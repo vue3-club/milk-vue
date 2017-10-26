@@ -3,16 +3,16 @@ import VueRouter from 'vue-router';
 import App from './ExamplesApp';
 import routes from './router.config';
 import { setLang } from './utils/lang';
-import Vant, { Lazyload } from 'packages';
+import Vant from 'packages';
 import ZanDoc from 'zan-doc';
 import 'packages/vant-css/src/index.css';
 import 'zan-doc/src/helper/touch-simulator';
 
 Vue.use(Vant);
 Vue.use(ZanDoc);
-Vue.use(Lazyload, {
-  lazyComponent: true
-});
+// Vue.use(Lazyload, {
+//   lazyComponent: true
+// });
 Vue.use(VueRouter);
 
 const routesConfig = routes(true);

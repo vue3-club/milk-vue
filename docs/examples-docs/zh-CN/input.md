@@ -40,9 +40,7 @@ Vue.component(Button.name, Button);
 
 :::demo 按钮类型
 ```html
-<v-button type="default">q</v-button>
-<v-button type="primary">Primary</v-button>
-<v-button type="danger">Danger</v-button>
+<v-input type="default">input</v-input>
 ```
 :::
 

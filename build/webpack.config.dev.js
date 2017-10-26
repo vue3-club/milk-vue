@@ -9,6 +9,7 @@ const docConfig = require('../docs/src/doc.config');
 const { extractExample } = require('zan-doc/src/helper');
 const styleLoaders = [
   { loader: 'css-loader' },
+  { loader: 'less-loader' },
   { loader: 'postcss-loader', options: { sourceMap: true } }
 ];
 
@@ -84,6 +85,16 @@ module.exports = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({ use: styleLoaders })
+      },
+      {
+        test: /\.less$/,
+        use: [{
+            loader: "style-loader" // creates style nodes from JS strings 
+        }, {
+            loader: "css-loader" // translates CSS into CommonJS 
+        }, {
+            loader: "less-loader" // compiles Less to CSS 
+        }]
       },
       {
         test: /\.md/,
