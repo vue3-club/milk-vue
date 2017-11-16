@@ -8,6 +8,7 @@ var OUTPUT_PATH = path.join(__dirname, '../../packages/index.js');
 var IMPORT_TEMPLATE = 'import {{name}} from \'./{{package}}\';';
 var ISNTALL_COMPONENT_TEMPLATE = '  {{name}}';
 var MAIN_TEMPLATE = `{{include}}
+import '../style/index.less'
 
 const version = '{{version}}';
 const components = [
@@ -53,15 +54,15 @@ Components.forEach(name => {
   }));
 
   if ([
-    // directives
-    'Lazyload',
-    'Waterfall',
+      // directives
+      'Lazyload',
+      'Waterfall',
 
-    // services
-    'Dialog',
-    'Toast',
-    'ImagePreview'
-  ].indexOf(componentName) === -1) {
+      // services
+      'Dialog',
+      'Toast',
+      'ImagePreview'
+    ].indexOf(componentName) === -1) {
     installTemplate.push(render(ISNTALL_COMPONENT_TEMPLATE, {
       name: componentName,
       component: name
