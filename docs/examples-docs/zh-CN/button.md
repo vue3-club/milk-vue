@@ -1,6 +1,7 @@
 <style>
 .demo-button {
-  .van-button {
+  .vm-button {
+    margin: 10px 0;
     user-select: none;
 
     &--large,

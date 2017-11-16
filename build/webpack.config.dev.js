@@ -51,7 +51,8 @@ module.exports = {
       vue: 'vue/dist/vue.runtime.esm.js',
       packages: path.join(__dirname, '../packages'),
       lib: path.join(__dirname, '../lib'),
-      components: path.join(__dirname, '../docs/src/components')
+      components: path.join(__dirname, '../docs/src/components'),
+      loadSprite: path.join(__dirname, '../packages/icon/loadSprite.js')
     }
   },
   module: {
@@ -89,11 +90,11 @@ module.exports = {
       {
         test: /\.less$/,
         use: [{
-            loader: "style-loader" // creates style nodes from JS strings 
+            loader: "style-loader" // creates style nodes from JS strings
         }, {
-            loader: "css-loader" // translates CSS into CommonJS 
+            loader: "css-loader" // translates CSS into CommonJS
         }, {
-            loader: "less-loader" // compiles Less to CSS 
+            loader: "less-loader" // compiles Less to CSS
         }]
       },
       {
