@@ -1,6 +1,7 @@
 <style>
 .demo-button {
-  .van-button {
+  .vm-button {
+    margin: 10px 0;
     user-select: none;
 
     &--large,
@@ -40,7 +41,9 @@ Vue.component(Button.name, Button);
 
 :::demo 按钮类型
 ```html
-<v-input type="default">input</v-input>
+<v-button type="default">q</v-button>
+<v-button type="primary">Primary</v-button>
+<v-button type="danger">Danger</v-button>
 ```
 :::
 

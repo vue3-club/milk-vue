@@ -12,6 +12,7 @@
 .van-icon {
     display: inline-block;
 }
+
 .van-icon::before {
   font-family: "vant-icon" !important;
   font-style: normal;
