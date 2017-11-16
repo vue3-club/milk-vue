@@ -1,10 +1,17 @@
 import Button from './button';
+import Col from './col';
+import Icon from './icon';
 import Input from './input';
+import Row from './row';
+import '../style/index.less'
 
 const version = '0.10.0';
 const components = [
   Button,
-  Input
+  Col,
+  Icon,
+  Input,
+  Row
 ];
 
 const install = function(Vue) {
@@ -24,7 +31,10 @@ export {
   install,
   version,
   Button,
-  Input
+  Col,
+  Icon,
+  Input,
+  Row
 };
 export default {
   install,

@@ -4,77 +4,77 @@
     <h2 class="zanui-desc">有赞移动端 Vue 组件库</h2>
     <div class="mobile-navs">
       <div class="mobile-nav-item" v-for="(item, index) in navList" v-if="item.showInMobile" :key="index">
-        <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="base" :nav-key="index" :key="index" />
+        <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="base" :nav-key="index" :key="index"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import docConfig from '../doc.config';
-import MobileNav from './mobile-nav';
-import { getLang } from '../utils/lang';
+  import docConfig from '../doc.config';
+  import MobileNav from './mobile-nav';
+  import {getLang} from '../utils/lang';
 
-export default {
-  data() {
-    return {
-      docConfig,
-      lang: getLang()
-    };
-  },
-
-  beforeRouteEnter(to, from, next) {
-    next(vm => vm.lang = to.meta.lang);
-  },
-
-  beforeRouteUpdate(to, from, next) {
-    this.lang = to.meta.lang;
-  },
-
-  components: {
-    MobileNav
-  },
-
-  computed: {
-    base() {
-      return `${this.lang}/component`;
+  export default {
+    data() {
+      return {
+        docConfig,
+        lang: getLang()
+      };
     },
 
-    navList() {
-      return this.docConfig[this.lang].nav || [];
+    beforeRouteEnter(to, from, next) {
+      next(vm => vm.lang = to.meta.lang);
+    },
+
+    beforeRouteUpdate(to, from, next) {
+      this.lang = to.meta.lang;
+    },
+
+    components: {
+      MobileNav
+    },
+
+    computed: {
+      base() {
+        return `${this.lang}/component`;
+      },
+
+      navList() {
+        return this.docConfig[this.lang].nav || [];
+      }
     }
-  }
-};
+  };
 </script>
 
-<style>
-.side-nav {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 40px 15px 20px;
-  position: relative;
-  z-index: 1;
+<style lang="less">
+  .side-nav {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 15px 20px;
+    position: relative;
+    z-index: 1;
 
-  .zanui-title,
-  .zanui-desc {
-    text-align: center;
-    font-weight: normal;
-    user-select: none;
-  }
+    .zanui-title,
+    .zanui-desc {
+      text-align: center;
+      font-weight: normal;
+      user-select: none;
+    }
 
-  .zanui-title {
-    padding-top: 40px;
-    height: 0;
-    overflow: hidden;
-    background: url(https://img.yzcdn.cn/upload_files/2017/04/20/FjwR1mraVIqtHWb8YWDW_YzQ_Kh2.png) center center no-repeat;
-    background-size: 156px 40px;
-    margin: 0 0 10px;
-  }
+    .zanui-title {
+      padding-top: 40px;
+      height: 0;
+      overflow: hidden;
+      background: url(https://img.yzcdn.cn/upload_files/2017/04/20/FjwR1mraVIqtHWb8YWDW_YzQ_Kh2.png) center center no-repeat;
+      background-size: 156px 40px;
+      margin: 0 0 10px;
+    }
 
-  .zanui-desc {
-    font-size: 14px;
-    color: #666;
-    margin: 0 0 50px;
+    .zanui-desc {
+      font-size: 14px;
+      color: #666;
+      margin: 0 0 50px;
+    }
   }
-}
 </style>

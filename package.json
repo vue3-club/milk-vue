@@ -96,7 +96,7 @@
     "markdown-it": "^8.4.0",
     "markdown-it-container": "^2.0.0",
     "mocha": "^3.4.2",
-    "postcss": "^6.0.10",
+    "postcss": "^6.0.14",
     "postcss-calc": "^6.0.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-loader": "^2.0.6",
