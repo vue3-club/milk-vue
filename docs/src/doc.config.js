@@ -15,6 +15,8 @@ module.exports = {
         '意见反馈': 'https://github.com/vueClub/vmu/issues'
       }
     },
+    logo: 'https://vue-js.com/public/images/vue.png',
+    title: 'MILK',
     nav: [
       {
         "name": "开发指南",

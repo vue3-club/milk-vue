@@ -4,6 +4,7 @@ import App from './ExamplesDocsApp';
 import routes from './router.config';
 import ZanDoc from 'zan-doc';
 import isMobile from './utils/is-mobile';
+import ZanClass from 'zan-doc/dist/milk-doc.vendor.css';
 
 Vue.use(VueRouter);
 Vue.use(ZanDoc);

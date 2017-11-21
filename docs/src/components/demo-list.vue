@@ -1,7 +1,7 @@
 <template>
   <div class="side-nav">
     <h1 class="zanui-title">Zan UI</h1>
-    <h2 class="zanui-desc">有赞移动端 Vue 组件库</h2>
+    <h2 class="zanui-desc">Vue中文社区 MILk-UI</h2>
     <div class="mobile-navs">
       <div class="mobile-nav-item" v-for="(item, index) in navList" v-if="item.showInMobile" :key="index">
         <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="base" :nav-key="index" :key="index"/>
@@ -66,8 +66,8 @@
       padding-top: 40px;
       height: 0;
       overflow: hidden;
-      background: url(https://img.yzcdn.cn/upload_files/2017/04/20/FjwR1mraVIqtHWb8YWDW_YzQ_Kh2.png) center center no-repeat;
-      background-size: 156px 40px;
+      background: url(https://vue-js.com/public/images/vue.png) center center no-repeat;
+      background-size: 48px 40px;
       margin: 0 0 10px;
     }
 

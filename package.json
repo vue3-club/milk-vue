@@ -95,6 +95,7 @@
     "less-loader": "^4.0.5",
     "markdown-it": "^8.4.0",
     "markdown-it-container": "^2.0.0",
+    "milk-doc": "git+https://github.com/vueClub/milk-doc.git",
     "mocha": "^3.4.2",
     "postcss": "^6.0.14",
     "postcss-calc": "^6.0.0",

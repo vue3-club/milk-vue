@@ -52,7 +52,8 @@ module.exports = {
       packages: path.join(__dirname, '../packages'),
       lib: path.join(__dirname, '../lib'),
       components: path.join(__dirname, '../docs/src/components'),
-      loadSprite: path.join(__dirname, '../packages/icon/loadSprite.js')
+      loadSprite: path.join(__dirname, '../packages/icon/loadSprite.js'),
+      'zan-doc': 'milk-doc'
     }
   },
   module: {
