@@ -1,3 +1,3 @@
-import VButton from './Icon'
+import VIcon from './Icon'
 
-export default VButton
+export default VIcon

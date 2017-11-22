@@ -32,7 +32,27 @@
 import Vue from 'vue';
 
 const icons = [
-   'check-circle', 'check', 'check-circle-o', 'cross-circle', 'cross', 'cross-circle-o', 'up', 'down', 'left', 'right', 'ellipsis', 'loading'
+   'check-circle',
+   'check',
+   'check-circle-o',
+   'cross-circle',
+   'cross',
+   'cross-circle-o',
+   'up',
+   'down',
+   'left',
+   'right',
+   'ellipsis',
+   'loading',
+   'search',
+   'ellipsis',
+   'ellipsis-circle',
+   'exclamation-circle',
+   'info-circle',
+   'question-circle',
+   'voice',
+   'plus',
+   'minus'
 ];
 
 const IconListConstructor = Vue.extend({
@@ -74,7 +94,7 @@ Vue.component(Icon.name, Icon);
 
 ### 提示
 
-现在，我们只支持内置的 'check-circle', 'check', 'check-circle-o', 'cross-circle', 'cross', 'cross-circle-o', 'up', 'down', 'left', 'right', 'ellipsis', 'loading' 这些 icon 类型，**不再默认支持其他自定义类型的 icon**。你如果需要用你自定义的 icon 类型，有这几种方法：
+现在，我们只支持内置的 `check-circle`, `check`, `check-circle-o`, `cross-circle`, `cross`, `cross-circle-o`, `up`, `down`, `left`, `right`, `ellipsis`, `loading` 这些 icon 类型，**不再默认支持其他自定义类型的 icon**。你如果需要用你自定义的 icon 类型，有这几种方法：
 
 1. 查看 [/docs/react/upgrade-notes](/docs/react/upgrade-notes#1.x-=>-2.0) 中 1.x => 2.0 的 svg icon 文档介绍
 2. 使用自己的 iconfont 文件
@@ -96,7 +116,7 @@ Vue.component(Icon.name, Icon);
 设置`size`属性为对应参数即可，所有可用的图标名称见右侧列表
 :::demo 大小
 ```html
-<v-row justify="around" align="center">
+<v-row justify="around" align="center" wrap="wrap">
     <v-col span="4">
         <v-icon type="search" size="xxs"></v-icon>
         <span>xxs</span>

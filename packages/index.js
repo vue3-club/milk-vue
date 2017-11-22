@@ -3,6 +3,7 @@ import Col from './col';
 import Icon from './icon';
 import Input from './input';
 import Row from './row';
+import Toast from './toast';
 import '../style/index.less'
 
 const version = '0.10.0';
@@ -34,7 +35,8 @@ export {
   Col,
   Icon,
   Input,
-  Row
+  Row,
+  Toast
 };
 export default {
   install,

@@ -1,5 +1,5 @@
 <template>
-  <svg :class="cls" :style="style">
+  <svg :class="cls" :style="style" @click="$emit('click')">
     <use :href="href"/>
   </svg>
 </template>
@@ -28,11 +28,12 @@
         return `#${this.type}`
       },
       cls() {
+        const prefixCls = 'vm-icon'
         return [
-          'vm-icon',
+          `${prefixCls}`,
           {
-            [`vm-icon-${this.type}`]: this.type,
-            [`vm-icon-${this.size}`]: this.size
+            [`${prefixCls}-${this.type}`]: this.type,
+            [`${prefixCls}-${this.size}`]: this.size
           }
         ]
       },

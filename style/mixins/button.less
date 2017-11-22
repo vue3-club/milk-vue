@@ -1,4 +1,5 @@
 @buttonPrefixCls: vm-button;
+@iconPrefixCls: vm-icon;
 .@{buttonPrefixCls} {
   display: block;
   outline: 0 none;
@@ -14,6 +15,7 @@
   text-overflow: ellipsis;
   word-break: break-all;
   white-space: nowrap;
+  cursor:pointer;
 
   // default
   width: 100%;
@@ -79,7 +81,7 @@
     }
   }
 
-  &-warning {
+  &-danger {
     color: @color-text-base-inverse;
     background-color: @warning-button-fill;
 
@@ -92,5 +94,15 @@
       color: fade(@color-text-base-inverse, 60%);
       opacity: 0.4;
     }
+  }
+
+  &-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  > .@{iconPrefixCls} {
+    margin-right: 0.5em;
   }
 }
