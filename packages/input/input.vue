@@ -7,7 +7,19 @@
       <slot></slot>
     </label>
     <div :class="`${prefixCls}-control`">
+      <textarea
+        v-if="this.type==='textarea'"
+        ref="textarea"
+        v-bind="$attrs"
+        :disabled="disabled"
+        v-model="inputValue"
+        @input="handleInput"
+        @focus="$emit('focus')"
+        @blur="$emit('blur')"
+      >
+      </textarea>
       <input
+        v-else
         ref="input"
         v-bind="$attrs"
         :type="inputType"
@@ -24,7 +36,7 @@
     >
       <v-icon v-if="error" type="exclamation-circle"></v-icon>
       <v-icon v-else-if="clear" type="cross-circle-o" style="color:#c9c9c9" @click="handleClear"></v-icon>
-      <span v-else>{{extra}}</span>
+      <slot v-else name="extra"></slot>
     </div>
   </div>
 </template>
@@ -60,8 +72,6 @@
       },
       // 标签文案对齐方式
       labelAlign: String,
-      // 右侧注释文案
-      extra: String,
       // 是否显示清除按钮
       clear: Boolean,
       // 受否禁用
@@ -100,7 +110,6 @@
       // 是否有注释信息
       hasExtra() {
         return this.$slots.extra ||
-          this.extra ||
           this.error ||
           (this.inputValue && this.clear);
       },

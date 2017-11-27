@@ -2,6 +2,8 @@ import Button from './button';
 import Col from './col';
 import Icon from './icon';
 import Input from './input';
+import List from './list';
+import ListItem from './listItem';
 import Row from './row';
 import Toast from './toast';
 import '../style/index.less'
@@ -12,6 +14,8 @@ const components = [
   Col,
   Icon,
   Input,
+  List,
+  ListItem,
   Row
 ];
 
@@ -35,6 +39,8 @@ export {
   Col,
   Icon,
   Input,
+  List,
+  ListItem,
   Row,
   Toast
 };

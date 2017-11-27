@@ -113,7 +113,7 @@ type 支持`text`、`number`、`date`等类型，默认为`text`
 
 :::demo v-model
 ```html
-<v-input placeholder="input model" v-model="modelValue">v-model</v-input>
+<v-input type="textarea" rows="1" placeholder="input model" v-model="modelValue">v-model</v-input>
 <v-input readonly placeholder="value readonly" :value="modelValue">readonly</v-input>
 <v-input disabled placeholder="value disabled" :value="modelValue">disabled</v-input>
 ```
@@ -135,7 +135,10 @@ extra 设置输入框右侧注释信息
 
 :::demo extra
 ```html
-<v-input type="number" placeholder="input extra" extra="￥">extra</v-input>
+<v-input type="number" placeholder="input extra">
+    extra
+    <span slot="extra">￥</span>
+</v-input>
 ```
 :::
 

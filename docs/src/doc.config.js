@@ -67,6 +67,10 @@ module.exports = {
               {
                 "path": "/toast",
                 "title": "Toast - 轻提示"
+              },
+              {
+                "path": "/list",
+                "title": "List - 列表"
               }
             ]
           }
