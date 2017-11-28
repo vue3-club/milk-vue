@@ -44,9 +44,13 @@
 </script>
 
 <style lang="less">
-  .zan-doc-content--quickstart {
+  .zan-doc-content--quickstart{
     h3:not(:first-of-type) {
       margin-top: 35px;
     }
+  }
+
+  .zan-doc code{
+    word-break: normal;
   }
 </style>

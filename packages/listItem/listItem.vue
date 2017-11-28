@@ -2,6 +2,8 @@
   <div
     :class="listCls"
     v-bind="$attrs"
+    v-feedback="feedbackClass"
+    @click="handleClick"
   >
     <div v-if="$slots.thumb" :class="`${prefixCls}-thumb`">
       <slot name="thumb"></slot>
@@ -22,6 +24,10 @@
 </template>
 
 <script>
+  import Vue from 'vue';
+  import VFeedback from 'v-feedback';
+
+  Vue.use(VFeedback);
   const prefixCls = 'vm-list';
   export default {
     name: 'VListItem',
@@ -34,7 +40,17 @@
       },
       wrap: Boolean, // 是否换行，默认文字超出被隐藏
       multipleLine: Boolean, // 是否多行
-      brief:String
+      brief: String,
+      activeClass: {
+        type: String
+      }
+    },
+    computed: {
+      feedbackClass(){
+        let res = !this.$attrs.disabled && this.arrow ? this.activeClass || 'e-feedback' : false;
+        console.log(res);
+        return res;
+      }
     },
     data() {
       return {
@@ -58,6 +74,11 @@
           [`${prefixCls}-arrow-vertical`]: this.arrow === 'down' || this.arrow === 'up',
           [`${prefixCls}-arrow-vertical-up`]: this.arrow === 'up',
         }
+      }
+    },
+    methods: {
+      handleClick(event){
+        this.$emit('click', event)
       }
     }
   };

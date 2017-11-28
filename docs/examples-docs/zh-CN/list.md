@@ -5,11 +5,21 @@
 </style>
 <script>
 import Vue from 'vue';
-import { ListItem } from 'packages';
-
+import { ListItem, Icon } from 'packages';
 Vue.component(ListItem.name, ListItem);
+Vue.component(Icon.name, Icon);
 
 export default {
+  data(){
+    return{
+      disabled:false
+    }
+  },
+  methods:{
+    clickToDisabled:function(){
+      this.disabled = true;
+    }
+  }
 }
 </script>
 
@@ -35,9 +45,57 @@ export default {
 </v-list>
 <v-list>
     <div slot="header">Subtitle</div>
-    <v-list-item brief="brief" arrow="horizontal">
+    <v-list-item brief="Subtitle" arrow="horizontal">
         <div>Title</div>
-        <div slot="extra">Subtitle</div>
+    </v-list-item>
+    <v-list-item brief="Subtitle" arrow="horizontal">
+        <v-icon type="success" slot="thumb" color="#6abf47"></v-icon>
+        <div>Title</div>
+    </v-list-item>
+</v-list>
+<v-list>
+    <div slot="header">Customized Right Side（Empty Content / Text / Element）</div>
+    <v-list-item arrow="empty">
+        <div>Title</div>
+    </v-list-item>
+    <v-list-item arrow="horizontal">
+        <div>Title</div>
+    </v-list-item>
+    <v-list-item arrow="horizontal">
+        <div>Title</div>
+        <div slot="extra">extra</div>
+    </v-list-item>
+    <v-list-item brief="brief" align="top">
+        <v-icon type="success" slot="thumb" color="#6abf47"></v-icon>
+        <div>Title</div>
+        <v-icon type="ellipsis-circle" slot="extra" color="#108ee9"></v-icon>
+    </v-list-item>
+</v-list>
+<v-list>
+    <div slot="header">Align Vertical Center</div>
+    <v-list-item arrow="horizontal" brief="Subtitle" >
+        <div>Title</div>
+        <div slot="extra">extra</div>
+    </v-list-item>
+</v-list>
+<v-list>
+    <div slot="header">Text Wrapping</div>
+    <v-list-item wrap>
+        <div>Multiple line,long text will wrap;Long Text Long Text Long Text Long Text Long Text Long Text</div>
+    </v-list-item>
+    <v-list-item wrap align="top">
+        <div>Multiple line and long text will wrap. Long Text Long Text Long Text</div>
+        <div slot="extra">extra</div>
+    </v-list-item>
+    <v-list-item wrap>
+        <div>In rare cases, the text of right side will wrap in the single line with long text. long text long text long text</div>
+        <div slot="extra">extra</div>
+    </v-list-item>
+</v-list>
+<v-list>
+    <div slot="header">Other</div>
+    <v-list-item @click="clickToDisabled" :disabled="true">
+        click to disabled
     </v-list-item>
 </v-list>
 ```
@@ -49,14 +107,15 @@ export default {
 
 | 属性 | 说明 | 类型 | 默认值 | 可选值 |
 |----|-----|------|------|------|
-| solt |  插槽名称 | String |  ''  | `header` `footer` |
-| thumb       | 缩略图(当为 string 类型时作为 img src)  | String/React.Element |  无  |
-| extra      | 右边内容        | String/React.Element |  无  |
-| arrow      | 箭头方向(右,上,下), 可选`horizontal`,`up`,`down`,`empty`，如果是`empty`则存在对应的dom,但是不显示   | String |   无  |
-| align    |  子元素垂直对齐，可选`top`,`middle`,`bottom`  | String   | `middle` |
-| onClick    | 点击事件的回调函数 | (): void |  无  |
-| error(`web only`)    | 报错样式,右侧文字颜色变成橙色 | Boolean  | `false`  |
-| multipleLine    | 多行 | Boolean  | `false`  |
-| wrap    | 是否换行，默认情况下，文字超长会被隐藏， | Boolean  | `false`  |
-| activeStyle(`web only`)    | 自定义active的样式 | Object  |   |
-| platform (`web only`) |  设定组件的平台特有样式, 可选值为 `android`, `ios`， 默认为 `cross`， 即组件会自动检测设备 UA 应用不同平台的样式    | String | `'cross'`|
+| solt |  插槽名称 | String |  ''  | `header(头部内容)`,`footer(底部内容)` |
+
+### ListItem
+| 属性 | 说明 | 类型 | 默认值 | 可选值 |
+|----|-----|------|------|------|
+| solt |  插槽名称 | String |  -  | `thumb(缩略图)`,`extra(右边内容)` |
+| arrow      | 箭头方向(右,上,下) | String |   -  | 可选`horizontal`,`up`,`down`,`empty`,如果是`empty`则存在对应的dom,但是不显示
+| align    |  子元素垂直对齐 | String   | `middle` | 可选`top`,`middle`,`bottom` |
+| error    | 报错样式,右侧文字颜色变成橙色 | Boolean  | `false`  | `true`,`false`|
+| multipleLine    | 多行 | Boolean  | `false`  | `true`,`false` |
+| wrap    | 是否换行，默认情况下，文字超长会被隐藏， | Boolean  | `false`  | `true`,`false`|
+| activeClass  | 自定义active的类名 | String  | - | - |

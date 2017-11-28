@@ -6,7 +6,7 @@ import List from './list';
 import ListItem from './listItem';
 import Row from './row';
 import Toast from './toast';
-import '../style/index.less'
+import '../style/index.less';
 
 const version = '0.10.0';
 const components = [

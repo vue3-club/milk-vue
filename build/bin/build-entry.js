@@ -5,10 +5,12 @@ var uppercamelcase = require('uppercamelcase');
 var path = require('path');
 
 var OUTPUT_PATH = path.join(__dirname, '../../packages/index.js');
+var STYLE_PATH = '../style/index.less';
 var IMPORT_TEMPLATE = 'import {{name}} from \'./{{package}}\';';
+var IMPORT_STYLE_TEMPLATE = 'import \'{{package}}\';';
 var ISNTALL_COMPONENT_TEMPLATE = '  {{name}}';
 var MAIN_TEMPLATE = `{{include}}
-import '../style/index.less'
+{{style}}
 
 const version = '{{version}}';
 const components = [
@@ -44,6 +46,9 @@ delete Components.font;
 var includeComponentTemplate = [];
 var installTemplate = [];
 var listTemplate = [];
+var styleTemplate = [];
+var commonTemplate = [];
+var useTemplate = [];
 
 Components.forEach(name => {
   var componentName = uppercamelcase(name);
@@ -72,8 +77,14 @@ Components.forEach(name => {
   listTemplate.push(`  ${componentName}`);
 });
 
+
+styleTemplate.push(render(IMPORT_STYLE_TEMPLATE, {
+  package: STYLE_PATH
+}));
+
 var template = render(MAIN_TEMPLATE, {
   include: includeComponentTemplate.join('\n'),
+  style: styleTemplate.join('\n'),
   list: listTemplate.join(',\n'),
   components: installTemplate.join(',\n') || ' ',
   version: process.env.VERSION || require('../../package.json').version
