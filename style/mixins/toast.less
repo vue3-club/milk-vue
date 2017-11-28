@@ -1,0 +1,72 @@
+.vm-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  color: @color-text-base-inverse;
+  z-index: 3001;
+  font-size: @font-size-base;
+  line-height: 1.2;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  transform: translate3d(-50%, -50%, 0);
+  background-color: rgba(39, 39, 39, .7);
+
+  &-wrapper {
+    transition: opacity .2s;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3000;
+    background-color: transparent;
+
+    &--mask {
+      background-color: rgba(0, 0, 0, .5);
+    }
+  }
+
+  &--text {
+    padding: 12px;
+    min-width: 220px;
+  }
+
+  &--default {
+    width: 120px;
+    min-height: 120px;
+    padding: 15px;
+
+    .vm-toast__icon {
+      font-size: 50px;
+    }
+
+    .vm-loading {
+      margin: 10px 0 5px;
+    }
+
+    .vm-toast__text {
+      font-size: 14px;
+      padding-top: 10px;
+    }
+  }
+
+  &--top {
+    top: 50px;
+  }
+
+  &--bottom {
+    top: auto;
+    bottom: 50px;
+  }
+}
+
+.vm-toast-fade-enter, .vm-toast-fade-leave-to {
+  opacity: 0;
+}

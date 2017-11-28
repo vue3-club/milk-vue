@@ -3,6 +3,10 @@
   .vm-button {
     margin: 10px 0;
     user-select: none;
+    
+    &-inline{
+      margin-right:10px;
+    }
 
     &--large,
     &--bottom-action {
@@ -41,15 +45,25 @@ Vue.component(Button.name, Button);
 
 :::demo 按钮类型
 ```html
-<v-button type="default">q</v-button>
+<v-button type="default">default</v-button>
 <v-button type="primary">Primary</v-button>
 <v-button type="danger">Danger</v-button>
+<v-button type="ghost">Ghost</v-button>
 ```
 :::
 
 #### 按钮尺寸
 
-支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
+默认为`normal`，可选`small`
+
+:::demo 按钮尺寸
+```html 
+<v-button inline>inline normal</v-button>
+<v-button inline type="primary">inline normal</v-button>
+<v-button inline size="small">inline small</v-button>
+<v-button inline size="small" type="primary">inline small</v-button>
+```
+:::
 
 
 #### 禁用状态
@@ -66,8 +80,7 @@ Vue.component(Button.name, Button);
 
 :::demo 加载状态
 ```html 
-<v-button loading></v-button>
-<v-button loading type="primary"></v-button>
+<v-button tag="a" loading type="primary" href="#">loading</v-button>
 ```
 :::
 
@@ -81,10 +94,7 @@ Vue.component(Button.name, Button);
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | type | 按钮类型 | `String`  | `default` | `primary` `danger` |
-| size | 按钮尺寸 | `String`  | `normal` | `large` `small` `mini` |
+| size | 按钮尺寸 | `String`  | `normal` | `normal` `small` |
 | tag | 按钮标签 | `String`  | `button` | 任意`HTML`标签 |
-| nativeType | 按钮类型（原生） | `String`  | `''` | - |
 | diabled | 是否禁用 | `Boolean`  |  `false`  | - |
 | loading | 是否显示为加载状态 | `Boolean`  |  `false`  | - |
-| block | 是否为块级元素 | `Boolean`  |   `false`   | - |
-| bottomAction | 是否为底部行动按钮 | `Boolean` | `false` | - |

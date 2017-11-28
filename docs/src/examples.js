@@ -5,7 +5,7 @@ import routes from './router.config';
 import { setLang } from './utils/lang';
 import Vant from 'packages';
 import ZanDoc from 'zan-doc';
-import 'packages/vant-css/src/index.css';
+// import 'packages/vant-css/src/index.css';
 import 'zan-doc/src/helper/touch-simulator';
 
 Vue.use(Vant);

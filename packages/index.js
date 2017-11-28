@@ -2,8 +2,11 @@ import Button from './button';
 import Col from './col';
 import Icon from './icon';
 import Input from './input';
+import List from './list';
+import ListItem from './listItem';
 import Row from './row';
-import '../style/index.less'
+import Toast from './toast';
+import '../style/index.less';
 
 const version = '0.10.0';
 const components = [
@@ -11,6 +14,8 @@ const components = [
   Col,
   Icon,
   Input,
+  List,
+  ListItem,
   Row
 ];
 
@@ -34,7 +39,10 @@ export {
   Col,
   Icon,
   Input,
-  Row
+  List,
+  ListItem,
+  Row,
+  Toast
 };
 export default {
   install,

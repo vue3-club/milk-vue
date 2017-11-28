@@ -61,8 +61,16 @@ module.exports = {
                 "title": "Button - 按钮"
               },
               {
-                "path": "/Input",
+                "path": "/input",
                 "title": "Input - 输入框"
+              },
+              {
+                "path": "/toast",
+                "title": "Toast - 轻提示"
+              },
+              {
+                "path": "/list",
+                "title": "List - 列表"
               }
             ]
           }

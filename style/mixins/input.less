@@ -1,38 +1,57 @@
 @listPrefixCls: vm-list;
 @inputPrefixCls: vm-input;
+@iconPrefixCls: vm-icon;
+
+.vm-loop-label-span(@n, @i:1) when (@i <= @n) {
+  .@{inputPrefixCls}-label-@{i} {
+    width: @i * @input-label-width;
+  }
+  .vm-loop-label-span(@n, (@i + 1));
+}
 
 .@{listPrefixCls}-item {
-  position: relative;
-  display: flex;
-  padding-left: @h-spacing-lg;
-  min-height: @list-item-height;
-  background-color: @fill-base;
-  vertical-align: middle;
-  overflow: hidden;
-  transition: background-color 200ms;
-  align-items: center;
 
   &.@{inputPrefixCls}-item {
     height: @list-item-height;
     padding-left: @h-spacing-lg;
     padding-right: @h-spacing-lg;
     .hairline('bottom');
+    &-error{
+      input,
+      .@{iconPrefixCls}{
+        color:@brand-error !important;
+      }
+      input::-webkit-input-placeholder{
+        color:fadeout(@brand-error, 50%) !important;
+      }
+    }
   }
 
   .@{inputPrefixCls}-label {
     color: @color-text-base;
     font-size: @font-size-heading;
     margin-left: 0;
-    margin-right: @h-spacing-sm;
+    margin-right: @h-spacing-md;
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
     padding: 2 * @hd 0;
-
-    &.@{inputPrefixCls}-label-5 {
-      width: 5 * @input-label-width;
+    &-left {
+      text-align: left;
+    }
+    &-right {
+      text-align: right;
+    }
+    &-center {
+      text-align: center;
+    }
+    &-disabled{
+      color: #bbb;
+      background-color: #fff;
     }
   }
+
+  .vm-loop-label-span(10);
 
   .@{inputPrefixCls}-control {
     font-size: @input-font-size;
@@ -43,15 +62,18 @@
       font-size: @font-size-heading;
       appearance: none;
       width: 100%;
+      height: 100%;
       padding: 2 * @hd 0;
       border: 0;
       background-color: transparent;
       line-height: @line-height-base;
       box-sizing: border-box;
+      -webkit-padding-start: 1px;
 
       &::placeholder {
         color: @color-text-placeholder;
-        line-height: 1.2;
+        line-height: 120%;
+        font-size: .8em;
       }
 
       &:disabled {
@@ -59,5 +81,37 @@
         background-color: #fff;
       }
     }
+
+    textarea {
+      color: @color-text-base;
+      font-size: @font-size-heading;
+      appearance: none;
+      width: 100%;
+      height: 100%;
+      padding: 2 * @hd 0;
+      border: 0;
+      background-color: transparent;
+      line-height: @line-height-base;
+      box-sizing: border-box;
+      -webkit-padding-start: 1px;
+      resize: none;
+      font-family: inherit;
+
+      &::placeholder {
+        color: @color-text-placeholder;
+        line-height: 120%;
+        font-size: .8em;
+      }
+
+      &:disabled {
+        color: @color-text-disabled;
+        background-color: #fff;
+      }
+    }
+  }
+
+  .@{inputPrefixCls}-extra {
+    font-size: @input-font-size;
+    padding: 0 2 * @hd;
   }
 }

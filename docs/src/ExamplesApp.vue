@@ -10,5 +10,7 @@
     font-family: Arial, Helvetica, "STHeiti STXihei", "Microsoft YaHei", Tohoma, sans-serif;
     -webkit-font-smoothing: antialiased;
     padding-bottom: 20px;
+    margin: 0;
+    outline: none;
   }
 </style>

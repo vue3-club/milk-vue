@@ -1,23 +1,45 @@
 <template>
-  <button :disabled="disabled"
-          role="buttonType"
-          :class="classNames"
+  <component
+    :is="tag"
+    :disabled="disabled"
+    role="buttonType"
+    :class="classNames"
+    @click="handleClick"
   >
-    <span v-if="$slots.default"><slot></slot></span>
-  </button>
+    <v-icon v-if="iconType!=''" :type="iconType"></v-icon>
+    <slot v-if="$slots.default"></slot>
+  </component>
 </template>
 
 <script>
-  const prefixCls = 'vm-button'
+  import Icon from '../icon'
+
+  const prefixCls = 'vm-button';
 
   export default {
     name: 'VButton',
+    components: {
+      [Icon.name]: Icon
+    },
     props: {
       type: String,
-      size: String,
+      size: {
+        type: String,
+        default: "normal"
+      },
       disabled: Boolean,
       loading: Boolean,
-      inline: Boolean
+      inline: Boolean,
+      icon: String,
+      tag: {
+        type: String,
+        default: "button"
+      }
+    },
+    computed: {
+      iconType() {
+        return this.loading ? 'loading' : this.icon || '';
+      }
     },
     data() {
       return {
@@ -31,6 +53,11 @@
           [`${prefixCls}-inline`]: this.inline,
           [`${prefixCls}-active`]: this.active
         }
+      }
+    },
+    methods:{
+      handleClick(event){
+        this.$emit('click', event)
       }
     }
   }
