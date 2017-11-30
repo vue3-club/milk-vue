@@ -10,7 +10,7 @@ Vue.component(ListItem.name, ListItem);
 Vue.component(Icon.name, Icon);
 
 export default {
-  data(){
+  data(){   
     return{
       disabled:false
     }
@@ -31,6 +31,21 @@ export default {
 - 主要信息和主要操作放在列表的左边，次要信息和次要操作放在列表的右边。
 
 ### 代码演示
+
+```javascript
+export default {
+  data(){   
+    return{
+      disabled:false
+    }
+  },
+  methods:{
+    clickToDisabled:function(){
+      this.disabled = true;
+    }
+  }
+}
+```
 
 #### 基本
 
@@ -94,8 +109,15 @@ export default {
 </v-list>
 <v-list>
     <div slot="header">Other</div>
-    <v-list-item @click="clickToDisabled" :disabled="true">
+    <v-list-item @click="clickToDisabled" :disabled="this.disabled" arrow="horizontal">
         click to disabled
+    </v-list-item>
+    <v-list-item>
+      <select defaultValue="1">
+        <option value="1">Html select element</option>
+        <option value="2" disabled>Unable to select</option>
+        <option value="3">option 3</option>
+      </select>
     </v-list-item>
 </v-list>
 ```
@@ -113,7 +135,7 @@ export default {
 | 属性 | 说明 | 类型 | 默认值 | 可选值 |
 |----|-----|------|------|------|
 | solt |  插槽名称 | String |  -  | `thumb(缩略图)`,`extra(右边内容)` |
-| arrow      | 箭头方向(右,上,下) | String |   -  | 可选`horizontal`,`up`,`down`,`empty`,如果是`empty`则存在对应的dom,但是不显示
+| arrow      | 箭头方向(右,上,下) | String |   -  | 可选`horizontal`,`up`,`down`,`empty`,如果是`empty`则存在对应的dom,但是不显示 |
 | align    |  子元素垂直对齐 | String   | `middle` | 可选`top`,`middle`,`bottom` |
 | error    | 报错样式,右侧文字颜色变成橙色 | Boolean  | `false`  | `true`,`false`|
 | multipleLine    | 多行 | Boolean  | `false`  | `true`,`false` |

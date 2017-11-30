@@ -71,6 +71,10 @@ module.exports = {
               {
                 "path": "/list",
                 "title": "List - 列表"
+              },
+              {
+                "path": "/textarea",
+                "title": "Textarea - 多行输入"
               }
             ]
           }

@@ -1,6 +1,10 @@
 <template>
-  <svg :class="cls" :style="style" @click="$emit('click')">
-    <use :href="href"/>
+  <svg
+    :class="svgCls"
+    :style="style"
+    @click="$emit('click')"
+  >
+    <use :href="`#${this.type}`"/>
   </svg>
 </template>
 
@@ -24,12 +28,10 @@
       loadSprite();
     },
     computed: {
-      href() {
-        return `#${this.type}`
-      },
-      cls() {
+      svgCls() {
         const prefixCls = 'vm-icon'
         return [
+          this.$attrs.class || '',
           `${prefixCls}`,
           {
             [`${prefixCls}-${this.type}`]: this.type,

@@ -1,6 +1,7 @@
 <template>
   <div
     :class="listCls"
+    :disable="listDisabled"
     v-bind="$attrs"
     v-feedback="feedbackClass"
     @click="handleClick"
@@ -28,7 +29,9 @@
   import VFeedback from 'v-feedback';
 
   Vue.use(VFeedback);
+
   const prefixCls = 'vm-list';
+
   export default {
     name: 'VListItem',
     props: {
@@ -47,33 +50,40 @@
     },
     computed: {
       feedbackClass(){
-        let res = !this.$attrs.disabled && this.arrow ? this.activeClass || 'e-feedback' : false;
-        console.log(res);
-        return res;
-      }
-    },
-    data() {
-      return {
-        prefixCls: prefixCls,
-        listCls: {
+        return !this.listDisabled && this.$listeners.click ? this.activeClass || 'e-feedback' : 'no-feedback';
+      },
+      listDisabled(){
+        return this.$attrs.disabled;
+      },
+      listCls(){
+        return {
           [`${prefixCls}-item`]: true,
           [`${prefixCls}-item-disabled`]: this.$attrs.disabled,
           [`${prefixCls}-item-error`]: this.error,
           [`${prefixCls}-item-top`]: this.align === 'top',
           [`${prefixCls}-item-middle`]: this.align === 'middle',
           [`${prefixCls}-item-bottom`]: this.align === 'bottom'
-        },
-        lineCls: {
+        }
+      },
+      lineCls(){
+        return {
           [`${prefixCls}-line`]: true,
           [`${prefixCls}-line-multiple`]: this.multipleLine,
           [`${prefixCls}-line-wrap`]: this.wrap,
-        },
-        arrowCls: {
+        }
+      },
+      arrowCls(){
+        return {
           [`${prefixCls}-arrow`]: true,
           [`${prefixCls}-arrow-horizontal`]: this.arrow === 'horizontal',
           [`${prefixCls}-arrow-vertical`]: this.arrow === 'down' || this.arrow === 'up',
           [`${prefixCls}-arrow-vertical-up`]: this.arrow === 'up',
         }
+      }
+    },
+    data() {
+      return {
+        prefixCls: prefixCls
       }
     },
     methods: {

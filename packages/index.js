@@ -5,6 +5,7 @@ import Input from './input';
 import List from './list';
 import ListItem from './listItem';
 import Row from './row';
+import Textarea from './textarea';
 import Toast from './toast';
 import '../style/index.less';
 
@@ -16,7 +17,8 @@ const components = [
   Input,
   List,
   ListItem,
-  Row
+  Row,
+  Textarea
 ];
 
 const install = function(Vue) {
@@ -42,6 +44,7 @@ export {
   List,
   ListItem,
   Row,
+  Textarea,
   Toast
 };
 export default {
