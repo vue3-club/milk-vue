@@ -42,7 +42,7 @@
       <div
         v-if="error"
         :class="`${prefixCls}-error-extra`"
-        @click="handleErrorClick"
+        @click="$emit('error-click')"
       >
       </div>
       <div
@@ -89,7 +89,9 @@
       // 是否显示清除按钮
       clear: Boolean,
       // 受否禁用
-      disabled: Boolean
+      disabled: Boolean,
+      // 错误标识点击事件
+      errorClick: Function
     },
     data() {
       return {
@@ -214,10 +216,6 @@
       handleBlur(){
         this.focus = false;
         this.$emit("blur");
-      },
-      // 处理错误点击事件
-      handleErrorClick() {
-        this.errorClick && this.errorClick();
       }
     }
   }

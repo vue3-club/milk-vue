@@ -19,10 +19,7 @@
         required: true
       },
       size: String,
-      color: {
-        type: String,
-        default: '#000'
-      }
+      color: String
     },
     beforeCreate() {
       loadSprite();
@@ -45,5 +42,5 @@
         }
       }
     }
-  };
+  }
 </script>

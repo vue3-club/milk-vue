@@ -42,7 +42,6 @@ const icons = [
    'down',
    'left',
    'right',
-   'ellipsis',
    'loading',
    'search',
    'ellipsis',

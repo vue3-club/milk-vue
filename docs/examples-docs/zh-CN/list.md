@@ -26,6 +26,14 @@ export default {
 ## List 列表
 单个连续模块垂直排列，显示当前的内容、状态和可进行的操作。eg：联系人列表。
 
+### 使用指南
+
+```javascript
+import { List,ListItem } from 'vant';
+Vue.component(List.name, List);
+Vue.component(ListItem.name, ListItem);
+```
+
 ### 规则
 - 一般由主要信息、主要操作、次要信息、次要操作组成。
 - 主要信息和主要操作放在列表的左边，次要信息和次要操作放在列表的右边。
@@ -138,6 +146,7 @@ export default {
 | arrow      | 箭头方向(右,上,下) | String |   -  | 可选`horizontal`,`up`,`down`,`empty`,如果是`empty`则存在对应的dom,但是不显示 |
 | align    |  子元素垂直对齐 | String   | `middle` | 可选`top`,`middle`,`bottom` |
 | error    | 报错样式,右侧文字颜色变成橙色 | Boolean  | `false`  | `true`,`false`|
-| multipleLine    | 多行 | Boolean  | `false`  | `true`,`false` |
-| wrap    | 是否换行，默认情况下，文字超长会被隐藏， | Boolean  | `false`  | `true`,`false`|
+| multiple-line    | 多行 | Boolean  | `false`  | `true`,`false` |
+| wrap    | 是否换行，默认情况下，文字超长会被隐藏 | Boolean  | `false`  | `true`,`false`|
+| brief    | 辅助文案 | String  | -  | -|
 | activeClass  | 自定义active的类名 | String  | - | - |

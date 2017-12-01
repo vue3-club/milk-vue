@@ -30,7 +30,7 @@
     <div
       v-if="error"
       :class="`${prefixCls}-error-extra`"
-      @click="handleErrorClick"
+      @click="$emit('error-click')"
     >
     </div>
     <span
@@ -183,10 +183,6 @@
       handleBlur() {
         this.focus = false;
         this.$emit("blur");
-      },
-      // 处理错误点击事件
-      handleErrorClick() {
-        this.errorClick && this.errorClick();
       }
     }
   }

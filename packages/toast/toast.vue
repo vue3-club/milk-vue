@@ -8,7 +8,7 @@
 
         <!-- with icon -->
         <template v-if="toastType === 'default'">
-          <v-icon :type="type" :name="type" :color="iconColor"/>
+          <v-icon :type="type" :name="type" :color="iconColor" size="lg"/>
           <div v-if="message" class="vm-toast__text">{{ message }}</div>
         </template>
       </div>

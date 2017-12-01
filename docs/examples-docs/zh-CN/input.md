@@ -76,7 +76,7 @@ export default {
       this.phoneError=!!value;
     },
     errorClick(){
-      Toast.error('Error');
+      Toast.fail('Error');
     }
   }
 }
@@ -148,7 +148,7 @@ type 支持`text`、`number`、`date`等类型，默认为`text`
 :::demo error & clear
 ```html
 <v-list>
-<v-input placeholder="enter show error" @change="checkValue" :error="phoneError" :error-click="errorClick">error</v-input>
+<v-input placeholder="enter show error" @change="checkValue" :error="phoneError" @error-click="errorClick">error</v-input>
 <v-input placeholder="enter show clear" clear>clear</v-input>
 </v-list>
 ```
@@ -192,3 +192,4 @@ extra 设置输入框右侧注释信息
 |-----------|-----------|-----------|
 | focus | 输入框聚焦时触发 | - |
 | blur | 输入框失焦时触发 | - |
+| error-click | 点击错误提示时触发 | - |

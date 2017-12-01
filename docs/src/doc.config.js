@@ -69,12 +69,20 @@ module.exports = {
                 "title": "Toast - 轻提示"
               },
               {
+                "path": "/textarea",
+                "title": "Textarea - 多行输入"
+              },
+              {
                 "path": "/list",
                 "title": "List - 列表"
               },
               {
-                "path": "/textarea",
-                "title": "Textarea - 多行输入"
+                "path": "/navBar",
+                "title": "NavBar - 导航栏"
+              },
+              {
+                "path": "/drawer",
+                "title": "Drawer - 抽屉"
               }
             ]
           }

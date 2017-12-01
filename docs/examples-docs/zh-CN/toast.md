@@ -45,6 +45,9 @@ export default {
 import { Toast } from 'vant';
 ```
 
+### 代码演示
+
+
 ```javascript
 export default {
   methods:{
@@ -73,14 +76,12 @@ export default {
 }
 ```
 
-### 代码演示
-
 :::demo 基本
 ```html
 <v-button type="default" @click="toast('info','我是提示文案')">default</v-button>
-<v-button type="primary" @click="toast('success','成功文案')">success</v-button>
-<v-button type="danger" @click="toast('fail','失败文案')">fail</v-button>
-<v-button type="ghost" @click="toast('loading','加载中提示')">loading</v-button>
+<v-button type="default" @click="toast('success','成功文案')">success</v-button>
+<v-button type="default" @click="toast('fail','失败文案')">fail</v-button>
+<v-button type="default" @click="toast('loading','加载中提示')">loading</v-button>
 ```
 :::
 

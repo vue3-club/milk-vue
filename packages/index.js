@@ -1,9 +1,11 @@
 import Button from './button';
 import Col from './col';
+import Drawer from './drawer';
 import Icon from './icon';
 import Input from './input';
 import List from './list';
 import ListItem from './listItem';
+import NavBar from './navBar';
 import Row from './row';
 import Textarea from './textarea';
 import Toast from './toast';
@@ -13,10 +15,12 @@ const version = '0.10.0';
 const components = [
   Button,
   Col,
+  Drawer,
   Icon,
   Input,
   List,
   ListItem,
+  NavBar,
   Row,
   Textarea
 ];
@@ -39,10 +43,12 @@ export {
   version,
   Button,
   Col,
+  Drawer,
   Icon,
   Input,
   List,
   ListItem,
+  NavBar,
   Row,
   Textarea,
   Toast

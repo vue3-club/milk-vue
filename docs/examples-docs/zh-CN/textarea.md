@@ -53,8 +53,8 @@ export default {
 
 ### 使用指南
 ``` javascript
-import { Input } from 'vant';
-Vue.component(Input.name, Input);
+import { Textarea } from 'vant';
+Vue.component(Textarea.name, Textarea);
 ```
 
 ### 代码演示
@@ -76,7 +76,7 @@ export default {
       this.phoneError=!!value;
     },
     errorClick(){
-      Toast.error('Error');
+      Toast.fail('Error');
     }
   }
 }
@@ -158,7 +158,7 @@ count: 计数功能,兼具最大长度,默认为0,代表不开启计数功能
 :::demo error & clear
 ```html
 <v-list>
-    <v-textarea placeholder="enter show error" @change="checkValue" :error="phoneError" :error-click="errorClick">error</v-textarea>
+    <v-textarea placeholder="enter show error" @change="checkValue" :error="phoneError" @error-click="errorClick">error</v-textarea>
     <v-textarea placeholder="enter show clear" clear>clear</v-textarea>
 </v-list>
 ```
@@ -188,3 +188,4 @@ count: 计数功能,兼具最大长度,默认为0,代表不开启计数功能
 |-----------|-----------|-----------|
 | focus | 输入框聚焦时触发 | - |
 | blur | 输入框失焦时触发 | - |
+| error-click | 点击错误提示时触发 | - |
