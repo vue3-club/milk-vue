@@ -1,7 +1,7 @@
 <style>
 .demo-toast{
-  .zan-doc-demo-block {
-    padding: 0 15px;
+  .demo-block{
+    padding:0 15px;
   }
   .vm-button{
     margin-bottom:10px;
@@ -78,16 +78,20 @@ export default {
 
 :::demo 基本
 ```html
-<v-button type="default" @click="toast('info','我是提示文案')">default</v-button>
-<v-button type="default" @click="toast('success','成功文案')">success</v-button>
-<v-button type="default" @click="toast('fail','失败文案')">fail</v-button>
-<v-button type="default" @click="toast('loading','加载中提示')">loading</v-button>
+<div class="demo-block">
+    <v-button type="default" @click="toast('info','我是提示文案')">default</v-button>
+    <v-button type="default" @click="toast('success','成功文案')">success</v-button>
+    <v-button type="default" @click="toast('fail','失败文案')">fail</v-button>
+    <v-button type="default" @click="toast('loading','加载中提示')">loading</v-button>
+</div>
 ```
 :::
 
 :::demo 自定义
 ```html
-<v-button @click="toastDiy">toast diy</v-button>
+<div class="demo-block">
+    <v-button @click="toastDiy">toast diy</v-button>
+</div>
 ```
 :::
 
@@ -135,7 +139,7 @@ const timer = setInterval(() => {
 ```
 
 
-### 方法
+### Function
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 |-----------|-----------|-----------|-------------|
@@ -145,7 +149,7 @@ const timer = setInterval(() => {
 | Toast.fail | `options | message` | toast 实例 | 展示失败提示 |
 | Toast.clear | - | `void` | 关闭提示 |
 
-### Options
+### API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|

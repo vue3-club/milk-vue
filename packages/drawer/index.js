@@ -1,3 +1,3 @@
-import VDrawer from './drawer';
+import VDrawer from 'v-drawer';
 
 export default VDrawer;

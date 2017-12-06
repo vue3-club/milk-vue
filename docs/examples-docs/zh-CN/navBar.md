@@ -1,14 +1,3 @@
-<style>
-.demo-drawer{
-  .zan-doc-demo-block {
-    padding: 0 15px;
-  }
-  .vm-button{
-    margin-bottom:10px;
-  }
-}
-</style>
-
 <script>
 import { Toast } from 'packages';
 export default {
@@ -57,15 +46,22 @@ export default {
 ```
 :::
 
-### Options
+### API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| slot | 插槽`default 会覆盖 title` | `String` | `default` | `default` `left` `right` |
 | mode | 模式 | `String` | `dark` | `dark` `light` |
 | title | 标题 | `String` | - | - |
 | icon | 左侧图标 | `String` | - | icon type |
 | icon-click | 左侧图标点击事件 | `Function` | - | - |
+
+### Slot
+
+| name | 描述 |
+|------|------|
+| default | 自定义标题内容，如果存在会覆盖 `title` 值 |
+| left | 自定义左侧内容 |
+| right | 自定义右侧内容 |
 
 ### Event
 

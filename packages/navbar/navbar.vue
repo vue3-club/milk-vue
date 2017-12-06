@@ -16,6 +16,7 @@
 <script>
 
   const prefixCls = 'vm-navBar';
+  const modeList = ['light','dark'];
 
   export default {
     name: 'VNavBar',
@@ -24,8 +25,9 @@
       title: String,
       mode: {
         type: String,
+        default:'dark',
         validator: function (value) {
-          return value && value === 'light' ? 'light' : 'dark';
+          return value && modeList.indexOf(value)!==-1;
         }
       }
     },

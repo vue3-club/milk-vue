@@ -12,14 +12,14 @@
     <div :class="lineCls">
       <div v-if="$slots.default" :class="`${prefixCls}-content`">
         <slot name="default"></slot>
-        <div v-if="this.brief" :class="`${prefixCls}-brief`">
+        <div v-if="brief" :class="`${prefixCls}-brief`">
           {{this.brief}}
         </div>
       </div>
       <div v-if="$slots.extra" :class="`${prefixCls}-extra`">
         <slot name="extra"></slot>
       </div>
-      <div v-if="this.arrow" :class="arrowCls" :aria-hidden="true"></div>
+      <div v-if="arrow" :class="arrowCls" :aria-hidden="true"></div>
     </div>
   </div>
 </template>
