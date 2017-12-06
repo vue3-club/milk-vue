@@ -56,8 +56,8 @@
 </template>
 
 <script>
-  const prefixCls = 'vm-input'; //输入框类名前置
-  const listPrefixCls = 'vm-list'; //输入框排版list类名前置
+  const prefixCls = 'vm-input'; // 输入框类名前置
+  const listPrefixCls = 'vm-list'; // 输入框排版list类名前置
 
   export default {
     name: 'VInput',
@@ -96,15 +96,15 @@
     data() {
       return {
         prefixCls: prefixCls, // 输入框类名前置【模板用】
-        listPrefixCls:listPrefixCls,// 输入框列表类名前置【模板用】
-        focus:false,// 输入框是否聚焦
+        listPrefixCls: listPrefixCls, // 输入框列表类名前置【模板用】
+        focus: false, // 输入框是否聚焦
         inputValue: this.value // 绑定输入框值
-      }
+      };
     },
     watch: {
       // 监听父级作用域 value 值的变化
-      value: function (val) {
-        this.inputValue = val
+      value: function(val) {
+        this.inputValue = val;
       }
     },
     computed: {
@@ -113,11 +113,11 @@
         return {
           [`${listPrefixCls}-item`]: true,
           [`${prefixCls}-item`]: true,
-          [`${listPrefixCls}-item-middle`]:true,
+          [`${listPrefixCls}-item-middle`]: true,
           [`${prefixCls}-disabled`]: this.disabled,
           [`${prefixCls}-error`]: this.error,
           [`${prefixCls}-focus`]: this.focus
-        }
+        };
       },
       // 输入框标题类集合
       labelCls() {
@@ -125,16 +125,16 @@
           [`${prefixCls}-label`]: true,
           [`${prefixCls}-label-${this.labelNumber}`]: true,
           [`${prefixCls}-label-${this.labelAlign}`]: this.labelAlign
-        }
+        };
       },
-      characterLength(){
+      characterLength() {
         const regexAstralSymbols = /[\uD800-\uDBFF][\uDC00-\uDFFF]|\n/g;
         return this.inputValue.replace(regexAstralSymbols, '_').length;
       },
       // 获取输入框类型
       inputType() {
         let inputType = 'text';
-        let type = this.type;
+        const type = this.type;
         if (type === 'bankCard' || type === 'phone') {
           inputType = 'tel';
         } else if (type === 'password') {
@@ -149,7 +149,7 @@
     },
     methods: {
       // 格式化内容
-      formatValue(value){
+      formatValue(value) {
         const type = this.type;
 
         switch (type) {
@@ -179,8 +179,8 @@
       },
       // 处理input事件
       handleInput(event) {
-        let value = event.target? event.target.value : event;
-        value=this.formatValue(value);
+        let value = event.target ? event.target.value : event;
+        value = this.formatValue(value);
 
         this.inputValue = value;
         this.$emit('change', value);
@@ -190,8 +190,8 @@
       },
       // 处理change事件
       handleChange(event) {
-        let value = event.target? event.target.value : event;
-        value=this.formatValue(value);
+        let value = event.target ? event.target.value : event;
+        value = this.formatValue(value);
 
         this.inputValue = value;
         if (this.$listeners.change) {
@@ -200,23 +200,23 @@
       },
       // 点击标签聚焦
       toDoFocus() {
-        this.clickToFocus && this.$refs.input.focus()
+        this.clickToFocus && this.$refs.input.focus();
       },
       // 清除输入框内容
       handleClear() {
-        this.handleChange("");
-        this.inputValue = "";
+        this.handleChange('');
+        this.inputValue = '';
       },
       // 处理聚焦事件
-      handleFocus(){
+      handleFocus() {
         this.focus = true;
-        this.$emit("focus");
+        this.$emit('focus');
       },
       // 处理失焦事件
-      handleBlur(){
+      handleBlur() {
         this.focus = false;
-        this.$emit("blur");
+        this.$emit('blur');
       }
     }
-  }
+  };
 </script>

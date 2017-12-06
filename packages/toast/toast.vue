@@ -4,7 +4,7 @@
       <div :class="['vm-toast', `vm-toast--${toastType}`, `vm-toast--${position}`]">
         <!-- text only -->
         <div v-if="toastType === 'text'">{{ message }}</div>
-        <div v-if="toastType === 'html'" v-html="message" />
+        <div v-if="toastType === 'html'" v-html="message"/>
 
         <!-- with icon -->
         <template v-if="toastType === 'default'">
@@ -12,13 +12,14 @@
           <div v-if="message" class="vm-toast__text">{{ message }}</div>
         </template>
       </div>
-      <div :class="['vm-toast__overlay', { 'vm-toast__overlay--mask': mask }]" v-if="forbidClick || mask" />
+      <div :class="['vm-toast__overlay', { 'vm-toast__overlay--mask': mask }]" v-if="forbidClick || mask"/>
     </div>
   </transition>
 </template>
 
 <script>
   import Icon from '../icon';
+
   const TOAST_TYPES = ['text', 'html', 'loading', 'success', 'fail'];
   const DEFAULT_STYLE_LIST = ['success', 'fail', 'loading'];
   export default {
@@ -60,15 +61,14 @@
         return DEFAULT_STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
       },
       // iconColor
-      iconColor(){
-        switch (this.type){
+      iconColor() {
+        switch (this.type) {
           case 'success':
             return '#6abf47';
-            break;
           case 'fail':
             return '#f4333c';
-            break;
-          default :return'#fff'
+          default :
+            return '#fff';
         }
       }
     }

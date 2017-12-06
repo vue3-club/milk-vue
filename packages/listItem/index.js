@@ -1,3 +1,3 @@
-import VListItem from './listItem'
+import VListItem from './listItem';
 
-export default VListItem
+export default VListItem;

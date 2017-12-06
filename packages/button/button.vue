@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import Icon from '../icon'
+  import Icon from '../icon';
 
   const prefixCls = 'vm-button';
 
@@ -25,7 +25,7 @@
       type: String,
       size: {
         type: String,
-        default: "normal"
+        default: 'normal'
       },
       disabled: Boolean,
       loading: Boolean,
@@ -33,7 +33,7 @@
       icon: String,
       tag: {
         type: String,
-        default: "button"
+        default: 'button'
       }
     },
     computed: {
@@ -53,13 +53,13 @@
           [`${prefixCls}-inline`]: this.inline,
           [`${prefixCls}-active`]: this.active
         }
-      }
+      };
     },
-    methods:{
-      handleClick(event){
-        this.$emit('click', event)
+    methods: {
+      handleClick(event) {
+        this.$emit('click', event);
       }
     }
-  }
+  };
 </script>
 

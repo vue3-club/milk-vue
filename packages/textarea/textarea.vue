@@ -43,8 +43,8 @@
 </template>
 
 <script>
-  const prefixCls = 'vm-textarea'; //输入框类名前置
-  const listPrefixCls = 'vm-list'; //输入框排版list类名前置
+  const prefixCls = 'vm-textarea'; // 输入框类名前置
+  const listPrefixCls = 'vm-list'; // 输入框排版list类名前置
 
   export default {
     name: 'VTextarea',
@@ -82,25 +82,25 @@
     data() {
       return {
         prefixCls: prefixCls, // 输入框类名前置【模板用】
-        listPrefixCls: listPrefixCls,// 输入框列表类名前置【模板用】
-        focus: false,// 输入框是否聚焦
+        listPrefixCls: listPrefixCls, // 输入框列表类名前置【模板用】
+        focus: false, // 输入框是否聚焦
         inputValue: this.value // 绑定输入框值
-      }
+      };
     },
     watch: {
       // 监听父级作用域 value 值的变化
-      value: function (val) {
-        this.inputValue = val
+      value: function(val) {
+        this.inputValue = val;
       }
     },
-    updated: function () {
-      this.$nextTick(function () {
+    updated: function() {
+      this.$nextTick(function() {
         if (this.autoHeight && this.focus) {
           const textareaDom = this.$refs.textarea;
           textareaDom.style.height = '';
           textareaDom.style.height = `${textareaDom.scrollHeight}px`;
         }
-      })
+      });
     },
     computed: {
       // 输入框类集合
@@ -112,7 +112,7 @@
           [`${prefixCls}-disabled`]: this.disabled,
           [`${prefixCls}-error`]: this.error,
           [`${prefixCls}-focus`]: this.focus
-        }
+        };
       },
       // 输入框标题类集合
       labelCls() {
@@ -120,7 +120,7 @@
           [`${prefixCls}-label`]: true,
           [`${prefixCls}-label-${this.labelNumber}`]: true,
           [`${prefixCls}-label-${this.labelAlign}`]: this.labelAlign
-        }
+        };
       },
       characterLength() {
         const regexAstralSymbols = /[\uD800-\uDBFF][\uDC00-\uDFFF]|\n/g;
@@ -132,7 +132,7 @@
       },
       // 绑定属性
       bindAttr() {
-        let attrs = this.$attrs;
+        const attrs = this.$attrs;
         if (this.count) {
           attrs.maxLength = this.count;
         }
@@ -171,19 +171,19 @@
       },
       // 清除输入框内容
       handleClear() {
-        this.handleChange("");
-        this.inputValue = "";
+        this.handleChange('');
+        this.inputValue = '';
       },
       // 处理聚焦事件
       handleFocus() {
         this.focus = true;
-        this.$emit("focus");
+        this.$emit('focus');
       },
       // 处理失焦事件
       handleBlur() {
         this.focus = false;
-        this.$emit("blur");
+        this.$emit('blur');
       }
     }
-  }
+  };
 </script>

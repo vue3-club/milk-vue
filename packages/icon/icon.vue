@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import loadSprite from 'loadSprite'
+  import loadSprite from 'loadSprite';
 
   export default {
     name: 'VIcon',
@@ -26,7 +26,7 @@
     },
     computed: {
       svgCls() {
-        const prefixCls = 'vm-icon'
+        const prefixCls = 'vm-icon';
         return [
           this.$attrs.class || '',
           `${prefixCls}`,
@@ -34,13 +34,13 @@
             [`${prefixCls}-${this.type}`]: this.type,
             [`${prefixCls}-${this.size}`]: this.size
           }
-        ]
+        ];
       },
       style() {
         return {
-          ['color']: this.color
-        }
+          color: this.color
+        };
       }
     }
-  }
+  };
 </script>

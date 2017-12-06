@@ -1,3 +1,3 @@
-import VTextarea from './textarea'
+import VTextarea from './textarea';
 
-export default VTextarea
+export default VTextarea;

@@ -12,12 +12,14 @@ Vue.component(Icon.name, Icon);
 export default {
   data(){   
     return{
-      disabled:false
+      disabled:false,
+      eFeedback:'e-feedback'
     }
   },
   methods:{
     clickToDisabled:function(){
       this.disabled = true;
+      this.eFeedback='e-feedback-my';
     }
   }
 }
@@ -44,7 +46,8 @@ Vue.component(ListItem.name, ListItem);
 export default {
   data(){   
     return{
-      disabled:false
+      disabled:false,
+      eFeedback:'e-feedback'
     }
   },
   methods:{
@@ -131,7 +134,7 @@ export default {
         <div>Error</div>
         <span slot="extra">Extra</span>
     </v-list-item>
-    <v-list-item @click="clickToDisabled" :disabled="this.disabled" arrow="horizontal">
+    <v-list-item @click="clickToDisabled" :disabled="this.disabled" arrow="horizontal" :active-class="eFeedback">
         click to disabled
     </v-list-item>
     <v-list-item>
