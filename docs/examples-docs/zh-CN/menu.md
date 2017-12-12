@@ -8,8 +8,7 @@ export default {
   }
 }
 </script>
-
-## NavBar 抽屉
+## Toast 轻提示
 
 ### 使用指南
 

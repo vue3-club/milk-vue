@@ -62,7 +62,7 @@ export default {
   }
 }
 </script>
-## Toast 轻提示
+## Drawer 抽屉
 
 ### 使用指南
 
@@ -116,6 +116,10 @@ export default {
   }
 }
 ```
+
+#### v-drawer
+
+基于 [v-drawer](https://www.npmjs.com/package/v-drawer)
 
 :::demo 基本
 ```html

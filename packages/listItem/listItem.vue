@@ -107,7 +107,9 @@
     },
     methods: {
       handleClick(event) {
-        this.$emit('click', event);
+        if (!this.disabled) {
+          this.$emit('click', event);
+        }
       }
     }
   };

@@ -4,11 +4,6 @@
 }
 </style>
 <script>
-import Vue from 'vue';
-import { ListItem, Icon } from 'packages';
-Vue.component(ListItem.name, ListItem);
-Vue.component(Icon.name, Icon);
-
 export default {
   data(){   
     return{
@@ -19,7 +14,6 @@ export default {
   methods:{
     clickToDisabled:function(){
       this.disabled = true;
-      this.eFeedback='e-feedback-my';
     }
   }
 }
@@ -31,7 +25,7 @@ export default {
 ### 使用指南
 
 ```javascript
-import { List,ListItem } from 'vant';
+import { List,ListItem } from 'milk-vue';
 Vue.component(List.name, List);
 Vue.component(ListItem.name, ListItem);
 ```
@@ -134,7 +128,7 @@ export default {
         <div>Error</div>
         <span slot="extra">Extra</span>
     </v-list-item>
-    <v-list-item @click="clickToDisabled" :disabled="this.disabled" arrow="horizontal" :active-class="eFeedback">
+    <v-list-item @click="clickToDisabled" :disabled="disabled" arrow="horizontal" :active-class="eFeedback">
         click to disabled
     </v-list-item>
     <v-list-item>

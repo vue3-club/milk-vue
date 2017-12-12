@@ -28,8 +28,8 @@ const createInstance = () => {
 const Toast = (options = {}) => {
   createInstance();
 
-  options = typeof options === 'string' ? {message: options} : options;
-  options = {...defaultOptions, ...options};
+  options = typeof options === 'string' ? { message: options } : options;
+  options = { ...defaultOptions, ...options };
   Object.assign(instance, options);
 
   clearTimeout(instance.timer);

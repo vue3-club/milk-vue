@@ -53,7 +53,7 @@ export default {
 
 ### 使用指南
 ``` javascript
-import { Textarea } from 'vant';
+import { Textarea } from 'milk-vue';
 Vue.component(Textarea.name, Textarea);
 ```
 

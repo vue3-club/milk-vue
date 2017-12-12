@@ -42,7 +42,7 @@ export default {
 ### 使用指南
 
 ```javascript
-import { Toast } from 'vant';
+import { Toast } from 'milk-vue';
 ```
 
 ### 代码演示

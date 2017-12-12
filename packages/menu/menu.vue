@@ -14,21 +14,13 @@
   </div>
 </template>
 <script>
-  const prefixCls = 'vm-navBar';
-  const modeList = ['light', 'dark'];
+  const prefixCls = 'vm-menu';
 
   export default {
-    name: 'VNavBar',
+    name: 'VMenu',
     props: {
       icon: String,
-      title: String,
-      mode: {
-        type: String,
-        default: 'dark',
-        validator: function(value) {
-          return value && modeList.indexOf(value) !== -1;
-        }
-      }
+      title: String
     },
     data() {
       return {

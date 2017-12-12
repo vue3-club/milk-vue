@@ -87,8 +87,7 @@ export default {
 
 ### 使用指南
 ``` javascript
-import { Icon } from 'vant';
-
+import { Icon } from 'milk-vue';
 Vue.component(Icon.name, Icon);
 ```
 

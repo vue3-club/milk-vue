@@ -53,7 +53,7 @@ export default {
 
 ### 使用指南
 ``` javascript
-import { Input } from 'vant';
+import { Input } from 'milk-vue';
 Vue.component(Input.name, Input);
 ```
 
