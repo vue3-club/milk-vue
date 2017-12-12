@@ -115,7 +115,7 @@
       toggle() {
         let value;
         if (this.isRadio) {
-          value = this.isChecked ? '' : (this.value || true);
+          value = this.value || true;
         } else if (Array.isArray(this.modelValue)) {
           value = this.modelValue.slice(0);
           if (this.isChecked) {

@@ -94,7 +94,7 @@ module.exports = {
               },
               {
                 'path': '/checkbox',
-                'title': 'Checkbox - 多选框'
+                'title': 'Checkbox - 复选框'
               }
             ]
           }

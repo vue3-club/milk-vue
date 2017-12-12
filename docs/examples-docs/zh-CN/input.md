@@ -2,7 +2,7 @@
 .demo-input {
   .vm-button {
     user-select: none;
-    color:#66c6f2;
+    color:#108ee9;
     border:none;
 
     &--large,
@@ -113,7 +113,7 @@ type 支持`text`、`number`、`date`等类型，默认为`text`
 <v-input placeholder="label empty" label-align="left"></v-input>
 <v-input placeholder="label icon" label-align="left">
     <div style="display: inline-flex;vertical-align: middle;">
-        <v-icon type="search" color="#66c6f2"></v-icon>
+        <v-icon type="search" color="#108ee9"></v-icon>
     </div>
 </v-input>
 <v-input placeholder="label align left" label-align="left">left</v-input>
