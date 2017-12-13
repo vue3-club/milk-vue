@@ -10,6 +10,7 @@ import Menu from './menu';
 import NavBar from './navBar';
 import Radio from './radio';
 import Row from './row';
+import Switch from './switch';
 import Textarea from './textarea';
 import Toast from './toast';
 import '../style/index.less';
@@ -28,6 +29,7 @@ const components = [
   NavBar,
   Radio,
   Row,
+  Switch,
   Textarea
 ];
 
@@ -59,6 +61,7 @@ export {
   NavBar,
   Radio,
   Row,
+  Switch,
   Textarea,
   Toast
 };

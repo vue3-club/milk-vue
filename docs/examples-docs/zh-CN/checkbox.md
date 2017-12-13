@@ -23,7 +23,7 @@ export default {
     }
   },
   methods:{
-    clickToast:function(info){
+    toastInfo:function(info){
       Toast.info(info.toString());
     }
   }
@@ -53,7 +53,7 @@ export default {
     }
   },
   methods:{
-    clickToast:function(info){
+    toastInfo:function(info){
       Toast.info(info.toString());
     }
   }
@@ -70,21 +70,17 @@ export default {
 ```html
 <v-list>
   <v-checkbox
-    v-model="modelValue"
-    @click="clickToast(modelValue)"
+    @change="toastInfo"
   >
     Normal
   </v-checkbox>
   <v-checkbox
-    v-model="modelFalse"
-    @click="clickToast(modelFalse)"
     disabled
   >
     Disabled unchecked
   </v-checkbox>
   <v-checkbox
-    v-model="modelTrue"
-    @click="clickToast(modelTrue)"
+    checked
     disabled
   >
     Disabled checked
@@ -103,14 +99,14 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
   <v-checkbox
     value="one"
     v-model="modelValues"
-    @change="clickToast(modelValues)"
+    @change="toastInfo(modelValues)"
   >
     One
   </v-checkbox>
   <v-checkbox
     value="two"
     v-model="modelValues"
-    @change="clickToast(modelValues)"
+    @change="toastInfo(modelValues)"
   >
     Two
     <span slot="extra">It's extra</span>
@@ -118,7 +114,7 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
   <v-checkbox
     value="three"
     v-model="modelValues"
-    @change="clickToast(modelValues)"
+    @change="toastInfo(modelValues)"
   >
     Three
   </v-checkbox>
@@ -136,14 +132,14 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
   <v-checkbox-item
     value="one"
     v-model="modelValues"
-    @change="clickToast(modelValues)"
+    @change="toastInfo(modelValues)"
   >
     One normal
   </v-checkbox-item>
   <v-checkbox-item
     value="two"
     v-model="modelValues"
-    @change="clickToast(modelValues)"
+    @change="toastInfo(modelValues)"
   >
     Two extra
     <span slot="extra">It's extra</span>
@@ -152,7 +148,7 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
     brief="It's brief"
     value="three"
     v-model="modelValues"
-    @change="clickToast(modelValues)"
+    @change="toastInfo(modelValues)"
     disabled
   >
     Three brief
@@ -169,7 +165,7 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
 <v-agreement
   v-model="agreeValue"
 >
-  Agree <a @click="clickToast('agreement')">agreement</a>
+  Agree <a @click="toastInfo('agreement')">agreement</a>
 </v-agreement>
 ```
 :::
@@ -180,15 +176,16 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 绑定数据源 | `Boolean`,`Array` | - | - |
+| v-model | 绑定数据源<br/>当为单个时为`Boolean`<br/>当为组时为`Array` | `Boolean`,`Array` | - | - |
 | disabled | 是否禁用 | `Boolean` | `false` | `true`,`false` |
+| checked | 是否默认选中 | `Boolean` | `false` | `true`,`false` |
 | value | 复选框值 | `String` | - | - |
 
 #### Event
 
 | 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| change | checkbox值改变时触发 | - |
+| change | checkbox值改变时触发 | `Boolean` 是否选中 |
 | click | 点击事件 | - |
 
 ### Agreement

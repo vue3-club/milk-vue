@@ -12,11 +12,11 @@
     background-clip: content-box;
 
     &:nth-child(odd) {
-      background-color: #108ee9;
+      background-color: #39a9ed;
     }
 
     &:nth-child(even) {
-      background-color: #1284d6;
+      background-color: #66c6f2;
     }
     
     &.small{

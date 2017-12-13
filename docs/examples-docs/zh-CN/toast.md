@@ -75,37 +75,17 @@ export default {
   }
 }
 ```
-
-:::demo 基本
-```html
-<div class="demo-block">
-    <v-button type="default" @click="toast('info','我是提示文案')">default</v-button>
-    <v-button type="default" @click="toast('success','成功文案')">success</v-button>
-    <v-button type="default" @click="toast('fail','失败文案')">fail</v-button>
-    <v-button type="default" @click="toast('loading','加载中提示')">loading</v-button>
-</div>
-```
-:::
-
-:::demo 自定义
-```html
-<div class="demo-block">
-    <v-button @click="toastDiy">toast diy</v-button>
-</div>
-```
-:::
-
 #### 文字提示
 
 ```javascript
-Toast('我是提示文案，建议不超过十五字~');
+Toast('提示文案，建议不超过15个字~');
 ```
 
 
 #### 加载提示
 
 ```javascript
-Toast.loading({ mask: true });
+Toast.loading('加载中提示');
 ```
 
 
@@ -116,34 +96,32 @@ Toast.success('成功文案');
 Toast.fail('失败文案');
 ```
 
+:::demo 基本
+```html
+<div class="demo-block">
+    <v-button type="default" @click="toast('info','提示文案，建议不超过15个字~')">default</v-button>
+    <v-button type="default" @click="toast('loading','加载中提示')">loading</v-button>
+    <v-button type="default" @click="toast('success','成功文案')">success</v-button>
+    <v-button type="default" @click="toast('fail','失败文案')">fail</v-button>
+</div>
+```
+:::
 
 #### 高级用法
 
-```javascript
-const toast = Toast.loading({
-  duration: 0,       // 持续展示 toast
-  forbidClick: true, // 禁用背景点击
-  message: '倒计时 3 秒'
-});
-
-let second = 3;
-const timer = setInterval(() => {
-  second--;
-  if (second) {
-    toast.message = `倒计时 ${second} 秒`;
-  } else {
-    clearInterval(timer);
-    Toast.clear();
-  }
-}, 1000);
+:::demo 自定义
+```html
+<div class="demo-block">
+    <v-button @click="toastDiy">toast diy</v-button>
+</div>
 ```
-
+:::
 
 ### Function
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 |-----------|-----------|-----------|-------------|
-| Toast | `options | message` | toast 实例 | 展示提示 |
+| Toast | `options | message` | toast 实例 | 展示提示信息 |
 | Toast.loading | `options | message` | toast 实例 | 展示加载提示 |
 | Toast.success | `options | message` | toast 实例 | 展示成功提示 |
 | Toast.fail | `options | message` | toast 实例 | 展示失败提示 |

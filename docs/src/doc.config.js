@@ -95,6 +95,10 @@ module.exports = {
               {
                 'path': '/checkbox',
                 'title': 'Checkbox - 复选框'
+              },
+              {
+                'path': '/switch',
+                'title': 'Switch - 滑动开关'
               }
             ]
           }

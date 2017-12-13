@@ -32,8 +32,8 @@ export default {
 ### 使用指南
 
 ```javascript
-import { radio } from 'milk-vue';
-Vue.component(radio.name, radio);
+import { Radio } from 'milk-vue';
+Vue.component(Radio.name, Radio);
 ```
 
 ### 代码演示

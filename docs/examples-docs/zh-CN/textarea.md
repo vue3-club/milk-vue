@@ -175,7 +175,7 @@ count: 计数功能,兼具最大长度,默认为0,代表不开启计数功能
 | label-align | 输入框标签对齐方式 | `String` | `left` | - |
 | click-to-focus | 点击标签是否聚焦 | `Boolean` | `false` | - |
 | autofocus | 是否自动聚焦 | `Boolean` | `false` | - |
-| auto-height | 是否自动聚焦 | `Boolean` | `false` | - |
+| auto-height | 是否高度自适应 | `Boolean` | `false` | - |
 | readonly | 是否只读 | `Boolean` | `false` | - |
 | disabled | 是否禁用输入框 | `Boolean` | `false` | - |
 | error | 输入框是否有错误 | `Boolean` | `false` | - |

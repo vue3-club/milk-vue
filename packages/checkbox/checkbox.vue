@@ -68,7 +68,16 @@
         if (val !== this.isChecked) {
           this.toggle();
         }
+      },
+      // 监听v-model变化
+      modelValue() {
+        this.isChecked = this.getChecked;
       }
+    },
+    data() {
+      return {
+        isChecked: false
+      };
     },
     computed: {
       // 元素类集合
@@ -80,20 +89,18 @@
         };
       },
       // 是否已选中
-      isChecked() {
-        // 无默认选中项
-        if (this.modelValue === undefined) {
-          return this.checked;
+      getChecked() {
+        let checkVal;
+        if (this.modelValue === undefined) { // 无默认选中项
+          checkVal = this.checked;
+        } else if (Array.isArray(this.modelValue)) { // 多选框
+          checkVal = this.modelValue.indexOf(this.value) > -1;
+        } else if (this.isRadio && this.value) { // 单选框
+          checkVal = this.modelValue === this.value;
+        } else {
+          checkVal = !!this.modelValue;
         }
-        // 多选框
-        if (Array.isArray(this.modelValue)) {
-          return this.modelValue.indexOf(this.value) > -1;
-        }
-        // 单选框
-        if (this.isRadio && this.value) {
-          return this.modelValue === this.value;
-        }
-        return !!this.modelValue;
+        return checkVal;
       },
       // 是否是单选框
       isRadio() {
@@ -101,9 +108,9 @@
       }
     },
     methods: {
-      onChange(event) {
+      onChange() {
         this.toggle();
-        this.$emit('change', event);
+        this.$emit('change', this.isChecked);
       },
       onClick(event) {
         if (!this.disabled) {
@@ -112,10 +119,12 @@
           }, 0, this, event);
         }
       },
+      // 切换选中状态
       toggle() {
         let value;
         if (this.isRadio) {
           value = this.value || true;
+          this.isChecked = !this.isChecked;
         } else if (Array.isArray(this.modelValue)) {
           value = this.modelValue.slice(0);
           if (this.isChecked) {
@@ -123,17 +132,16 @@
           } else {
             value.push(this.value);
           }
+          this.isChecked = !this.isChecked;
         } else {
-          value = !this.isChecked;
+          value = this.isChecked = !this.isChecked;
         }
         this.$emit('input', value);
         return value;
       }
     },
     mounted() {
-      if (this.checked && !this.isChecked) {
-        this.toggle();
-      }
+      this.isChecked = this.getChecked;
     }
   };
 </script>
