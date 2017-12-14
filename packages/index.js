@@ -7,7 +7,7 @@ import Input from './input';
 import List from './list';
 import ListItem from './listItem';
 import Menu from './menu';
-import NavBar from './navBar';
+import Navbar from './navbar';
 import Radio from './radio';
 import Row from './row';
 import Switch from './switch';
@@ -26,7 +26,7 @@ const components = [
   List,
   ListItem,
   Menu,
-  NavBar,
+  Navbar,
   Radio,
   Row,
   Switch,
@@ -58,7 +58,7 @@ export {
   List,
   ListItem,
   Menu,
-  NavBar,
+  Navbar,
   Radio,
   Row,
   Switch,

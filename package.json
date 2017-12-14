@@ -44,7 +44,7 @@
   "dependencies": {
     "babel-runtime": "6.x",
     "v-drawer": "^1.0.8",
-    "v-feedback": "^0.1.12",
+    "v-feedback": "^0.1.13",
     "vue": "^2.5.9",
     "vue-lazyload": "^1.1.3",
     "vue-router": "^3.0.0",

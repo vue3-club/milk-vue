@@ -66,15 +66,15 @@
       padding-top: 40px;
       height: 0;
       overflow: hidden;
-      background: url(https://vue-js.com/public/images/vue.png) center center no-repeat;
-      background-size: 48px 40px;
+      background: url(http://ooaa8syjw.bkt.clouddn.com/FgNkalCgxgLkf5-9M8hqW0AXg9SA) center center no-repeat;
+      background-size: 50%;
       margin: 0 0 10px;
     }
 
     .zanui-desc {
       font-size: 14px;
       color: #666;
-      margin: 0 0 50px;
+      margin: 0 0 30px;
     }
   }
 </style>
