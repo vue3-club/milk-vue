@@ -20,8 +20,8 @@
     name: 'VList',
     data() {
       return {
-        prefixCls:'vm-list'
-      }
+        prefixCls: 'vm-list'
+      };
     }
   };
 </script>

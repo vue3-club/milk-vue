@@ -2,7 +2,7 @@
 .demo-input {
   .vm-button {
     user-select: none;
-    color:rgb(16, 142, 233);
+    color:#108ee9;
     border:none;
 
     &--large,
@@ -27,7 +27,7 @@
 }
 </style>
 <script>
-import { Toast } from 'packages';
+import {Toast} from "packages"
 export default {
   data(){
     return {
@@ -41,6 +41,9 @@ export default {
     },
     checkValue(value){
       this.phoneError=!!value;
+    },
+    errorClick(){
+      Toast.fail('Error');
     }
   }
 }
@@ -50,14 +53,14 @@ export default {
 
 ### 使用指南
 ``` javascript
-import { Input } from 'vant';
+import { Input } from 'milk-vue';
 Vue.component(Input.name, Input);
 ```
 
 ### 代码演示
 
 ```javascript
-import { Toast } from 'packages';
+import {Toast} from "packages"
 export default {
   data(){
     return {
@@ -71,6 +74,9 @@ export default {
     },
     checkValue(value){
       this.phoneError=!!value;
+    },
+    errorClick(){
+      Toast.fail('Error');
     }
   }
 }
@@ -82,6 +88,7 @@ type 支持`text`、`number`、`date`等类型，默认为`text`
 
 :::demo 基本
 ```html
+<v-list>
 <v-input type="number" ref="number" placeholder="number">number</v-input>
 <v-input type="password" name="password" placeholder="password" clear>password</v-input>
 <v-input type="phone" ref="phone" placeholder="phone">phone</v-input>
@@ -89,21 +96,32 @@ type 支持`text`、`number`、`date`等类型，默认为`text`
 <v-input type="text" name="autofocus" autofocus placeholder="auto focus">autofocus</v-input>
 <v-input type="text" name="clickfocus" ref="clickfocus" placeholder="click to focus">click to focus</v-input>
 <v-button @click="setFocus">click button to focus</v-button>
+</v-list>
 ```
 :::
 
-#### 标签
+#### 标题
 
+* 空值
 * label-align 支持`left`、`center`、`right`类型，默认为`left`
 * label-number 值为1-10，默认为5
+* click-to-focus 点击标题聚焦
 
-:::demo label align
+:::demo Custom title
 ```html
-<v-input placeholder="Label align left" label-align="left">left</v-input>
-<v-input placeholder="Label align center" label-align="center">center</v-input>
-<v-input placeholder="Label align right" label-align="right">right</v-input>
-<v-input placeholder="Label number 3" label-number="3">labelNumber 3</v-input>
+<v-list>
+<v-input placeholder="label empty" label-align="left"></v-input>
+<v-input placeholder="label icon" label-align="left">
+    <div style="display: inline-flex;vertical-align: middle;">
+        <v-icon type="search" color="#108ee9"></v-icon>
+    </div>
+</v-input>
+<v-input placeholder="label align left" label-align="left">left</v-input>
+<v-input placeholder="label align center" label-align="center">center</v-input>
+<v-input placeholder="label align right" label-align="right">right</v-input>
+<v-input placeholder="label number 3" label-number="3">labelNumber 3</v-input>
 <v-input click-to-focus placeholder="click label to focus" label-number="7" >click to focus</v-input>
+</v-list>
 ```
 :::
 
@@ -113,19 +131,26 @@ type 支持`text`、`number`、`date`等类型，默认为`text`
 
 :::demo v-model
 ```html
-<v-input type="textarea" rows="1" placeholder="input model" v-model="modelValue">v-model</v-input>
+<v-list>
+<v-input placeholder="input model" v-model="modelValue">v-model</v-input>
 <v-input readonly placeholder="value readonly" :value="modelValue">readonly</v-input>
 <v-input disabled placeholder="value disabled" :value="modelValue">disabled</v-input>
+</v-list>
 ```
 :::
 
+
 #### 输入验证
 
-设置 error 值，显示错误提示
+* 添加 error 属性，显示错误提示
+* 添加 clear 属性，显示清除标识
 
-:::demo error
+:::demo error & clear
 ```html
-<v-input type="phone" placeholder="enter to error" @input="checkValue" :error="phoneError">error</v-input>
+<v-list>
+<v-input placeholder="enter show error" @change="checkValue" :error="phoneError" @error-click="errorClick">error</v-input>
+<v-input placeholder="enter show clear" clear>clear</v-input>
+</v-list>
 ```
 :::
 
@@ -135,10 +160,12 @@ extra 设置输入框右侧注释信息
 
 :::demo extra
 ```html
+<v-list>
 <v-input type="number" placeholder="input extra">
     extra
     <span slot="extra">￥</span>
 </v-input>
+</v-list>
 ```
 :::
 
@@ -165,3 +192,4 @@ extra 设置输入框右侧注释信息
 |-----------|-----------|-----------|
 | focus | 输入框聚焦时触发 | - |
 | blur | 输入框失焦时触发 | - |
+| error-click | 点击错误提示时触发 | - |

@@ -1,11 +1,15 @@
 <template>
-  <svg :class="cls" :style="style" @click="$emit('click')">
-    <use :href="href"/>
+  <svg
+    :class="svgCls"
+    :style="style"
+    @click="$emit('click')"
+  >
+    <use :href="`#${this.type}`"/>
   </svg>
 </template>
 
 <script>
-  import loadSprite from 'loadSprite'
+  import loadSprite from 'loadSprite';
 
   export default {
     name: 'VIcon',
@@ -15,32 +19,27 @@
         required: true
       },
       size: String,
-      color: {
-        type: String,
-        default: '#000'
-      }
+      color: String
     },
     beforeCreate() {
       loadSprite();
     },
     computed: {
-      href() {
-        return `#${this.type}`
-      },
-      cls() {
-        const prefixCls = 'vm-icon'
+      svgCls() {
+        const prefixCls = 'vm-icon';
         return [
+          this.$attrs.class || '',
           `${prefixCls}`,
           {
             [`${prefixCls}-${this.type}`]: this.type,
             [`${prefixCls}-${this.size}`]: this.size
           }
-        ]
+        ];
       },
       style() {
         return {
-          ['color']: this.color
-        }
+          color: this.color
+        };
       }
     }
   };

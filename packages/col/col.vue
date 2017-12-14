@@ -21,7 +21,7 @@
       },
       style() {
         return this.gutter
-          ? {padding: `0 ${this.gutter / 2}px`}
+          ? { padding: `0 ${this.gutter / 2}px` }
           : {};
       },
       classNames() {
@@ -29,9 +29,9 @@
           `${prefixCls}-item`,
           {
             [`${prefixCls}-item-span-${this.span}`]: this.span,
-            [`${prefixCls}-item-offset-${this.offset}`]: this.offset,
+            [`${prefixCls}-item-offset-${this.offset}`]: this.offset
           }
-        ]
+        ];
       }
     }
   };

@@ -1,8 +1,0 @@
-/**
- * Entry of basic styles
- */
-
-@import "./common/var.css";
-@import "./common/normalize.css";
-@import "./common/hairline.css";
-@import "./common/animation.css";

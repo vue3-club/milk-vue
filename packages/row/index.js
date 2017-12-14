@@ -1,3 +1,3 @@
 import VRow from './row';
 
-export default VRow
+export default VRow;

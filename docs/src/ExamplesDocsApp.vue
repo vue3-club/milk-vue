@@ -8,7 +8,7 @@
 
 <script>
   import docConfig from './doc.config';
-  import {getLang} from './utils/lang';
+  import { getLang } from './utils/lang';
 
   export default {
     data() {
@@ -44,13 +44,17 @@
 </script>
 
 <style lang="less">
-  .zan-doc-content--quickstart{
-    h3:not(:first-of-type) {
-      margin-top: 35px;
+  .zan-doc {
+    background-image: linear-gradient(0deg, #061a2a, #fff);
+    .zan-doc-content--quickstart {
+      h3:not(:first-of-type) {
+        margin-top: 35px;
+      }
+    }
+
+    code {
+      word-break: normal;
     }
   }
 
-  .zan-doc code{
-    word-break: normal;
-  }
 </style>

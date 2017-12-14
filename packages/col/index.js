@@ -1,3 +1,3 @@
 import VCol from './col';
 
-export default VCol
+export default VCol;

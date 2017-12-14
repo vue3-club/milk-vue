@@ -18,7 +18,7 @@
     display: none;
     font-size: 32px;
     margin: 15px 0;
-    color: rgba(69, 90, 100, .8);
+    color: #000;
   }
 
   span {
@@ -32,27 +32,27 @@
 import Vue from 'vue';
 
 const icons = [
-   'check-circle',
    'check',
+   'check-circle',
    'check-circle-o',
-   'cross-circle',
    'cross',
+   'cross-circle',
    'cross-circle-o',
-   'up',
-   'down',
    'left',
    'right',
-   'ellipsis',
+   'down',
+   'up',
    'loading',
+   'error',
    'search',
+   'plus',
+   'minus',
    'ellipsis',
    'ellipsis-circle',
    'exclamation-circle',
    'info-circle',
    'question-circle',
-   'voice',
-   'plus',
-   'minus'
+   'voice'
 ];
 
 const IconListConstructor = Vue.extend({
@@ -87,8 +87,7 @@ export default {
 
 ### 使用指南
 ``` javascript
-import { Icon } from 'vant';
-
+import { Icon } from 'milk-vue';
 Vue.component(Icon.name, Icon);
 ```
 
@@ -142,7 +141,6 @@ Vue.component(Icon.name, Icon);
 :::
 
 ### API
-
 
 | 属性        | 说明           | 类型            | 默认值       | 可选值 |
 |------------|----------------|----------------|--------------|-----------|

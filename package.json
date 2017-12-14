@@ -1,7 +1,7 @@
 {
-  "name": "vant",
-  "version": "0.10.0",
-  "description": "有赞vue wap组件库",
+  "name": "milk-vue",
+  "version": "1.0.1",
+  "description": "Milk vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
   "unpkg": "lib/index.js",
@@ -33,29 +33,32 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:youzan/vant.git"
+    "url": "git@github.com:liujian10/milk-vue.git"
   },
   "keywords": [
-    "youzan",
     "vue",
     "component"
   ],
-  "author": "youzanfe",
+  "author": "Milk vue",
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "6.x",
-    "v-feedback": "^0.1.11",
-    "vue-lazyload": "^1.1.3"
+    "v-drawer": "^1.0.8",
+    "v-feedback": "^0.1.12",
+    "vue": "^2.5.9",
+    "vue-lazyload": "^1.1.3",
+    "vue-router": "^3.0.0",
+    "zan-doc": "^0.3.11"
   },
   "peerDependencies": {
     "vue": "^2.4.4"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.3",
+    "autoprefixer": "^7.2.2",
     "avoriaz": "2.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-helper-vue-jsx-merge-props": "^2.0.2",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.2",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
@@ -101,7 +104,7 @@
     "postcss": "^6.0.14",
     "postcss-calc": "^6.0.0",
     "postcss-easy-import": "^3.0.0",
-    "postcss-loader": "^2.0.6",
+    "postcss-loader": "^2.0.9",
     "precss": "2.0.0",
     "progress-bar-webpack-plugin": "^1.10.0",
     "rimraf": "^2.5.4",
@@ -111,17 +114,14 @@
     "style-loader": "^0.19.0",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^0.6.2",
-    "vue": "^2.5.8",
     "vue-loader": "^13.5.0",
     "vue-markdown-loader": "^2.3.0",
-    "vue-router": "^3.0.0",
     "vue-sfc-compiler": "^0.0.2",
     "vue-style-loader": "^3.0.0",
-    "vue-template-compiler": "^2.5.8",
-    "webpack": "^3.7.1",
+    "vue-template-compiler": "^2.5.9",
+    "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.1",
-    "webpack-dev-server": "^2.7.1",
-    "webpack-merge": "^4.1.0",
-    "zan-doc": "^0.3.11"
+    "webpack-dev-server": "^2.9.7",
+    "webpack-merge": "^4.1.0"
   }
 }

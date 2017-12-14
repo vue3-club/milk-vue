@@ -1,12 +1,14 @@
 <template>
-  <div :class="inputCls" @click="$emit('click')">
-    <label
-      :class="labelCls"
-      :for="$attrs.name"
-      @click="toDoFocus">
-      <slot></slot>
-    </label>
-    <div :class="`${prefixCls}-control`">
+  <div :class="warpCls" @click="$emit('click')">
+    <div :class="`${listPrefixCls}-line`">
+      <label
+        v-if="$slots.default"
+        :class="labelCls"
+        :for="$attrs.name"
+        @click="toDoFocus">
+        <slot></slot>
+      </label>
+      <div :class="`${prefixCls}-control`">
       <textarea
         v-if="this.type==='textarea'"
         ref="textarea"
@@ -14,36 +16,48 @@
         :disabled="disabled"
         v-model="inputValue"
         @input="handleInput"
-        @focus="$emit('focus')"
-        @blur="$emit('blur')"
+        @change="handleChange"
+        @focus="handleFocus"
+        @blur="handleBlur"
       >
       </textarea>
-      <input
-        v-else
-        ref="input"
-        v-bind="$attrs"
-        :type="inputType"
-        :disabled="disabled"
-        v-model="inputValue"
-        @input="handleInput"
-        @focus="$emit('focus')"
-        @blur="$emit('blur')"
+        <input
+          v-else
+          ref="input"
+          v-bind="$attrs"
+          :type="inputType"
+          :disabled="disabled"
+          v-model="inputValue"
+          @input="handleInput"
+          @focus="handleFocus"
+          @blur="handleBlur"
+        >
+      </div>
+      <div
+        v-if="clear && inputValue && characterLength"
+        :class="`${prefixCls}-clear`"
+        @click="handleClear"
       >
-    </div>
-    <div
-      v-if="hasExtra"
-      :class="`${prefixCls}-extra`"
-    >
-      <v-icon v-if="error" type="exclamation-circle"></v-icon>
-      <v-icon v-else-if="clear" type="cross-circle-o" style="color:#c9c9c9" @click="handleClear"></v-icon>
-      <slot v-else name="extra"></slot>
+      </div>
+      <div
+        v-if="error"
+        :class="`${prefixCls}-error-extra`"
+        @click="$emit('error-click')"
+      >
+      </div>
+      <div
+        v-if="$slots.extra"
+        :class="`${prefixCls}-extra`"
+      >
+        <slot name="extra"></slot>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-  const prefixCls = 'vm-input'; //输入框类名前置
-  const listPrefixCls = 'vm-list'; //输入框排版list类名前置
+  const prefixCls = 'vm-input'; // 输入框类名前置
+  const listPrefixCls = 'vm-list'; // 输入框排版list类名前置
 
   export default {
     name: 'VInput',
@@ -75,48 +89,52 @@
       // 是否显示清除按钮
       clear: Boolean,
       // 受否禁用
-      disabled: Boolean
+      disabled: Boolean,
+      // 错误标识点击事件
+      errorClick: Function
     },
     data() {
       return {
         prefixCls: prefixCls, // 输入框类名前置【模板用】
+        listPrefixCls: listPrefixCls, // 输入框列表类名前置【模板用】
+        focus: false, // 输入框是否聚焦
         inputValue: this.value // 绑定输入框值
-      }
+      };
     },
     watch: {
       // 监听父级作用域 value 值的变化
-      value: function (val) {
-        this.inputValue = val
+      value: function(val) {
+        this.inputValue = val;
       }
     },
     computed: {
       // 输入框类集合
-      inputCls() {
+      warpCls() {
         return {
           [`${listPrefixCls}-item`]: true,
           [`${prefixCls}-item`]: true,
-          [`${prefixCls}-item-error`]: this.error,
-        }
+          [`${listPrefixCls}-item-middle`]: true,
+          [`${prefixCls}-disabled`]: this.disabled,
+          [`${prefixCls}-error`]: this.error,
+          [`${prefixCls}-focus`]: this.focus
+        };
       },
       // 输入框标题类集合
       labelCls() {
         return {
           [`${prefixCls}-label`]: true,
           [`${prefixCls}-label-${this.labelNumber}`]: true,
-          [`${prefixCls}-label-${this.labelAlign}`]: this.labelAlign,
-          [`${prefixCls}-label-disabled`]: this.disabled
-        }
+          [`${prefixCls}-label-${this.labelAlign}`]: this.labelAlign
+        };
       },
-      // 是否有注释信息
-      hasExtra() {
-        return this.$slots.extra ||
-          this.error ||
-          (this.inputValue && this.clear);
+      characterLength() {
+        const regexAstralSymbols = /[\uD800-\uDBFF][\uDC00-\uDFFF]|\n/g;
+        return this.inputValue.replace(regexAstralSymbols, '_').length;
       },
       // 获取输入框类型
       inputType() {
         let inputType = 'text';
-        let type = this.type;
+        const type = this.type;
         if (type === 'bankCard' || type === 'phone') {
           inputType = 'tel';
         } else if (type === 'password') {
@@ -130,9 +148,8 @@
       }
     },
     methods: {
-      // 输入内容格式化
-      handleInput(event) {
-        let value = event.target.value;
+      // 格式化内容
+      formatValue(value) {
         const type = this.type;
 
         switch (type) {
@@ -158,19 +175,48 @@
           default:
             break;
         }
+        return value;
+      },
+      // 处理input事件
+      handleInput(event) {
+        let value = event.target ? event.target.value : event;
+        value = this.formatValue(value);
+
         this.inputValue = value;
+        this.$emit('change', value);
         if (this.$listeners.input) {
-          this.$emit('input', value)
+          this.$emit('input', value);
+        }
+      },
+      // 处理change事件
+      handleChange(event) {
+        let value = event.target ? event.target.value : event;
+        value = this.formatValue(value);
+
+        this.inputValue = value;
+        if (this.$listeners.change) {
+          this.$emit('change', value);
         }
       },
       // 点击标签聚焦
       toDoFocus() {
-        this.clickToFocus && this.$refs.input.focus()
+        this.clickToFocus && this.$refs.input.focus();
       },
       // 清除输入框内容
       handleClear() {
-        this.inputValue = "";
+        this.handleChange('');
+        this.inputValue = '';
+      },
+      // 处理聚焦事件
+      handleFocus() {
+        this.focus = true;
+        this.$emit('focus');
+      },
+      // 处理失焦事件
+      handleBlur() {
+        this.focus = false;
+        this.$emit('blur');
       }
     }
-  }
+  };
 </script>

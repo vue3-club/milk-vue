@@ -30,7 +30,7 @@
           [`${prefixCls}-align-${this.align}`]: this.align,
           [`${prefixCls}-align-content-${this.alignContent}`]: this.alignContent
         }
-      }
+      };
     }
   };
 </script>

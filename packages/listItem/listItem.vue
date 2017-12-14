@@ -1,9 +1,11 @@
 <template>
   <div
     :class="listCls"
+    :disable="listDisabled"
     v-bind="$attrs"
     v-feedback="feedbackClass"
     @click="handleClick"
+    ref="list"
   >
     <div v-if="$slots.thumb" :class="`${prefixCls}-thumb`">
       <slot name="thumb"></slot>
@@ -11,14 +13,14 @@
     <div :class="lineCls">
       <div v-if="$slots.default" :class="`${prefixCls}-content`">
         <slot name="default"></slot>
-        <div v-if="this.brief" :class="`${prefixCls}-brief`">
+        <div v-if="brief" :class="`${prefixCls}-brief`">
           {{this.brief}}
         </div>
       </div>
       <div v-if="$slots.extra" :class="`${prefixCls}-extra`">
         <slot name="extra"></slot>
       </div>
-      <div v-if="this.arrow" :class="arrowCls" :aria-hidden="true"></div>
+      <div v-if="arrow" :class="arrowCls" :aria-hidden="true"></div>
     </div>
   </div>
 </template>
@@ -28,7 +30,9 @@
   import VFeedback from 'v-feedback';
 
   Vue.use(VFeedback);
+
   const prefixCls = 'vm-list';
+
   export default {
     name: 'VListItem',
     props: {
@@ -40,45 +44,72 @@
       },
       wrap: Boolean, // 是否换行，默认文字超出被隐藏
       multipleLine: Boolean, // 是否多行
-      brief: String,
+      brief: String, // 描述文案
       activeClass: {
         type: String
+      }, // 激活样式类名
+      disabled: Boolean
+    },
+    watch: {
+      // 监听activeClass变化
+      activeClass: function(val) {
+        const list = this.$refs.list;
+        if (list) {
+          this.$refs.list.setAttribute('data-feedback-class', val);
+        }
+      },
+      // 监听disabled变化
+      disabled: function(val) {
+        const list = this.$refs.list;
+        if (list) {
+          this.$refs.list.setAttribute('data-feedback-class', val ? 'none-feedback' : this.activeClass);
+        }
       }
     },
     computed: {
-      feedbackClass(){
-        let res = !this.$attrs.disabled && this.arrow ? this.activeClass || 'e-feedback' : false;
-        console.log(res);
-        return res;
-      }
-    },
-    data() {
-      return {
-        prefixCls: prefixCls,
-        listCls: {
+      feedbackClass() {
+        return !this.listDisabled && (this.$listeners.click || this.$listeners.touchstart)
+          ? this.activeClass || 'e-feedback' : 'no-feedback';
+      },
+      listDisabled() {
+        return this.disabled;
+      },
+      listCls() {
+        return {
           [`${prefixCls}-item`]: true,
-          [`${prefixCls}-item-disabled`]: this.$attrs.disabled,
+          [`${prefixCls}-item-disabled`]: this.disabled,
           [`${prefixCls}-item-error`]: this.error,
           [`${prefixCls}-item-top`]: this.align === 'top',
           [`${prefixCls}-item-middle`]: this.align === 'middle',
           [`${prefixCls}-item-bottom`]: this.align === 'bottom'
-        },
-        lineCls: {
+        };
+      },
+      lineCls() {
+        return {
           [`${prefixCls}-line`]: true,
           [`${prefixCls}-line-multiple`]: this.multipleLine,
-          [`${prefixCls}-line-wrap`]: this.wrap,
-        },
-        arrowCls: {
+          [`${prefixCls}-line-wrap`]: this.wrap
+        };
+      },
+      arrowCls() {
+        return {
           [`${prefixCls}-arrow`]: true,
           [`${prefixCls}-arrow-horizontal`]: this.arrow === 'horizontal',
           [`${prefixCls}-arrow-vertical`]: this.arrow === 'down' || this.arrow === 'up',
-          [`${prefixCls}-arrow-vertical-up`]: this.arrow === 'up',
-        }
+          [`${prefixCls}-arrow-vertical-up`]: this.arrow === 'up'
+        };
       }
     },
+    data() {
+      return {
+        prefixCls: prefixCls
+      };
+    },
     methods: {
-      handleClick(event){
-        this.$emit('click', event)
+      handleClick(event) {
+        if (!this.disabled) {
+          this.$emit('click', event);
+        }
       }
     }
   };

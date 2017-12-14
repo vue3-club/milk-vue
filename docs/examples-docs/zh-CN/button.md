@@ -18,13 +18,8 @@
       margin-right: 10px;
     }
   }
-
-  .zan-doc-demo-block {
-    padding: 0 15px;
-  }
-
-  .zan-doc-demo-block__subtitle {
-    padding-left: 0;
+  .demo-block{
+    padding:0 15px;
   }
 }
 </style>
@@ -33,7 +28,7 @@
 
 ### 使用指南
 ``` javascript
-import { Button } from 'vant';
+import { Button } from 'milk-vue';
 Vue.component(Button.name, Button);
 ```
 
@@ -45,10 +40,12 @@ Vue.component(Button.name, Button);
 
 :::demo 按钮类型
 ```html
-<v-button type="default">default</v-button>
-<v-button type="primary">Primary</v-button>
-<v-button type="danger">Danger</v-button>
-<v-button type="ghost">Ghost</v-button>
+<div class="demo-block">
+    <v-button type="default">default</v-button>
+    <v-button type="primary">Primary</v-button>
+    <v-button type="danger">Danger</v-button>
+    <v-button type="ghost">Ghost</v-button>
+</div>
 ```
 :::
 
@@ -58,10 +55,12 @@ Vue.component(Button.name, Button);
 
 :::demo 按钮尺寸
 ```html 
-<v-button inline>inline normal</v-button>
-<v-button inline type="primary">inline normal</v-button>
-<v-button inline size="small">inline small</v-button>
-<v-button inline size="small" type="primary">inline small</v-button>
+<div class="demo-block">
+    <v-button inline>inline normal</v-button>
+    <v-button inline type="primary">inline normal</v-button>
+    <v-button inline size="small">inline small</v-button>
+    <v-button inline size="small" type="primary">inline small</v-button>
+</div>
 ```
 :::
 
@@ -72,15 +71,19 @@ Vue.component(Button.name, Button);
 
 :::demo 禁用状态
 ```html
-<v-button disabled>Diabled</v-button>
+<div class="demo-block">
+    <v-button disabled>Diabled</v-button>
+</div>
 ```
 :::
 
 #### 加载状态
 
 :::demo 加载状态
-```html 
-<v-button tag="a" loading type="primary" href="#">loading</v-button>
+```html
+<div class="demo-block">
+    <v-button tag="a" loading type="primary" href="#">loading</v-button>
+</div>
 ```
 :::
 
@@ -88,6 +91,20 @@ Vue.component(Button.name, Button);
 
 按钮标签默认为`button`，可以使用`tag`属性来修改按钮标签
 
+#### 场景示例
+
+:::demo 场景
+```html
+<v-list>
+    <v-list-item multiple-line brief="I'm brief">
+        Title
+        <div slot="extra">
+            <v-button size="small">button<v-button>
+        </div>
+    </v-list-item>
+</v-list>
+```
+:::
 
 ### API
 
@@ -96,5 +113,5 @@ Vue.component(Button.name, Button);
 | type | 按钮类型 | `String`  | `default` | `primary` `danger` |
 | size | 按钮尺寸 | `String`  | `normal` | `normal` `small` |
 | tag | 按钮标签 | `String`  | `button` | 任意`HTML`标签 |
-| diabled | 是否禁用 | `Boolean`  |  `false`  | - |
+| disabled | 是否禁用 | `Boolean`  |  `false`  | - |
 | loading | 是否显示为加载状态 | `Boolean`  |  `false`  | - |
