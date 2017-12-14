@@ -1,7 +1,7 @@
 {
-  "name": "vant",
-  "version": "0.10.0",
-  "description": "有赞vue wap组件库",
+  "name": "mile-vue",
+  "version": "1.0.1",
+  "description": "Milk vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
   "unpkg": "lib/index.js",
@@ -33,21 +33,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:youzan/vant.git"
+    "url": "git@github.com:liujian10/milk-vue.git"
   },
   "keywords": [
-    "youzan",
     "vue",
     "component"
   ],
-  "author": "youzanfe",
+  "author": "git@github.com:liujian10",
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "6.x",
     "v-drawer": "^1.0.8",
     "v-feedback": "^0.1.12",
     "vue": "^2.5.9",
-    "vue-drawer": "^0.1.0",
     "vue-lazyload": "^1.1.3",
     "vue-router": "^3.0.0",
     "zan-doc": "^0.3.11"
