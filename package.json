@@ -1,5 +1,5 @@
 {
-  "name": "mile-vue",
+  "name": "Milk-vue",
   "version": "1.0.1",
   "description": "Milk vue wap组件库",
   "main": "lib/vant.js",
@@ -39,7 +39,7 @@
     "vue",
     "component"
   ],
-  "author": "git@github.com:liujian10",
+  "author": "Milk vue",
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "6.x",
