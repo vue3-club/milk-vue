@@ -1,3 +1,3 @@
-import VIcon from './Icon';
+import VIcon from './icon';
 
 export default VIcon;

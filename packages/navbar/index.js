@@ -1,3 +1,3 @@
-import VNavBar from './navBar';
+import VNavBar from './navbar';
 
 export default VNavBar;

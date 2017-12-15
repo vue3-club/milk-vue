@@ -1,3 +1,3 @@
-import VInput from './Input';
+import VInput from './input';
 
 export default VInput;
