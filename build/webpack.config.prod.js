@@ -6,7 +6,7 @@ const devConfig = require('./webpack.config.dev.js');
 module.exports = merge(devConfig, {
   output: {
     path: path.join(__dirname, '../docs/dist'),
-    publicPath: '/milk-vue',
+    publicPath: '/milk-vue/',
     filename: '[name].[hash:8].js',
     umdNamedDefine: true,
     chunkFilename: 'async_[name].[chunkhash:8].js'
