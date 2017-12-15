@@ -20,7 +20,7 @@
       const hash = window.location.hash;
 
       return {
-        simulator: `/zanui/vue/examples${hash}`,
+        simulator: `/examples.html${hash}`,
         lang: getLang()
       };
     },

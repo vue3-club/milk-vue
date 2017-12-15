@@ -5,6 +5,7 @@ import routes from './router.config';
 import { setLang } from './utils/lang';
 import Vant from 'packages';
 import ZanDoc from 'zan-doc';
+import ZanClass from 'zan-doc/dist/milk-doc.vendor.css';
 // import 'packages/vant-css/src/index.css';
 import 'zan-doc/src/helper/touch-simulator';
 
@@ -18,7 +19,6 @@ Vue.use(VueRouter);
 const routesConfig = routes(true);
 const router = new VueRouter({
   mode: 'hash',
-  base: '/zanui/vue/examples',
   routes: routesConfig
 });
 
