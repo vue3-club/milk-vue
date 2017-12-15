@@ -20,7 +20,7 @@
       const hash = window.location.hash;
 
       return {
-        simulator: `${window.location.pathname}/examples.html/examples.html${hash}`,
+        simulator: `${window.location.pathname}examples.html/examples.html${hash}`,
         lang: getLang()
       };
     },
