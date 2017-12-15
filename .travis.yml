@@ -12,7 +12,7 @@ script:
   - git init
   - git add -A
   - git commit -m "Deploy GH"
-  - git push -u https://$GH_TOKEN@github.com/vueClub/milk-vue.git HEAD:auto-build --force
+  - git push -u https://$GH_TOKEN@github.com/vueClub/milk-vue.git HEAD:gh-pages --force
 cache:
   directories:
     - node_modules
