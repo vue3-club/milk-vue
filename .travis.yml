@@ -1,7 +1,18 @@
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN
-  local_dir: docs/dist/ 
-  on:
-    branch: master
+language: node_js
+node_js:
+  - "6"
+before_install:
+  - git config --global push.default matching
+  - git config --global user.name "febobo"
+  - git config --global user.email "584516601@qq.com"
+script:
+  - npm run deploy:docs
+  - cd docs
+  - cd dist
+  - git init
+  - git add -A
+  - git commit -m "Deploy GH"
+  - git push -u https://$GH_TOKEN@github.com/vueClub/milk-vue.git HEAD:auto-build --force
+cache:
+  directories:
+    - node_modules
