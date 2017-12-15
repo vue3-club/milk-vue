@@ -29,7 +29,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
-    publicPath: '/',
+    publicPath: isProduction ? '/milk-vue' : '/',
     filename: '[name].js',
     umdNamedDefine: true,
     chunkFilename: 'async_[name].js'
