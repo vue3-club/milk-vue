@@ -18,9 +18,8 @@
       }
 
       const hash = window.location.hash;
-
       return {
-        simulator: `${window.location.pathname}examples.html/examples.html${hash}`,
+        simulator: `${origin.indexOf('github') > -1 ? "https://vueclub.github.io/milk-vue" : '' }/examples.html${hash}`,
         lang: getLang()
       };
     },
