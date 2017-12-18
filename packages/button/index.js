@@ -1,3 +1,3 @@
-import VButton from './Button';
+import VButton from './button';
 
 export default VButton;

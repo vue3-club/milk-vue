@@ -1,19 +1,18 @@
 language: node_js
 node_js:
-- 6
-os: linux
-cache:
-  yarn: true
-branches:
-  only:
-  - master
-  - dev
-install:
-- |
-    yarn install
+  - "7"
+before_install:
+  - git config --global push.default matching
+  - git config --global user.name "febobo"
+  - git config --global user.email "584516601@qq.com"
 script:
-- |
-    npm run lint && npm run test
-after_success:
-- |
-    cat ./test/unit/coverage/lcov.info | ./node_modules/.bin/codecov
+  - npm run deploy:docs
+  - cd docs
+  - cd dist
+  - git init
+  - git add -A
+  - git commit -m "Deploy GH"
+  - git push -u https://$GH_TOKEN@github.com/vueClub/milk-vue.git HEAD:gh-pages --force
+cache:
+  directories:
+    - node_modules
