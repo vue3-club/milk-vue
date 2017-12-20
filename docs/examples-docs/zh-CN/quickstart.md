@@ -16,7 +16,7 @@ https://unpkg.com/milk-vue/lib/milk-vue.min.js
 ```
 
 
-我们建议使用 CDN 引入 Milk 的用户在链接地址上锁定版本，以免将来 Element 升级时受到非兼容性更新的影响。锁定版本的方法请查看 [unpkg.com](https://unpkg.com)。
+我们建议使用 CDN 引入 Milk 的用户在链接地址上锁定版本，以免将来 Milk 升级时受到非兼容性更新的影响。锁定版本的方法请查看 [unpkg.com](https://unpkg.com)。
 
 ### Hello Milk (Example)
 
@@ -34,14 +34,17 @@ https://unpkg.com/milk-vue/lib/milk-vue.min.js
   </div>
 </body>
   <!-- 先引入 Vue -->
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+ <script src="https://unpkg.com/vue/dist/vue.js">
+ </script>
   <!-- 引入组件库 -->
- <script src="https://unpkg.com/milk-vue/lib/milk-vue.min.js"></script>
-  <script>
-    new Vue({
-      el: '#app'
-    })
-  </script>
+ <script src="https://unpkg.com/milk-vue/lib/milk-vue.min.js"
+ ></script>
+
+<script>
+  new Vue({
+    el: '#app'
+  })
+</script>
 </html>
 ```
 
