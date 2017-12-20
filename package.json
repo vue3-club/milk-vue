@@ -1,6 +1,6 @@
 {
   "name": "milk-vue",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Milk vue wap组件库",
   "main": "lib/milk-vue.js",
   "style": "lib/vant-css/index.css",
@@ -15,7 +15,7 @@
     "build:file": "node build/bin/build-entry.js",
     "build:components": "node build/bin/build-components.js --color",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color && mkdir lib/vant-css && cp -R packages/vant-css/lib/ lib/vant-css",
-    "build:vant": "cross-env NODE_ENV=production webpack --progress --hide-modules --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --color --config build/webpack.build.js",
+    "build:milk": "cross-env NODE_ENV=production webpack --progress --hide-modules --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --color --config build/webpack.build.js",
     "build:style-entry": "VUE_ENV=server node build/bin/build-style-entry.js",
     "build:changelog": "sh build/bin/build-changelog.sh",
     "deploy": "npm run deploy:docs && npm run deploy:cdn && gh-pages -d docs/dist --remote youzan && rimraf docs/dist",
