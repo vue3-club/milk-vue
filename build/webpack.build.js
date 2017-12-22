@@ -4,7 +4,7 @@ const isMinify = process.argv.indexOf('-p') !== -1;
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 config.entry = {
-  'vant': './packages/index.js'
+  'milk-vue': './packages/index.js'
 };
 
 config.output = {

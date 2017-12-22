@@ -7,6 +7,47 @@
 npm i milk-vue --save-dev
 ```
 
+### CDN
+
+[https://unpkg.com/milk-vue/lib/milk-vue.min.js](https://unpkg.com/milk-vue/lib/milk-vue.min.js)
+
+``` shell
+https://unpkg.com/milk-vue/lib/milk-vue.min.js
+```
+
+
+我们建议使用 CDN 引入 Milk 的用户在链接地址上锁定版本，以免将来 Milk 升级时受到非兼容性更新的影响。锁定版本的方法请查看 [unpkg.com](https://unpkg.com)。
+
+### Hello Milk (Example)
+
+通过 CDN 的方式我们可以很容易地使用 Milk 写出一个 Hello Milk 页面
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div id="app">
+    <v-button type="primary">Hello Milk!</v-button>
+  </div>
+</body>
+  <!-- 先引入 Vue -->
+ <script src="https://unpkg.com/vue/dist/vue.js">
+ </script>
+  <!-- 引入组件库 -->
+ <script src="https://unpkg.com/milk-vue/lib/milk-vue.min.js"
+ ></script>
+
+<script>
+  new Vue({
+    el: '#app'
+  })
+</script>
+</html>
+```
+
 ### 引入组件
 
 #### 方式一. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
