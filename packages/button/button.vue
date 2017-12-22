@@ -1,8 +1,9 @@
 <template>
   <component
+    v-bind="$attrs"
+    role="buttonType"
     :is="tag"
     :disabled="disabled"
-    role="buttonType"
     :class="classNames"
     @click="handleClick"
   >

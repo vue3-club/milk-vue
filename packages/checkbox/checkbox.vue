@@ -15,9 +15,11 @@
       />
       <span :class="`${prefixCls}-inner`"></span>
     </span>
-    <slot></slot>
+    <span><slot></slot></span>
   </label>
-  <span v-else :class="warpCls">
+  <span
+    v-else
+    :class="warpCls">
       <input
         v-bind="$attrs"
         :class="`${prefixCls}-input`"
@@ -109,8 +111,7 @@
     },
     methods: {
       onChange() {
-        this.toggle();
-        this.$emit('change', this.isChecked);
+        this.$emit('change', this.toggle());
       },
       onClick(event) {
         if (!this.disabled) {
@@ -124,7 +125,9 @@
         let value;
         if (this.isRadio) {
           value = this.value || true;
-          this.isChecked = !this.isChecked;
+          if (this.modelValue === undefined) {
+            this.isChecked = value;
+          }
         } else if (Array.isArray(this.modelValue)) {
           value = this.modelValue.slice(0);
           if (this.isChecked) {

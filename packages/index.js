@@ -15,7 +15,7 @@ import Textarea from './textarea';
 import Toast from './toast';
 import '../style/index.less';
 
-const version = '1.0.1';
+const version = '0.9.2';
 const components = [
   Button,
   Checkbox,
