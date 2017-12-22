@@ -200,12 +200,12 @@ export default {
 ```html
 <div :class="oneShow?'menu-active':''">
     <div class="menu-mask"></div>
-    <v-nav-bar
+    <v-navbar
       :icon="oneShow?'left':'right'"
       title="Normal menu"
       @icon-click="changeMenu('oneShow')"
     >
-    </v-nav-bar>
+    </v-navbar>
     <v-menu
       v-show="oneShow"
       :menu-data="itemList"
@@ -225,17 +225,16 @@ export default {
 ```html
 <div :class="twoShow?'menu-active':''">
     <div class="menu-mask"></div>
-    <v-nav-bar
+    <v-navbar
       :icon="twoShow?'left':'right'"
       title="Single menu"
       @icon-click="changeMenu('twoShow')"
     >
-    </v-nav-bar>
+    </v-navbar>
     <v-menu
       v-show="twoShow"
       :menu-data="itemList"
       :level="1"
-      multi-select
       @change="toastInfo"
     >
     </v-menu>
@@ -252,12 +251,12 @@ export default {
 ```html
 <div :class="threeShow?'menu-active':''">
     <div class="menu-mask"></div>
-    <v-nav-bar
+    <v-navbar
       :icon="threeShow?'left':'right'"
       title="Multi-select menu"
       @icon-click="changeMenu('threeShow')"
     >
-    </v-nav-bar>
+    </v-navbar>
     <v-menu
       v-show="threeShow"
       :menu-data="itemList"

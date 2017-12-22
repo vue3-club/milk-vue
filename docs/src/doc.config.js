@@ -59,8 +59,8 @@ module.exports = {
               'title': 'List - 列表'
             },
             {
-              'path': '/navBar',
-              'title': 'NavBar - 导航栏'
+              'path': '/navbar',
+              'title': 'Navbar - 导航栏'
             },
             {
               'path': '/drawer',

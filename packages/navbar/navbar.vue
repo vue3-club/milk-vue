@@ -18,7 +18,7 @@
   const modeList = ['light', 'dark'];
 
   export default {
-    name: 'VNavBar',
+    name: 'VNavbar',
     props: {
       icon: String,
       title: String,

@@ -9,13 +9,13 @@ export default {
 }
 </script>
 
-## NavBar 抽屉
+## Navbar 抽屉
 
 ### 使用指南
 
 ```javascript
-import { NavBar } from 'milk-vue';
-Vue.component(NavBar.name, NavBar);
+import { Navbar } from 'milk-vue';
+Vue.component(Navbar.name, Navbar);
 ```
 
 ### 代码演示
@@ -33,17 +33,17 @@ export default {
 
 :::demo 基本
 ```html
-<v-nav-bar icon="left" title="NavBar" @icon-click="clickToast('left')">
+<v-navbar icon="left" title="Navbar" @icon-click="clickToast('left')">
     <v-icon slot="right" type="ellipsis" @click="clickToast('right')"></v-icon>
-</v-nav-bar>
-<v-nav-bar icon="left" mode="light" @icon-click="clickToast('left')">
+</v-navbar>
+<v-navbar icon="left" mode="light" @icon-click="clickToast('left')">
     <span slot="left" @click="clickToast('back')">back</span>
-    NavBar
+    Navbar
     <div slot="right">
         <v-icon type="search" style="margin-right:10px" @click="clickToast('search')"></v-icon>
         <v-icon type="ellipsis" @click="clickToast('ellipsis')"></v-icon>
     </div>
-</v-nav-bar>
+</v-navbar>
 ```
 :::
 

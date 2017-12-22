@@ -131,7 +131,7 @@ export default {
   :sidebar-style="sidebarStyle"
   @open-change="onOpenChange">
 <div class="drawer-content-main">
-  <v-nav-bar :icon="open?'left':'right'" @icon-click="onOpenChange">Basic</v-nav-bar>
+  <v-navbar :icon="open?'left':'right'" @icon-click="onOpenChange">Basic</v-navbar>
   <v-button @click="onPositionChange">Position: {{posList[position]}}</v-button>
   <v-button @click="onDockedChange">Docked: {{docked}}</v-button>
   <p>Click upper button to change</p>
