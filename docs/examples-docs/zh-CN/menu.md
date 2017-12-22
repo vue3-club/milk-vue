@@ -1,9 +1,113 @@
+<style lang="less">
+.demo-menu{
+  .vm-menu{
+  }
+  .menu-active{
+    .vm-navBar,
+    .vm-menu{
+      position:relative;
+      z-index:100 !important;
+    }
+    .menu-mask{
+      display:block;
+      z-index:99;
+    }
+  }
+  .menu-mask{
+      display:none;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.4;
+  }
+}
+</style>
 <script>
 import { Toast } from 'packages';
 export default {
+  data(){
+    return {
+      itemList:[
+        {
+          label:'menu1',
+          value:'m1',
+          children:[
+            {
+              label:'child1',
+              value:'c1'
+            },
+            {
+              label:'child2',
+              value:'c2'
+            },
+            {
+              label:'child3',
+              value:'c3'
+            },
+            {
+              label:'child4',
+              value:'c4'
+            },
+            {
+              label:'child5',
+              value:'c5'
+            },
+            {
+              label:'child6',
+              value:'c6'
+            },
+            {
+              label:'child7',
+              value:'c7'
+            },
+            {
+              label:'child8',
+              value:'c8'
+            },
+            {
+              label:'child9',
+              value:'c9'
+            }
+          ]
+        },
+        {
+          label:'menu2',
+          value:'m2',
+          children:[
+            {
+              label:'child21',
+              value:'c21'
+            },
+            {
+              label:'child22',
+              value:'c22',
+              disabled:true
+            },
+            {
+              label:'child23',
+              value:'c23'
+            }
+          ]
+        },
+        {
+          label:'menu3',
+          value:'m3'
+        }
+      ],
+      selectItem:[1],
+      oneShow:false,
+      twoShow:false,
+      threeShow:false
+    }
+  },
   methods:{
-    clickToast:function(info){
-      Toast.info(info);
+    toastInfo:function(info){
+      console.log(info);
+    },
+    changeMenu:function(menu){
+      this[menu]=!this[menu];
     }
   }
 }
@@ -22,27 +126,147 @@ Vue.component(NavBar.name, NavBar);
 ```javascript
 import { Toast } from 'packages';
 export default {
+  data(){
+    return {
+      itemList:[
+        {
+          label:'menu1',
+          value:'m1',
+          children:[
+            {
+              label:'child1',
+              value:'c1'
+            },
+            {
+              label:'child2',
+              value:'c2'
+            },
+            {
+              label:'child3',
+              value:'c3'
+            },
+            {
+              label:'child1',
+              value:'c4'
+            },
+            {
+              label:'child2',
+              value:'c5'
+            },
+            {
+              label:'child3',
+              value:'c6'
+            },
+            {
+              label:'child1',
+              value:'c7'
+            },
+            {
+              label:'child2',
+              value:'c8'
+            },
+            {
+              label:'child3',
+              value:'c9'
+            }
+          ]
+        },
+        {
+          label:'menu2',
+          value:'m2'
+        }
+      ],
+      selectItem:[1],
+      oneShow:false
+    }
+  },
   methods:{
-    clickToast:function(info){
-      Toast.info(info);
+    toastInfo:function(info){
+      console.log(info);
+    },
+    changeMenu:function(menu){
+      this[menu]=!this[menu];
     }
   }
 }
 ```
 
+### 基本用法
+
+默认菜单，`menu-data`传入菜单数据，`change`回调选中菜单值
+
 :::demo 基本
+
 ```html
-<v-nav-bar icon="left" title="NavBar" @icon-click="clickToast('left')">
-    <v-icon slot="right" type="ellipsis" @click="clickToast('right')"></v-icon>
-</v-nav-bar>
-<v-nav-bar icon="left" mode="light" @icon-click="clickToast('left')">
-    <span slot="left" @click="clickToast('back')">back</span>
-    NavBar
-    <div slot="right">
-        <v-icon type="search" style="margin-right:10px" @click="clickToast('search')"></v-icon>
-        <v-icon type="ellipsis" @click="clickToast('ellipsis')"></v-icon>
-    </div>
-</v-nav-bar>
+<div :class="oneShow?'menu-active':''">
+    <div class="menu-mask"></div>
+    <v-nav-bar
+      :icon="oneShow?'left':'right'"
+      title="Normal menu"
+      @icon-click="changeMenu('oneShow')"
+    >
+    </v-nav-bar>
+    <v-menu
+      v-show="oneShow"
+      :menu-data="itemList"
+      @change="toastInfo"
+    >
+    </v-menu>
+<div>
+```
+:::
+
+### 单极菜单
+
+`level`设置菜单层级
+
+:::demo 单极菜单
+
+```html
+<div :class="twoShow?'menu-active':''">
+    <div class="menu-mask"></div>
+    <v-nav-bar
+      :icon="twoShow?'left':'right'"
+      title="Single menu"
+      @icon-click="changeMenu('twoShow')"
+    >
+    </v-nav-bar>
+    <v-menu
+      v-show="twoShow"
+      :menu-data="itemList"
+      :level="1"
+      @change="toastInfo"
+    >
+    </v-menu>
+<div>
+```
+:::
+
+### 复选菜单
+
+`multi-select`设置菜单为多选
+
+:::demo 多选菜单
+
+```html
+<div :class="threeShow?'menu-active':''">
+    <div class="menu-mask"></div>
+    <v-nav-bar
+      :icon="threeShow?'left':'right'"
+      title="Multi-select menu"
+      @icon-click="changeMenu('threeShow')"
+    >
+    </v-nav-bar>
+    <v-menu
+      v-show="threeShow"
+      :menu-data="itemList"
+      multi-select
+      @change="toastInfo"
+      @ensure="toastInfo"
+      @cancel="changeMenu('threeShow')"
+    >
+    </v-menu>
+<div>
 ```
 :::
 

@@ -20,12 +20,12 @@
       const hash = window.location.hash;
       const origin = window.location.origin;
       return {
-        simulator: `${origin.indexOf('github') > -1 ? "https://vueclub.github.io/milk-vue" : '' }/examples.html${hash}`,
+        simulator: `${origin.indexOf('github') > -1 ? 'https://vueclub.github.io/milk-vue' : ''}/examples.html${hash}`,
         lang: getLang()
       };
     },
     mounted() {
-      document.querySelector('.zan-doc-header__logo').innerHTML = ''; 
+      document.querySelector('.zan-doc-header__logo').innerHTML = '';
     },
     computed: {
       base() {
@@ -48,7 +48,7 @@
 <style lang="less">
   .zan-doc {
     background-image: linear-gradient(0deg, #061a2a, #fff);
-    .zan-doc-header__logo{
+    .zan-doc-header__logo {
       background-image: url(http://ooaa8syjw.bkt.clouddn.com/FgNkalCgxgLkf5-9M8hqW0AXg9SA)
     }
     .zan-doc-content--quickstart {

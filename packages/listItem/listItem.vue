@@ -1,11 +1,11 @@
 <template>
   <div
-    :class="listCls"
-    :disable="listDisabled"
+    ref="list"
     v-bind="$attrs"
     v-feedback="feedbackClass"
+    :class="listCls"
+    :disabled="listDisabled"
     @click="handleClick"
-    ref="list"
   >
     <div v-if="$slots.thumb" :class="`${prefixCls}-thumb`">
       <slot name="thumb"></slot>

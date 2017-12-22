@@ -5,7 +5,7 @@
     margin-left:5px;
   }
   .vm-list-body>.vm-checkbox-wrapper{
-    display:block;
+    display:inline-block;
     margin:15px;
   }
 }
@@ -15,16 +15,12 @@ import { Toast } from 'packages';
 export default {
   data(){
     return {
-      modelValues:['two'],
-      modelValue:false,
-      modelTrue:true,
-      modelFalse:false,
-      agreeValue:false
+      modelValue:['two']
     }
   },
   methods:{
     toastInfo:function(info){
-      Toast.info(info.toString());
+      Toast.info(info===undefined?"undefined":info.toString());
     }
   }
 }
@@ -45,11 +41,7 @@ import { Toast } from 'packages';
 export default {
   data(){
     return {
-      modelValues:['two'],
-      modelValue:false,
-      modelTrue:true,
-      modelFalse:false,
-      agreeValue:false
+      modelValue:['two']
     }
   },
   methods:{
@@ -98,23 +90,23 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
 <v-list>
   <v-checkbox
     value="one"
-    v-model="modelValues"
-    @change="toastInfo(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
   >
     One
   </v-checkbox>
   <v-checkbox
     value="two"
-    v-model="modelValues"
-    @change="toastInfo(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
   >
     Two
     <span slot="extra">It's extra</span>
   </v-checkbox>
   <v-checkbox
     value="three"
-    v-model="modelValues"
-    @change="toastInfo(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
   >
     Three
   </v-checkbox>
@@ -131,15 +123,16 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
 <v-list>
   <v-checkbox-item
     value="one"
-    v-model="modelValues"
-    @change="toastInfo(modelValues)"
+    align="right"
+    v-model="modelValue"
+    @change="toastInfo"
   >
-    One normal
+    One normal right
   </v-checkbox-item>
   <v-checkbox-item
     value="two"
-    v-model="modelValues"
-    @change="toastInfo(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
   >
     Two extra
     <span slot="extra">It's extra</span>
@@ -147,8 +140,8 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
   <v-checkbox-item
     brief="It's brief"
     value="three"
-    v-model="modelValues"
-    @change="toastInfo(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
     disabled
   >
     Three brief
@@ -162,9 +155,7 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
 :::demo v-agreement
 
 ```html
-<v-agreement
-  v-model="agreeValue"
->
+<v-agreement>
   Agree <a @click="toastInfo('agreement')">agreement</a>
 </v-agreement>
 ```
@@ -176,16 +167,17 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 绑定数据源<br/>当为单个时为`Boolean`<br/>当为组时为`Array` | `Boolean`,`Array` | - | - |
+| v-model | 绑定数据源<br/>当单个时为`Boolean`<br/>当成组时为`Array` | `Boolean`,`Array` | - | - |
 | disabled | 是否禁用 | `Boolean` | `false` | `true`,`false` |
 | checked | 是否默认选中 | `Boolean` | `false` | `true`,`false` |
 | value | 复选框值 | `String` | - | - |
+| align | 复选框位置 | `String` | `left` | `left`,`right` |
 
 #### Event
 
 | 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| change | checkbox值改变时触发 | `Boolean` 是否选中 |
+| change | checkbox值改变时触发 | `Boolean`是否选中,`Array`选中值 |
 | click | 点击事件 | - |
 
 ### Agreement
@@ -194,4 +186,8 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
 
 ### CheckboxItem
 
-基于 `ListItem` 进行封装，`checkbox` 作为 `thumb` slot 传入，其他属性及API参考 `Checkbox` 与 `ListItem`
+基于 `ListItem` 进行封装<br/>
+当`align`值为`left`时`checkbox` 作为 `thumb` slot 传入<br/>
+当`align`值为`right`时`checkbox` 作为 `extra` slot 传入<br/>
+其他属性及API参考 `Checkbox`与 `ListItem`
+

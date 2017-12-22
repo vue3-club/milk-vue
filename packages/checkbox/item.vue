@@ -4,18 +4,32 @@
     :disabled="$attrs.disabled"
     @click="onClick"
   >
-    <v-checkbox
-      slot="thumb"
-      ref="checkbox"
-      :type="type"
-      :prefixCls="prefixCls"
-      v-bind="$attrs"
-      v-model="modelValue"
-      @change="onChange"
-    ></v-checkbox>
+    <template slot="thumb">
+      <v-checkbox
+        v-if="align=='left'"
+        ref="checkbox"
+        :type="type"
+        :prefixCls="prefixCls"
+        :warp-label="false"
+        v-bind="$attrs"
+        v-model="modelValue"
+        @change="onChange"
+      ></v-checkbox>
+      <slot v-else name="thumb"></slot>
+    </template>
     <slot></slot>
     <template slot="extra">
-      <slot name="extra"></slot>
+      <slot v-if="align=='left'" name="extra"></slot>
+      <v-checkbox
+        v-else
+        ref="checkbox"
+        :type="type"
+        :prefixCls="prefixCls"
+        :warp-label="false"
+        v-bind="$attrs"
+        v-model="modelValue"
+        @change="onChange"
+      ></v-checkbox>
     </template>
   </v-list-item>
 </template>
@@ -41,7 +55,11 @@
         type: String,
         default: 'vm-checkbox'
       },
-      brief: String
+      brief: String,
+      align: {
+        type: String,
+        default: 'left'
+      }
     },
     data() {
       return {
@@ -60,8 +78,9 @@
         this.$emit('click');
       },
       onChange() {
-        this.$emit('input', this.$refs.checkbox.toggle());
-        this.$emit('change');
+        const newValue = this.$refs.checkbox.toggle();
+        this.$emit('input', newValue);
+        this.$emit('change', newValue);
       }
     }
   };
