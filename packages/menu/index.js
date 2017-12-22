@@ -1,3 +1,3 @@
-import VMenu from './menu';
+import VMenu from './menu.vue';
 
 export default VMenu;

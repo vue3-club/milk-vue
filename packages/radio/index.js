@@ -1,4 +1,4 @@
-import VRadio from './radio';
+import VRadio from './radio.vue';
 import VRadioItem from './item.vue';
 import Vue from 'vue';
 

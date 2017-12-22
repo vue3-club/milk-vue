@@ -7,7 +7,7 @@ import Input from './input';
 import List from './list';
 import ListItem from './listItem';
 import Menu from './menu';
-import Navbar from './navbar';
+import NavBar from './navBar';
 import Radio from './radio';
 import Row from './row';
 import Switch from './switch';
@@ -15,7 +15,7 @@ import Textarea from './textarea';
 import Toast from './toast';
 import '../style/index.less';
 
-const version = '1.0.1';
+const version = '0.9.2';
 const components = [
   Button,
   Checkbox,
@@ -26,7 +26,7 @@ const components = [
   List,
   ListItem,
   Menu,
-  Navbar,
+  NavBar,
   Radio,
   Row,
   Switch,
@@ -58,7 +58,7 @@ export {
   List,
   ListItem,
   Menu,
-  Navbar,
+  NavBar,
   Radio,
   Row,
   Switch,

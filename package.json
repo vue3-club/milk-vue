@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:liujian10/milk-vue.git"
+    "url": "git@github.com:vueClub/milk-vue"
   },
   "keywords": [
     "vue",
@@ -42,9 +42,9 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "6.x",
-    "v-drawer": "^1.0.8",
+    "v-drawer": "^1.0.9",
     "v-feedback": "^0.1.13",
-    "vue": "^2.5.9",
+    "vue": "^2.5.11",
     "vue-lazyload": "^1.1.3",
     "vue-router": "^3.0.0",
     "zan-doc": "^0.3.11"
@@ -53,7 +53,7 @@
     "vue": "^2.4.4"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.2",
+    "autoprefixer": "^7.2.3",
     "avoriaz": "2.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -93,7 +93,7 @@
     "karma-sinon-chai": "^1.3.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "^0.0.31",
-    "karma-webpack": "^2.0.6",
+    "karma-webpack": "^2.0.9",
     "less": "^3.0.0-pre.4",
     "less-loader": "^4.0.5",
     "markdown-it": "^8.4.0",
@@ -110,14 +110,14 @@
     "run-sequence": "^2.1.0",
     "sinon": "^2.4.1",
     "sinon-chai": "^2.12.0",
-    "style-loader": "^0.19.0",
+    "style-loader": "^0.19.1",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^0.6.2",
-    "vue-loader": "^13.5.0",
+    "vue-loader": "^13.6.0",
     "vue-markdown-loader": "^2.3.0",
     "vue-sfc-compiler": "^0.0.2",
     "vue-style-loader": "^3.0.0",
-    "vue-template-compiler": "^2.5.9",
+    "vue-template-compiler": "^2.5.11",
     "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-server": "^2.9.7",

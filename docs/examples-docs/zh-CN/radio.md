@@ -5,7 +5,7 @@
     margin-left:5px;
   }
   .vm-list-body>.vm-radio-wrapper{
-    display:block;
+    display:inline-block;
     margin:15px;
   }
 }
@@ -15,14 +15,12 @@ import { Toast } from 'packages';
 export default {
   data(){
     return {
-      modelValues:'two',
-      modelValue:false,
-      agreeValue:false
+      modelValue:'two'
     }
   },
   methods:{
-    clickToast:function(info){
-      Toast.info(info&&info.toString()||"none");
+    toastInfo:function(info){
+      Toast.info(info===undefined?"undefined":info.toString());
     }
   }
 }
@@ -43,15 +41,11 @@ import { Toast } from 'packages';
 export default {
   data(){
     return {
-      modelValues:'two',
-      modelValue:false,
-      modelTrue:true,
-      modelFalse:false,
-      agreeValue:false
+      modelValue:'two'
     }
   },
   methods:{
-    clickToast:function(info){
+    toastInfo:function(info){
       Toast.info(info.toString());
     }
   }
@@ -61,27 +55,24 @@ export default {
 
 #### 基本用法
 
-通过v-model绑定 radio 的勾选状态
+默认为未勾选状态，设置`checked`属性默认勾选，设置`disabled`属性禁用
 
 :::demo 基本
 
 ```html
 <v-list>
   <v-radio
-    v-model="modelValue"
-    @click="clickToast(modelValue)"
+    @change="toastInfo"
   >
     Normal
   </v-radio>
   <v-radio
-    @click="clickToast(modelFalse)"
     disabled
   >
     Disabled unchecked
   </v-radio>
   <v-radio
     checked
-    @click="clickToast(modelTrue)"
     disabled
   >
     Disabled checked
@@ -92,31 +83,31 @@ export default {
 
 #### radio 组
 
-v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
+v-model 可绑定一个变量
 
 :::demo radio 组
 ```html
 <v-list>
   <v-radio
     value="one"
-    v-model="modelValues"
-    @change="clickToast(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
   >
     One
   </v-radio>
   <v-radio
     value="two"
     checked
-    v-model="modelValues"
-    @change="clickToast(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
   >
     Two
     <span slot="extra">It's extra</span>
   </v-radio>
   <v-radio
     value="three"
-    v-model="modelValues"
-    @change="clickToast(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
   >
     Three
   </v-radio>
@@ -133,15 +124,15 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
 <v-list>
   <v-radio-item
     value="one"
-    v-model="modelValues"
-    @change="clickToast(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
   >
     One normal
   </v-radio-item>
   <v-radio-item
     value="two"
-    v-model="modelValues"
-    @change="clickToast(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
   >
     Two extra
     <span slot="extra">It's extra</span>
@@ -149,8 +140,8 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
   <v-radio-item
     brief="It's brief"
     value="three"
-    v-model="modelValues"
-    @change="clickToast(modelValues)"
+    v-model="modelValue"
+    @change="toastInfo"
     disabled
   >
     Three brief
@@ -165,17 +156,23 @@ v-model 需绑定一个数组，数组值为选中复选框 value 值的集合
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 绑定数据源 | `Boolean`,`Array` | - | - |
+| v-model | 绑定数据源 | `Boolean`,`String` | - | - |
 | disabled | 是否禁用 | `Boolean` | `false` | `true`,`false` |
+| checked | 是否默认选中 | `Boolean` | `false` | `true`,`false` |
 | value | 复选框值 | `String` | - | - |
+| align | 复选框位置 | `String` | `left` | `left`,`right` |
+
 
 #### Event
 
 | 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| change | radio值改变时触发 | - |
+| change | radio值改变时触发 | `Boolean|String` 是否选中|选中值 |
 | click | 点击事件 | - |
 
 ### radioItem
 
-基于 `ListItem` 进行封装，`radio` 作为 `thumb` slot 传入，其他属性及API参考 `radio` 与 `ListItem`
+基于 `ListItem` 进行封装<br/>
+当`align`值为`left`时`radio` 作为 `thumb` slot 传入<br/>
+当`align`值为`right`时`radio` 作为 `extra` slot 传入<br/>
+其他属性及API参考 `radio`与 `ListItem`
