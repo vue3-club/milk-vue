@@ -88,7 +88,7 @@
         prefixCls: prefixCls,
         subMenuData: [],
         curMenu: '',
-        selMenu: {},
+        selMenu: this.getInitSelMenu(),
         docHeight: 0,
         multiSelectMenuBtnsCls: multiSelectMenuBtnsCls
       };
@@ -98,20 +98,24 @@
       menuHeight() {
         return this.height || this.docHeight;
       },
+      // 次级菜单高度
       subMenuHeight() {
         return this.multiSelect ? this.menuHeight - 47 : this.menuHeight;
       },
+      // 多选模式下按钮样式
       btnStyle() {
         return {
           border: 'none',
           borderRadius: 0
         };
       },
+      // 次级菜单已选值
       subSelMenu() {
-        return this.selMenu[this.curMenu] || [];
+        return this.level === 2 ? (this.selMenu[this.curMenu] || []) : this.selMenu;
       }
     },
     methods: {
+      // 获取次级菜单数据
       getSubMenuData(menuValue) {
         if (this.level === 1) return this.menuData;
         let menuItem;
@@ -124,6 +128,10 @@
         }
         return [];
       },
+      // 获取初始已选菜单值
+      getInitSelMenu() {
+        return this.level === 2 ? {} : this.multiSelect ? [] : '';
+      },
       // 点击菜单事件
       onClickMenu(value) {
         this.subMenuData = this.getSubMenuData(value);
@@ -133,6 +141,8 @@
         if (this.level === 2) {
           if (!this.multiSelect) this.selMenu = {};
           this.selMenu[this.curMenu] = item;
+        } else {
+          this.selMenu = item;
         }
         this.$emit('change', this.selMenu);
       },
@@ -142,7 +152,7 @@
       },
       // 点击取消按钮事件
       onCancel() {
-        this.selMenu = {};
+        this.selMenu = this.getInitSelMenu();
         this.$emit('cancel');
       }
     }

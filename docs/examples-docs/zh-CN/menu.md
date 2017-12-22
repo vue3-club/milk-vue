@@ -112,13 +112,13 @@ export default {
   }
 }
 </script>
-## Toast 轻提示
+## Toast 菜单
 
 ### 使用指南
 
 ```javascript
-import { NavBar } from 'milk-vue';
-Vue.component(NavBar.name, NavBar);
+import { Menu } from 'milk-vue';
+Vue.component(Menu.name, Menu);
 ```
 
 ### 代码演示
@@ -235,6 +235,7 @@ export default {
       v-show="twoShow"
       :menu-data="itemList"
       :level="1"
+      multi-select
       @change="toastInfo"
     >
     </v-menu>
@@ -274,21 +275,15 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| mode | 模式 | `String` | `dark` | `dark` `light` |
-| title | 标题 | `String` | - | - |
-| icon | 左侧图标 | `String` | - | icon type |
-| icon-click | 左侧图标点击事件 | `Function` | - | - |
-
-### Slot
-
-| name | 描述 |
-|------|------|
-| default | 自定义标题内容，如果存在会覆盖 `title` 值 |
-| left | 自定义左侧内容 |
-| right | 自定义右侧内容 |
+| menu-data | 菜单数据 | `Array<{label: String, value, disabled?, children<data>?}>` | [] | - |
+| multi-select | 是否多选模式 | `Boolean` | `false` | `false`,`true` |
+| level | 菜单层级 | `Number` | `2` | `1`,`2` |
+| height | 菜单高度 | `Number` | `document.documentElement.clientHeight / 2` | - |
 
 ### Event
 
 | 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| icon-click | 设置icon后，点击左侧图标时触发 | - |
+| change | 菜单项选值发生变化时触发 | 菜单选中值【1级单选:String，1级多选:Array，2级:Object<1级菜单value: 2级菜单value>】 |
+| ensure | 多选模式下，点击`确定`按钮时触发 | 菜单选中值【1级单选:String，1级多选:Array，2级:Object<1级菜单value: 2级菜单value>】 |
+| cancel | 多选模式下，点击`取消`按钮时触发 | - |
