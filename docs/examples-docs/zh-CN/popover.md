@@ -89,6 +89,6 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | open | 是否默认显示气泡 | `Boolean` | `false` | `false` `true` |
 | disable | 是否禁用 | `Boolean` | `false` | `false` `true` |
-| offset | 偏移距离 | `Number` | - | - |
+| offset | 偏移距离,单位px | `Number` | - | - |
 
 更多 API 可查看 [v-tooltip](https://www.npmjs.com/package/v-tooltip)
