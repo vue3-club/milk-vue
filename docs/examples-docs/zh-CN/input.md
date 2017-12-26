@@ -95,7 +95,7 @@ type 支持`text`、`number`、`date`等类型，默认为`text`
 <v-input type="bankCard" ref="bankCard" placeholder="bankCard">bankCard</v-input>
 <v-input type="text" name="autofocus" autofocus placeholder="auto focus">autofocus</v-input>
 <v-input type="text" name="clickfocus" ref="clickfocus" placeholder="click to focus">click to focus</v-input>
-<v-button @click="setFocus">click button to focus</v-button>
+<v-button @click="setFocus" style="border-radius:0">click button to focus</v-button>
 </v-list>
 ```
 :::

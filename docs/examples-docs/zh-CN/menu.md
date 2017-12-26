@@ -3,7 +3,7 @@
   .vm-menu{
   }
   .menu-active{
-    .vm-navBar,
+    .vm-nav-bar,
     .vm-menu{
       position:relative;
       z-index:100 !important;
@@ -235,7 +235,6 @@ export default {
       v-show="twoShow"
       :menu-data="itemList"
       :level="1"
-      multi-select
       @change="toastInfo"
     >
     </v-menu>

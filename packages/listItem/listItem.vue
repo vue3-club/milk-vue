@@ -7,7 +7,8 @@
     :disabled="listDisabled"
     @click="handleClick"
   >
-    <div v-if="$slots.thumb" :class="`${prefixCls}-thumb`">
+    <div v-if="icon||$slots.thumb" :class="`${prefixCls}-thumb`">
+      <v-icon v-if="icon" :type="icon"/>
       <slot name="thumb"></slot>
     </div>
     <div :class="lineCls">
@@ -37,6 +38,7 @@
     name: 'VListItem',
     props: {
       arrow: String,
+      icon: String,
       error: Boolean, // 右侧是否显示错误样式
       align: {  // 子元素垂直对齐
         type: String,

@@ -16,7 +16,7 @@
       >
         <v-list>
           <v-list-item
-            v-for="(item,index) in menuData"
+            v-for="(item, index) in menuData"
             :key="index"
             :disabled="item.disabled"
             :class="{
@@ -79,8 +79,6 @@
       this.$nextTick(function() {
         this.docHeight = document.documentElement.clientHeight / 2; // 获取页面文档高度
         this.subMenuData = this.getSubMenuData(); // 初始化菜单项
-        console.log('this.subMenuData');
-        console.log(this.subMenuData);
       });
     },
     data() {

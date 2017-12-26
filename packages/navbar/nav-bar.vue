@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-  const prefixCls = 'vm-navBar';
+  const prefixCls = 'vm-nav-bar';
   const modeList = ['light', 'dark'];
 
   export default {
