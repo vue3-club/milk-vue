@@ -59,8 +59,8 @@ module.exports = {
               'title': 'List - 列表'
             },
             {
-              'path': '/navbar',
-              'title': 'Navbar - 导航栏'
+              'path': '/nav-bar',
+              'title': 'NavBar - 导航栏'
             },
             {
               'path': '/drawer',
@@ -73,6 +73,10 @@ module.exports = {
             {
               'path': '/switch',
               'title': 'Switch - 滑动开关'
+            },
+            {
+              'path': '/popover',
+              'title': 'Popover - 气泡'
             }
           ]
         }, {

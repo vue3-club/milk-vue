@@ -8,6 +8,7 @@ import List from './list';
 import ListItem from './listItem';
 import Menu from './menu';
 import Navbar from './navbar';
+import Popover from './popover';
 import Radio from './radio';
 import Row from './row';
 import Switch from './switch';
@@ -27,6 +28,7 @@ const components = [
   ListItem,
   Menu,
   Navbar,
+  Popover,
   Radio,
   Row,
   Switch,
@@ -59,6 +61,7 @@ export {
   ListItem,
   Menu,
   Navbar,
+  Popover,
   Radio,
   Row,
   Switch,

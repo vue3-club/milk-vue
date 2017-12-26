@@ -3,7 +3,7 @@
   .vm-menu{
   }
   .menu-active{
-    .vm-navBar,
+    .vm-nav-bar,
     .vm-menu{
       position:relative;
       z-index:100 !important;
@@ -200,12 +200,12 @@ export default {
 ```html
 <div :class="oneShow?'menu-active':''">
     <div class="menu-mask"></div>
-    <v-navbar
+    <v-nav-bar
       :icon="oneShow?'left':'right'"
       title="Normal menu"
       @icon-click="changeMenu('oneShow')"
     >
-    </v-navbar>
+    </v-nav-bar>
     <v-menu
       v-show="oneShow"
       :menu-data="itemList"
@@ -225,12 +225,12 @@ export default {
 ```html
 <div :class="twoShow?'menu-active':''">
     <div class="menu-mask"></div>
-    <v-navbar
+    <v-nav-bar
       :icon="twoShow?'left':'right'"
       title="Single menu"
       @icon-click="changeMenu('twoShow')"
     >
-    </v-navbar>
+    </v-nav-bar>
     <v-menu
       v-show="twoShow"
       :menu-data="itemList"
@@ -251,12 +251,12 @@ export default {
 ```html
 <div :class="threeShow?'menu-active':''">
     <div class="menu-mask"></div>
-    <v-navbar
+    <v-nav-bar
       :icon="threeShow?'left':'right'"
       title="Multi-select menu"
       @icon-click="changeMenu('threeShow')"
     >
-    </v-navbar>
+    </v-nav-bar>
     <v-menu
       v-show="threeShow"
       :menu-data="itemList"
