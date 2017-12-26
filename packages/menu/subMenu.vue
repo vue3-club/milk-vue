@@ -9,10 +9,11 @@
       <compontent
         :is="itemType"
         v-for="(checkbox,index) in menuData"
+        align="right"
+        v-model="modelMenu"
         :key="`checkbox${index}`"
         :value="checkbox.value"
-        v-model="modelMenu"
-        align="right"
+        :class="{[`${prefixCls}-item-selected`]:isSelected(checkbox.value)}"
         :disabled="checkbox.disabled"
         @change="onChange(checkbox)"
       >
@@ -26,7 +27,7 @@
   import VListItem from '../listItem';
   import VCheckBox from '../checkbox';
 
-  const prefixCls = 'sub-vm-menu';
+  const prefixCls = 'vm-sub-menu';
 
   export default {
     components: {
@@ -40,11 +41,6 @@
       selMenu: [Array, String],
       multiSelect: Boolean
     },
-    mounted() {
-      this.$nextTick(function() {
-        console.log(this.menuData);
-      });
-    },
     data() {
       return {
         prefixCls: prefixCls,
@@ -53,32 +49,25 @@
       };
     },
     watch: {
+      // 监听checkbox值变化
       selMenu() {
         this.modelMenu = this.selMenu;
       }
     },
-    computed:{
-      itemType(){
-        const iType = this.multiSelect?'v-checkbox-item':'v-radio-item';
-        console.log(iType);
-        return iType;
+    computed: {
+      // 动态组件类型
+      itemType() {
+        return this.multiSelect ? 'v-checkbox-item' : 'v-radio-item';
       }
     },
     methods: {
-      getSubMenuData(menuValue) {
-        if (this.level === 1) return this.menuData;
-        this.menuData.map(item => {
-          if (item.children && item.children.length > 0) {
-            if (menuValue === undefined
-              || menuValue === item.value) {
-              return item.children;
-            }
-          }
-        });
-        return [];
-      },
+      // 菜单值变化事件
       onChange() {
         this.$emit('change', this.modelMenu);
+      },
+      isSelected(value) {
+        if (this.multiSelect) return this.modelMenu.indexOf(value) > -1;
+        return this.modelMenu === value;
       }
     }
   };
