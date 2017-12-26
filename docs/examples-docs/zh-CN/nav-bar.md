@@ -9,7 +9,7 @@ export default {
 }
 </script>
 
-## Navbar 抽屉
+## NavBar 抽屉
 
 ### 使用指南
 
