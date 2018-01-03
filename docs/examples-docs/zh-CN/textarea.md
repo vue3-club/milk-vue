@@ -37,13 +37,16 @@ export default {
   },
   methods:{
     setFocus(){
-      this.$refs.clickfocus.$refs.textarea.focus();
+      this.$refs.clickfocus.$refs.input.focus();
     },
     checkValue(value){
       this.phoneError=!!value;
     },
-    errorClick(){
-      Toast.fail('Error');
+    errorClick(value){
+      Toast.fail(`Error:${value}`);
+    },
+    handleChange(val){
+      console.log('change:'+val);
     }
   }
 }
@@ -70,13 +73,16 @@ export default {
   },
   methods:{
     setFocus(){
-      this.$refs.clickfocus.$refs.textarea.focus();
+      this.$refs.clickfocus.$refs.input.focus();
     },
     checkValue(value){
       this.phoneError=!!value;
     },
-    errorClick(){
-      Toast.fail('Error');
+    errorClick(value){
+      Toast.fail(`Error:${value}`);
+    },
+    handleChange(val){
+      console.log('change:'+val);
     }
   }
 }
@@ -89,7 +95,7 @@ type 支持`text`、`number`、`date`等类型，默认为`text`
 :::demo 基本
 ```html
 <v-list>
-    <v-textarea ref="autoHeight" placeholder="autoHeight" auto-height>autoHeight</v-textarea>
+    <v-textarea ref="autoHeight" placeholder="autoHeight" value="123" @change="handleChange" auto-height>autoHeight</v-textarea>
     <v-textarea placeholder="multi-rows" :rows="3"></v-textarea>
     <v-textarea autofocus placeholder="auto focus">autofocus</v-textarea>
     <v-textarea ref="clickfocus" placeholder="click to focus">click focus</v-textarea>
@@ -143,7 +149,7 @@ count: 计数功能,兼具最大长度,默认为0,代表不开启计数功能
 :::demo v-model
 ```html
 <v-list>
-    <v-textarea placeholder="textarea model" v-model="modelValue" auto-height>v-model</v-textarea>
+    <v-textarea placeholder="textarea model" auto-height>v-model</v-textarea>
     <v-textarea readonly placeholder="value readonly" :value="modelValue">readonly</v-textarea>
     <v-textarea disabled placeholder="value disabled" :value="modelValue">disabled</v-textarea>
 </v-list>
@@ -186,6 +192,8 @@ count: 计数功能,兼具最大长度,默认为0,代表不开启计数功能
 
 | 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| focus | 输入框聚焦时触发 | - |
-| blur | 输入框失焦时触发 | - |
-| error-click | 点击错误提示时触发 | - |
+| change | 输入框之改变时触发 | `String|Number` 输入框值 |
+| focus | 输入框聚焦时触发 | `String|Number` 输入框值 |
+| blur | 输入框失焦时触发 | `String|Number` 输入框值 |
+| error-click | 点击错误提示时触发 | `String|Number` 输入框值 |
+
