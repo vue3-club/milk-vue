@@ -101,6 +101,10 @@ module.exports = {
               'path': '/checkbox',
               'title': 'Checkbox - 复选框'
             },
+            {
+              'path': '/stepper',
+              'title': 'Stepper - 步进器'
+            },
           ]
         }, {
           'groupName': '操作反溃',

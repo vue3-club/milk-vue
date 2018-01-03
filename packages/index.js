@@ -11,6 +11,7 @@ import Navbar from './navbar';
 import Popover from './popover';
 import Radio from './radio';
 import Row from './row';
+import Stepper from './stepper';
 import Switch from './switch';
 import Textarea from './textarea';
 import Toast from './toast';
@@ -31,6 +32,7 @@ const components = [
   Popover,
   Radio,
   Row,
+  Stepper,
   Switch,
   Textarea
 ];
@@ -64,6 +66,7 @@ export {
   Popover,
   Radio,
   Row,
+  Stepper,
   Switch,
   Textarea,
   Toast

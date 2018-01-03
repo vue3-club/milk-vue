@@ -1,0 +1,75 @@
+@import "../themes/default";
+
+.vm-stepper {
+  display: inline-block;
+  font-size: 0;
+  &-handle {
+    position: relative;
+    box-sizing: border-box;
+    padding: 4px;
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: none;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: @color-text-base;
+    }
+    &:active {
+      background-color: @fill-tap;
+    }
+    &.vm-stepper-plus-disabled,
+    &.vm-stepper-minus-disabled {
+      opacity: @opacity-disabled;
+      &:active {
+        background: none;
+      }
+    }
+  }
+
+  &-handle-minus {
+    &::before {
+      width: 10px;
+      height: 1px;
+    }
+    &::after {
+      display: none;
+    }
+  }
+
+  &-handle-plus {
+    &::before {
+      width: 10px;
+      height: 1px;
+    }
+    &::after {
+      width: 1px;
+      height: 10px;
+    }
+  }
+
+  &-input {
+    box-sizing: border-box;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: top;
+    border: none;
+    outline: none;
+    color: @color-text-base;
+    background: none;
+    &.vm-stepper-input-disabled {
+      opacity: @opacity-disabled;
+    }
+  }
+}
