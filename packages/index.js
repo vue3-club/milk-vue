@@ -14,6 +14,7 @@ import Row from './row';
 import Switch from './switch';
 import Textarea from './textarea';
 import Toast from './toast';
+import Stepper from './stepper';
 import '../style/index.less';
 
 const version = '0.9.3';
@@ -32,7 +33,8 @@ const components = [
   Radio,
   Row,
   Switch,
-  Textarea
+  Textarea,
+  Stepper
 ];
 
 const install = function(Vue) {
@@ -66,7 +68,8 @@ export {
   Row,
   Switch,
   Textarea,
-  Toast
+  Toast,
+  Stepper
 };
 export default {
   install,
