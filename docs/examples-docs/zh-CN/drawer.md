@@ -117,9 +117,7 @@ export default {
 }
 ```
 
-#### v-drawer
-
-基于 [v-drawer](https://www.npmjs.com/package/v-drawer)
+#### 基本用法
 
 :::demo 基本
 ```html
@@ -157,3 +155,5 @@ export default {
 | overlay-style | 遮罩层样式 | `String` `Object`| - | - |
 | content-style | 抽屉内容样式 | `String` `Object`| - | - |
 | forbid-click | 禁止背景点击 | `Boolean` | `false` | - |
+
+更多 API 可查看 [v-drawer](https://www.npmjs.com/package/v-drawer)

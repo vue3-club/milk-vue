@@ -77,6 +77,10 @@ module.exports = {
             {
               'path': '/popover',
               'title': 'Popover - 气泡'
+            },
+            {
+              'path': '/pagination',
+              'title': 'Pagination - 分页器'
             }
           ]
         }, {
