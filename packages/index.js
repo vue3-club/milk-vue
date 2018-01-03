@@ -9,6 +9,7 @@ import ListItem from './listItem';
 import Menu from './menu';
 import Navbar from './navbar';
 import Popover from './popover';
+import Progress from './progress';
 import Radio from './radio';
 import Row from './row';
 import Switch from './switch';
@@ -29,6 +30,7 @@ const components = [
   Menu,
   Navbar,
   Popover,
+  Progress,
   Radio,
   Row,
   Switch,
@@ -62,6 +64,7 @@ export {
   Menu,
   Navbar,
   Popover,
+  Progress,
   Radio,
   Row,
   Switch,
