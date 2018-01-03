@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-## Button 按钮
+## Stepper 步进器
 
 ### 使用指南
 ``` javascript
