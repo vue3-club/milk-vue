@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-## NavBar 抽屉
+## Pagination 分页器
 
 ### 使用指南
 
