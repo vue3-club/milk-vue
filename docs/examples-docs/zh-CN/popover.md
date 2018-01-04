@@ -45,6 +45,8 @@ export default {
 }
 ```
 
+#### 基本用法
+
 :::demo 基本
 ```html
 <v-nav-bar title="Popover">

@@ -42,8 +42,11 @@ export default {
     checkValue(value){
       this.phoneError=!!value;
     },
-    errorClick(){
-      Toast.fail('Error');
+    errorClick(value){
+      Toast.fail(`Error:${value}`);
+    },
+    handleChange(val){
+      console.log('change:'+val);
     }
   }
 }
@@ -75,8 +78,11 @@ export default {
     checkValue(value){
       this.phoneError=!!value;
     },
-    errorClick(){
-      Toast.fail('Error');
+    errorClick(value){
+      Toast.fail(`Error:${value}`);
+    },
+    handleChange(val){
+      console.log('change:'+val);
     }
   }
 }
@@ -89,7 +95,7 @@ type 支持`text`、`number`、`date`等类型，默认为`text`
 :::demo 基本
 ```html
 <v-list>
-<v-input type="number" ref="number" placeholder="number">number</v-input>
+<v-input type="number" ref="number" placeholder="number" value="123" @change="handleChange">number</v-input>
 <v-input type="password" name="password" placeholder="password" clear>password</v-input>
 <v-input type="phone" ref="phone" placeholder="phone">phone</v-input>
 <v-input type="bankCard" ref="bankCard" placeholder="bankCard">bankCard</v-input>
@@ -176,7 +182,8 @@ extra 设置输入框右侧注释信息
 | type | 输入框类型 | `String` | `text` | `input默认类型` <br> `bankCard` `phone`|
 | id | 输入框的id | `String` | - | - |
 | name | 输入框的name | `String` | - | - |
-| value | 输入框的值 | `String` | - | - |
+| value | 输入框默认值 | `String`,`Number` | - | - |
+| v-model | 双向绑定数据 | `String` | - | - |
 | label-number | 输入框标签最大字数 | `Number` | 5 | - |
 | label-align | 输入框标签对齐方式 | `String` | `left` | - |
 | click-to-focus | 点击标签是否聚焦 | `Boolean` | `false` | - |
@@ -190,6 +197,7 @@ extra 设置输入框右侧注释信息
 
 | 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| focus | 输入框聚焦时触发 | - |
-| blur | 输入框失焦时触发 | - |
-| error-click | 点击错误提示时触发 | - |
+| change | 输入框之改变时触发 | `String|Number` 输入框值 |
+| focus | 输入框聚焦时触发 | `String|Number` 输入框值 |
+| blur | 输入框失焦时触发 | `String|Number` 输入框值 |
+| error-click | 点击错误提示时触发 | `String|Number` 输入框值 |

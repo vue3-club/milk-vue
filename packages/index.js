@@ -8,10 +8,12 @@ import List from './list';
 import ListItem from './listItem';
 import Menu from './menu';
 import Navbar from './navbar';
+import Pagination from './pagination';
 import Popover from './popover';
 import Progress from './progress';
 import Radio from './radio';
 import Row from './row';
+import Stepper from './stepper';
 import Switch from './switch';
 import Textarea from './textarea';
 import Toast from './toast';
@@ -29,10 +31,12 @@ const components = [
   ListItem,
   Menu,
   Navbar,
+  Pagination,
   Popover,
   Progress,
   Radio,
   Row,
+  Stepper,
   Switch,
   Textarea
 ];
@@ -63,10 +67,12 @@ export {
   ListItem,
   Menu,
   Navbar,
+  Pagination,
   Popover,
   Progress,
   Radio,
   Row,
+  Stepper,
   Switch,
   Textarea,
   Toast

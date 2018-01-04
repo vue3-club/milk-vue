@@ -81,6 +81,10 @@ module.exports = {
             {
               'path': '/progress',
               'title': 'Progress - 进度条'
+            },
+            {
+              'path': '/pagination',
+              'title': 'Pagination - 分页器'
             }
           ]
         }, {
@@ -100,6 +104,10 @@ module.exports = {
             {
               'path': '/checkbox',
               'title': 'Checkbox - 复选框'
+            },
+            {
+              'path': '/stepper',
+              'title': 'Stepper - 步进器'
             },
           ]
         }, {
