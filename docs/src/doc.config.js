@@ -79,6 +79,10 @@ module.exports = {
               'title': 'Popover - 气泡'
             },
             {
+              'path': '/progress',
+              'title': 'Progress - 进度条'
+            },
+            {
               'path': '/pagination',
               'title': 'Pagination - 分页器'
             }

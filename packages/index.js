@@ -10,6 +10,7 @@ import Menu from './menu';
 import Navbar from './navbar';
 import Pagination from './pagination';
 import Popover from './popover';
+import Progress from './progress';
 import Radio from './radio';
 import Row from './row';
 import Stepper from './stepper';
@@ -32,6 +33,7 @@ const components = [
   Navbar,
   Pagination,
   Popover,
+  Progress,
   Radio,
   Row,
   Stepper,
@@ -67,6 +69,7 @@ export {
   Navbar,
   Pagination,
   Popover,
+  Progress,
   Radio,
   Row,
   Stepper,
