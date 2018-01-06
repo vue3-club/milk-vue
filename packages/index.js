@@ -3,6 +3,7 @@ import Checkbox from './checkbox';
 import Col from './col';
 import Drawer from './drawer';
 import Icon from './icon';
+import ImagePicker from './imagePicker';
 import Input from './input';
 import List from './list';
 import ListItem from './listItem';
@@ -26,6 +27,7 @@ const components = [
   Col,
   Drawer,
   Icon,
+  ImagePicker,
   Input,
   List,
   ListItem,
@@ -62,6 +64,7 @@ export {
   Col,
   Drawer,
   Icon,
+  ImagePicker,
   Input,
   List,
   ListItem,

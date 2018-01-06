@@ -1,5 +1,5 @@
-import Picker from 'packages/picker';
-import PickerColumn from 'packages/picker/picker-column';
+import Picker from 'packages/imagePicker';
+import PickerColumn from 'packages/imagePicker/imagePicker-column';
 import { mount } from 'avoriaz';
 
 const itemHeight = 44;
@@ -21,21 +21,21 @@ describe('Picker', () => {
     wrapper && wrapper.destroy();
   });
 
-  it('create picker', () => {
+  it('create imagePicker', () => {
     wrapper = mount(Picker, {
       propsData: {
         columns: pickerColumns
       }
     });
 
-    expect(wrapper.hasClass('van-picker')).to.be.true;
+    expect(wrapper.hasClass('van-imagePicker')).to.be.true;
     expect(wrapper.contains('.van-picker__columns--2')).to.be.true;
 
     expect(wrapper.vm.getColumnValues(0).length).to.equal(2);
     expect(wrapper.vm.getValues().length).to.equal(2);
   });
 
-  it('set picker values', () => {
+  it('set imagePicker values', () => {
     wrapper = mount(Picker, {
       propsData: {
         columns: pickerColumns
@@ -64,14 +64,14 @@ describe('Picker', () => {
     expect(wrapper.vm.getColumnValue(1)).to.equal('1992');
   });
 
-  it('create a invalid columns picker', () => {
+  it('create a invalid columns imagePicker', () => {
     wrapper = mount(Picker, {
       propsData: {
         columns: undefined
       }
     });
 
-    expect(wrapper.hasClass('van-picker')).to.be.true;
+    expect(wrapper.hasClass('van-imagePicker')).to.be.true;
     expect(wrapper.vm.values.length).to.equal(0);
   });
 
@@ -110,14 +110,14 @@ describe('Picker', () => {
     });
   });
 
-  it('create a empty picker and emit a cencel event', (done) => {
+  it('create a empty imagePicker and emit a cencel event', (done) => {
     wrapper = mount(Picker, {
       propsData: {
         showToolbar: true
       }
     });
 
-    expect(wrapper.hasClass('van-picker')).to.be.true;
+    expect(wrapper.hasClass('van-imagePicker')).to.be.true;
     expect(wrapper.contains('.van-picker__toolbar')).to.be.true;
     expect(wrapper.vm.values.length).to.equal(0);
 
@@ -132,14 +132,14 @@ describe('Picker', () => {
     });
   });
 
-  it('create a empty picker and emit a confirm event', (done) => {
+  it('create a empty imagePicker and emit a confirm event', (done) => {
     wrapper = mount(Picker, {
       propsData: {
         showToolbar: true
       }
     });
 
-    expect(wrapper.hasClass('van-picker')).to.be.true;
+    expect(wrapper.hasClass('van-imagePicker')).to.be.true;
     expect(wrapper.contains('.van-picker__toolbar')).to.be.true;
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
@@ -160,17 +160,17 @@ describe('PickerColumn', () => {
     wrapper && wrapper.destroy();
   });
 
-  it('create a picker-column', () => {
+  it('create a imagePicker-column', () => {
     wrapper = mount(PickerColumn);
 
-    expect(wrapper.hasClass('van-picker-column')).to.be.true;
+    expect(wrapper.hasClass('van-imagePicker-column')).to.be.true;
     expect(wrapper.vm.values.length).to.equal(0);
     expect(wrapper.vm.visibleContentHeight).to.equal(itemHeight * 5);
     expect(wrapper.vm.dragRange[0]).to.equal(3 * itemHeight);
     expect(wrapper.vm.dragRange[1]).to.equal(2 * itemHeight);
   });
 
-  it('change picker-column value', (done) => {
+  it('change imagePicker-column value', (done) => {
     wrapper = mount(PickerColumn, {
       propsData: {
         values: [1, 2, 3, 4, 5],
@@ -178,7 +178,7 @@ describe('PickerColumn', () => {
       }
     });
 
-    expect(wrapper.hasClass('van-picker-column')).to.be.true;
+    expect(wrapper.hasClass('van-imagePicker-column')).to.be.true;
     expect(wrapper.vm.values.length).to.equal(5);
 
     wrapper.vm.value = 3;
@@ -189,10 +189,10 @@ describe('PickerColumn', () => {
     });
   });
 
-  it('change picker-column values', (done) => {
+  it('change imagePicker-column values', (done) => {
     wrapper = mount(PickerColumn);
 
-    expect(wrapper.hasClass('van-picker-column')).to.be.true;
+    expect(wrapper.hasClass('van-imagePicker-column')).to.be.true;
     expect(wrapper.vm.values.length).to.equal(0);
 
     wrapper.vm.values = [1, 2];
@@ -204,7 +204,7 @@ describe('PickerColumn', () => {
     });
   });
 
-  it('create a picker test translate', () => {
+  it('create a imagePicker test translate', () => {
     wrapper = mount(PickerColumn, {
       propsData: {
         values: [1, 2, 3, 4, 5],
@@ -228,7 +228,7 @@ describe('PickerColumn', () => {
     expect(wrapper.vm.values.length).to.equal(5);
 
     setTimeout(() => {
-      const nColumn = wrapper.find('.van-picker-column-wrapper')[0];
+      const nColumn = wrapper.find('.van-imagePicker-column-wrapper')[0];
 
       const eventMouseObject = new window.Event('mousedown');
       eventMouseObject.pageY = 0;
@@ -240,7 +240,7 @@ describe('PickerColumn', () => {
     }, 500);
 
     setTimeout(() => {
-      const nColumn = wrapper.find('.van-picker-column-wrapper')[0];
+      const nColumn = wrapper.find('.van-imagePicker-column-wrapper')[0];
 
       const eventMouseMoveObject = new window.Event('mousemove');
       eventMouseMoveObject.pageY = 40;
@@ -259,8 +259,8 @@ describe('PickerColumn', () => {
     }, 1000);
 
     setTimeout(() => {
-      const nItem = wrapper.find('.van-picker-column__item');
-      expect(nItem[1].hasClass('van-picker-column__item--selected')).to.be.true;
+      const nItem = wrapper.find('.van-imagePicker-column__item');
+      expect(nItem[1].hasClass('van-imagePicker-column__item--selected')).to.be.true;
 
       done();
     }, 1200);
