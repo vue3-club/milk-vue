@@ -104,6 +104,12 @@ module.exports = {
             'path': '/toast',
             'title': 'Toast - 轻提示'
           }, ]
+        }, {
+          'groupName': '手势',
+          'list': [{
+            'path': '/swipeaction',
+            'title': 'SwipeAction - 滑动操作'
+          }, ]
         }]
       }
     ]

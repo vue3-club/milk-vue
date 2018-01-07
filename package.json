@@ -42,6 +42,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "6.x",
+    "hammerjs": "^2.0.8",
     "v-drawer": "^1.0.9",
     "v-feedback": "^0.1.13",
     "v-tooltip": "^2.0.0-rc.25",

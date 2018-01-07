@@ -11,9 +11,11 @@ import Navbar from './navbar';
 import Popover from './popover';
 import Radio from './radio';
 import Row from './row';
+import Swipeaction from './swipeaction';
 import Switch from './switch';
 import Textarea from './textarea';
 import Toast from './toast';
+import Touch from './touch';
 import '../style/index.less';
 
 const version = '0.9.3';
@@ -31,8 +33,10 @@ const components = [
   Popover,
   Radio,
   Row,
+  Swipeaction,
   Switch,
-  Textarea
+  Textarea,
+  Touch
 ];
 
 const install = function(Vue) {
@@ -64,9 +68,11 @@ export {
   Popover,
   Radio,
   Row,
+  Swipeaction,
   Switch,
   Textarea,
-  Toast
+  Toast,
+  Touch
 };
 export default {
   install,
