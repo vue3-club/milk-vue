@@ -21,14 +21,17 @@
         return (this.$parent && Number(this.$parent.gutter)) || 0;
       },
       style() {
-        return this.gutter
-          ? { padding: `0 ${this.gutter / 2}px` }
-          : {};
+        let resStyle = {};
+        if (this.gutter) {
+          resStyle.padding = `0 ${this.gutter / 2}px`;
+        }
+        return resStyle;
       },
       classNames() {
         return [
           `${prefixCls}-item`,
           {
+            [`${prefixCls}-item-flex`]: !this.span && !this.offset,
             [`${prefixCls}-item-span-${this.span}`]: this.span,
             [`${prefixCls}-item-offset-${this.offset}`]: this.offset
           }

@@ -40,12 +40,9 @@
     computed: {
       iconType() {
         return this.loading ? 'loading' : this.icon || '';
-      }
-    },
-    data() {
-      return {
-        active: false,
-        classNames: {
+      },
+      classNames(){
+        return {
           [prefixCls]: true,
           [`${prefixCls}-${this.type}`]: this.type,
           [`${prefixCls}-${this.size}`]: this.size,
@@ -54,6 +51,11 @@
           [`${prefixCls}-inline`]: this.inline,
           [`${prefixCls}-active`]: this.active
         }
+      }
+    },
+    data() {
+      return {
+        active: false
       };
     },
     methods: {

@@ -32,7 +32,7 @@
 - [ ] ImagePicker 图片选择器
 - [ ] Range 区域选择
 - [ ] SearchBar 搜索栏
-- [ ] Stepper 步进器
+- [x] ~~Stepper 步进器~~ [@zyl1314](https://github.com/zyl1314)
 
 ## 操作反溃
 - [ ] Progress 进度条
@@ -47,6 +47,9 @@
 
 ## 业务组件 (待更新)
 - [ ] 个人中心
+
+## 集成SDK
+- [ ] 分享 - 支持主流社区分享
 
 
 
