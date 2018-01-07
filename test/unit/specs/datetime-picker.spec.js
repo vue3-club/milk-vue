@@ -1,4 +1,4 @@
-import DatetimePicker from 'packages/datetime-imagePicker';
+import DatetimePicker from 'packages/datetime-picker';
 import { mount } from 'avoriaz';
 import { triggerTouch } from '../utils';
 
@@ -22,7 +22,7 @@ describe('DatetimePicker', () => {
     wrapper && wrapper.destroy();
   });
 
-  it('create a time imagePicker', () => {
+  it('create a time picker', () => {
     wrapper = mount(DatetimePicker, {
       attachToDocument: true,
       propsData: {
@@ -33,7 +33,7 @@ describe('DatetimePicker', () => {
     expect(wrapper.vm.innerValue).to.equal(testTime);
   });
 
-  it('create a date imagePicker', () => {
+  it('create a date picker', () => {
     wrapper = mount(DatetimePicker, {
       attachToDocument: true,
       propsData: {
@@ -44,7 +44,7 @@ describe('DatetimePicker', () => {
     expect(wrapper.vm.innerValue.getTime()).to.equal(testDate.getTime());
   });
 
-  it('create a datetime imagePicker', () => {
+  it('create a datetime picker', () => {
     wrapper = mount(DatetimePicker, {
       attachToDocument: true,
       propsData: {
@@ -55,7 +55,7 @@ describe('DatetimePicker', () => {
     expect(wrapper.vm.innerValue.getTime()).to.equal(testDate.getTime());
   });
 
-  it('drag time imagePicker', (done) => {
+  it('drag time picker', (done) => {
     wrapper = mount(DatetimePicker, {
       attachToDocument: true,
       propsData: {
@@ -64,7 +64,7 @@ describe('DatetimePicker', () => {
       }
     });
 
-    const [hour, minute] = wrapper.find('.van-imagePicker-column-wrapper');
+    const [hour, minute] = wrapper.find('.van-picker-column-wrapper');
     dragHelper(hour, -50);
     dragHelper(minute, -50);
 
@@ -74,7 +74,7 @@ describe('DatetimePicker', () => {
     }, 10);
   });
 
-  it('drag date imagePicker', (done) => {
+  it('drag date picker', (done) => {
     wrapper = mount(DatetimePicker, {
       attachToDocument: true,
       propsData: {
@@ -86,7 +86,7 @@ describe('DatetimePicker', () => {
     });
 
     setTimeout(() => {
-      const [year, month, day] = wrapper.find('.van-imagePicker-column-wrapper');
+      const [year, month, day] = wrapper.find('.van-picker-column-wrapper');
       dragHelper(year, -50);
       dragHelper(month, -50);
       dragHelper(day, -50);
@@ -102,7 +102,7 @@ describe('DatetimePicker', () => {
     }, 10);
   });
 
-  it('drag datetime imagePicker', (done) => {
+  it('drag datetime picker', (done) => {
     wrapper = mount(DatetimePicker, {
       attachToDocument: true,
       propsData: {
@@ -114,7 +114,7 @@ describe('DatetimePicker', () => {
     });
 
     setTimeout(() => {
-      const [year, month, day, hour, minute] = wrapper.find('.van-imagePicker-column-wrapper');
+      const [year, month, day, hour, minute] = wrapper.find('.van-picker-column-wrapper');
       dragHelper(year, -50);
       dragHelper(month, -50);
       dragHelper(day, -50);
