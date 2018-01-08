@@ -1,10 +1,10 @@
 @import "../themes/default";
 
-@prefixCls: vm-popover;
+@popPrefixCls: vm-popover;
 @tooltip: tooltip;
 @listPrefixCls: vm-list;
 
-.@{prefixCls}-mask {
+.@{popPrefixCls}-mask {
   position: fixed;
   top: 0;
   right: 0;
@@ -105,21 +105,26 @@
 
       .@{listPrefixCls}-body {
         border: none;
+        &::before,
+        &::after {
+          display: none;
+        }
       }
 
       .@{listPrefixCls},
-      .@{listPrefixCls}-body{
+      .@{listPrefixCls}-body {
         border-radius: 3px;
       }
 
-      .@{listPrefixCls}-item{
+      .@{listPrefixCls}-item {
         padding: 0 10px;
       }
 
-      .@{listPrefixCls}-item:first-child{
+      .@{listPrefixCls}-item:first-child {
         border-radius: 3px 3px 0 0;
+
       }
-      .@{listPrefixCls}-item:last-child{
+      .@{listPrefixCls}-item:last-child {
         border-radius: 0 0 3px 3px;
       }
     }

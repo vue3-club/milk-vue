@@ -4,14 +4,14 @@
 
 .vm-loop-span(@n, @i:1) when (@i <= @n) {
   .@{flexPrefixCls}-item-span-@{i} {
-    width:percentage(@i/@n)
+    width: percentage(@i/@n)
   }
   .vm-loop-span(@n, (@i + 1));
 }
 
 .vm-loop-offset(@n, @i:1) when (@i <= @n) {
   .@{flexPrefixCls}-item-offset-@{i} {
-    margin-left:percentage(@i/@n)
+    margin-left: percentage(@i/@n)
   }
   .vm-loop-offset(@n, (@i + 1));
 }
@@ -25,6 +25,10 @@
 
   .vm-loop-span(24);
   .vm-loop-offset(24);
+
+  & &-item-flex {
+    flex: 1;
+  }
 
   &&-dir-row {
     flex-direction: row;
