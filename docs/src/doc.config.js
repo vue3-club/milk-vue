@@ -109,6 +109,10 @@ module.exports = {
               'path': '/stepper',
               'title': 'Stepper - 步进器'
             },
+            {
+              'path': '/image-picker',
+              'title': 'ImagePicker - 图片选择器'
+            },
           ]
         }, {
           'groupName': '操作反溃',
