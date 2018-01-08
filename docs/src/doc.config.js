@@ -119,10 +119,16 @@ module.exports = {
           'list': [{
             'path': '/toast',
             'title': 'Toast - 轻提示'
-          }, {
+          },{
               'path': '/modal',
               'title': 'Modal - 对话框'
-            }]
+           }]
+        }, {
+          'groupName': '手势',
+          'list': [{
+            'path': '/swipeaction',
+            'title': 'SwipeAction - 滑动操作'
+          }]
         }]
       }
     ]
