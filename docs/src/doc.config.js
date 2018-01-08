@@ -119,7 +119,10 @@ module.exports = {
           'list': [{
             'path': '/toast',
             'title': 'Toast - 轻提示'
-          }, ]
+          }, {
+              'path': '/modal',
+              'title': 'Modal - 对话框'
+            }]
         }]
       }
     ]

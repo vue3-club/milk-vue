@@ -8,6 +8,7 @@ import Input from './input';
 import List from './list';
 import ListItem from './listItem';
 import Menu from './menu';
+import Modal from './modal';
 import Navbar from './navbar';
 import Pagination from './pagination';
 import Popover from './popover';
@@ -32,6 +33,7 @@ const components = [
   List,
   ListItem,
   Menu,
+  Modal,
   Navbar,
   Pagination,
   Popover,
@@ -69,6 +71,7 @@ export {
   List,
   ListItem,
   Menu,
+  Modal,
   Navbar,
   Pagination,
   Popover,
