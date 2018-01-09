@@ -70,6 +70,7 @@
             };
           });
           this.$emit('change', this.files, 'append');
+          e.currentTarget.value = null // 每次上传重置input的值 便于触发onchange事件
         } catch (e) {
           this.$emit('fail', e);
         }
