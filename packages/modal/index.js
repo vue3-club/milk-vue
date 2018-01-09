@@ -13,6 +13,7 @@ const defaultOptions = {
   promptRender: null,
   btns: null,
   forbidClick: true,
+  popupRender: null,
   callback: action => {
     instance[action === 'confirm' ? 'resolve' : 'reject'](action);
   },
@@ -52,6 +53,11 @@ const createModal = function(options) {
 Modal.confirm = options => createModal({
   ...options,
   type: 'confirm'
+});
+
+Modal.popup = options => createModal({
+  ...options,
+  type: 'popup'
 });
 
 export default Modal;

@@ -91,10 +91,32 @@
       border-radius: 0 0 7px 7px;
     }
   }
+  &-body-popup {
+    padding: 0;
+  }
+  &-content-popup {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    transition: bottom .2s;
+  }
+  &-btn-popup {
+    border-radius: 0;
+  }
 }
 .vm-modal-fade-enter-active, .vm-modal-fade-leave-active {
   transition: opacity .2s;
 }
 .vm-modal-fade-enter, .vm-modal-fade-leave-to {
   opacity: 0;
+}
+.vm-modal-slideup-enter-active, .vm-modal-slideup-leave-active {
+  transition: all .2s;
+}
+.vm-modal-slideup-enter, .vm-modal-slideup-leave-to {
+  opacity: 0;
+}
+.vm-modal-slideup-enter .vm-modal-content-popup, .vm-modal-slideup-leave-to .vm-modal-content-popup {
+  bottom: -100%;
 }

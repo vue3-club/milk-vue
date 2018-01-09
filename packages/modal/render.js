@@ -1,5 +1,5 @@
 export default {
-  name: 'propmt',
+  name: 'render',
   functional: true,
   props: {
     render: Function
