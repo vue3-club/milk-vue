@@ -15,8 +15,8 @@ import Popover from './popover';
 import Progress from './progress';
 import Radio from './radio';
 import Row from './row';
-import Swipeaction from './swipeaction';
 import Stepper from './stepper';
+import Swipeaction from './swipeaction';
 import Switch from './switch';
 import Textarea from './textarea';
 import Toast from './toast';
@@ -42,8 +42,8 @@ const components = [
   Progress,
   Radio,
   Row,
-  Swipeaction,
   Stepper,
+  Swipeaction,
   Switch,
   Textarea,
   Touch
@@ -82,8 +82,8 @@ export {
   Progress,
   Radio,
   Row,
-  Swipeaction,
   Stepper,
+  Swipeaction,
   Switch,
   Textarea,
   Toast,
