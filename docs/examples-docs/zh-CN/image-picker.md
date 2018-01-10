@@ -67,13 +67,11 @@ export default {
 
 ### 图片选择
 :::demo
+```html
 <div class="radio">
   <label><input type="radio" :value="false" v-model="radioValue">切换到单选</label>
   <label><input type="radio" :value="true" v-model="radioValue">切换到多选</label>
 </div>
-:::
-:::demo
-```html
 <div class="demo-block">
     <v-image-picker :files="files" @image-click="onClick" @change="onChange" :multiple="radioValue"></v-image-picker>
 </div>
