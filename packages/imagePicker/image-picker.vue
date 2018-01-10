@@ -45,11 +45,6 @@
         default: true
       }
     },
-    data() {
-      return {
-        prefixCls: prefixCls
-      };
-    },
     computed: {
       wrapClass() {
         return `${prefixCls}-wrap`;
