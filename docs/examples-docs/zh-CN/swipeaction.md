@@ -32,126 +32,125 @@ Vue.component(Swipeaction.name, Swipeaction);
 
 ### 代码演示
 
-
 :::demo 基本
 ```html
 <v-list>
-    <v-swipe-action
-        autoclose
-        :style="{ backgroundColor: 'gray' }"
-        :left="[
-            {
-                text: 'Reply',
-                onPress: replyBtn,
-                style: { backgroundColor: '#108ee9', color: 'white' }
-            },
-            {
-                text: 'Cancel',
-                onPress: cancelBtn,
-                style: { backgroundColor: '#ddd', color: 'white' }
-            }
-        ]"
-        :right="[
-            {
-                text: 'Cancel',
-                onPress: cancelBtn,
-                style: { backgroundColor: '#ddd', color: 'white' }
-            },
-            {
-                text: 'Delete',
-                onPress: deleteBtn,
-                style: { backgroundColor: '#F4333C', color: 'white' }
-            }
-        ]"
-        :onopen="openCb"
-        :onclose="closeCb"
-        >
-        <v-list-item arrow="horizontal">
-            <div>Have left and right buttons</div>
-            <div slot="extra">More</div>
-        </v-list-item>
-    </v-swipe-action>
-    <v-swipe-action
-        :autoclose="false"
-        :style="{ backgroundColor: 'gray' }"
-        :left="[
-            {
-                text: 'Reply',
-                onPress: replyBtn,
-                style: { backgroundColor: '#108ee9', color: 'white' }
-            },
-            {
-                text: 'Cancel',
-                onPress: cancelBtn,
-                style: { backgroundColor: '#ddd', color: 'white' }
-            }
-        ]"
-        :right="[
-            {
-                text: 'Cancel',
-                onPress: cancelBtn,
-                style: { backgroundColor: '#ddd', color: 'white' }
-            },
-            {
-                text: 'Delete',
-                onPress: deleteBtn,
-                style: { backgroundColor: '#F4333C', color: 'white' }
-            }
-        ]"
-        :onopen="openCb"
-        :onclose="closeCb"
-        >
-        <v-list-item arrow="horizontal">
-            <div>Disable auto close</div>
-            <div slot="extra">More</div>
-        </v-list-item>
-    </v-swipe-action>
-    <v-swipe-action
-        autoclose
-        :style="{ backgroundColor: 'gray' }"
-        :left="[
-            {
-                text: 'Reply',
-                onPress: replyBtn,
-                style: { backgroundColor: '#108ee9', color: 'white' }
-            },
-            {
-                text: 'Cancel',
-                onPress: cancelBtn,
-                style: { backgroundColor: '#ddd', color: 'white' }
-            }
-        ]"
-        :onopen="openCb"
-        :onclose="closeCb"
-        >
-        <v-list-item arrow="horizontal">
-            <div>Only left buttons</div>
-            <div slot="extra">More</div>
-        </v-list-item>
-    </v-swipe-action>
-    <v-swipe-action
-        autoclose
-        :style="{ backgroundColor: 'gray' }"
-        :right="[
-            {
-                text: 'Cancel',
-                onPress: cancelBtn,
-                style: { backgroundColor: '#ddd', color: 'white' }
-            },
-            {
-                text: 'Delete',
-                onPress: deleteBtn,
-                style: { backgroundColor: '#F4333C', color: 'white' }
-            }
-        ]"
-        :onopen="openCb"
-        :onclose="closeCb"
-        >
-        <v-list-item arrow="horizontal">
-            <div>Only right buttons</div>
-            <div slot="extra">More</div>
-        </v-list-item>
-    </v-swipe-action>
+  <v-swipe-action
+    auto-Close
+    :style="{ backgroundColor: 'gray' }"
+    :left="[
+      {
+        text: 'Reply',
+        onPress: replyBtn,
+        style: { backgroundColor: '#108ee9', color: 'white' }
+      },
+      {
+        text: 'Cancel',
+        onPress: cancelBtn,
+        style: { backgroundColor: '#ddd', color: 'white' }
+      }
+    ]"
+    :right="[
+      {
+        text: 'Cancel',
+        onPress: cancelBtn,
+        style: { backgroundColor: '#ddd', color: 'white' }
+      },
+      {
+        text: 'Delete',
+        onPress: deleteBtn,
+        style: { backgroundColor: '#F4333C', color: 'white' }
+      }
+    ]"
+    :on-Open="openCb"
+    :on-Close="closeCb"
+  >
+    <v-list-item arrow="horizontal">
+      <div>Have left and right buttons</div>
+      <div slot="extra">More</div>
+    </v-list-item>
+  </v-swipe-action>
+  <v-swipe-action
+    :auto-Close="false"
+    :style="{ backgroundColor: 'gray' }"
+    :left="[
+      {
+        text: 'Reply',
+        onPress: replyBtn,
+        style: { backgroundColor: '#108ee9', color: 'white' }
+      },
+      {
+        text: 'Cancel',
+        onPress: cancelBtn,
+        style: { backgroundColor: '#ddd', color: 'white' }
+      }
+    ]"
+    :right="[
+      {
+        text: 'Cancel',
+        onPress: cancelBtn,
+        style: { backgroundColor: '#ddd', color: 'white' }
+      },
+      {
+        text: 'Delete',
+        onPress: deleteBtn,
+        style: { backgroundColor: '#F4333C', color: 'white' }
+      }
+    ]"
+    :on-Open="openCb"
+    :on-Close="closeCb"
+  >
+    <v-list-item arrow="horizontal">
+      <div>Disable auto close</div>
+      <div slot="extra">More</div>
+    </v-list-item>
+  </v-swipe-action>
+  <v-swipe-action
+    auto-Close
+    :style="{ backgroundColor: 'gray' }"
+    :left="[
+      {
+        text: 'Reply',
+        onPress: replyBtn,
+        style: { backgroundColor: '#108ee9', color: 'white' }
+      },
+      {
+        text: 'Cancel',
+        onPress: cancelBtn,
+        style: { backgroundColor: '#ddd', color: 'white' }
+      }
+    ]"
+    :on-Open="openCb"
+    :on-Close="closeCb"
+  >
+    <v-list-item arrow="horizontal">
+      <div>Only left buttons</div>
+      <div slot="extra">More</div>
+    </v-list-item>
+  </v-swipe-action>
+  <v-swipe-action
+    auto-Close
+    :style="{ backgroundColor: 'gray' }"
+    :right="[
+      {
+        text: 'Cancel',
+        onPress: cancelBtn,
+        style: { backgroundColor: '#ddd', color: 'white' }
+      },
+      {
+        text: 'Delete',
+        onPress: deleteBtn,
+        style: { backgroundColor: '#F4333C', color: 'white' }
+      }
+    ]"
+    :on-Open="openCb"
+    :on-Close="closeCb"
+  >
+    <v-list-item arrow="horizontal">
+      <div>Only right buttons</div>
+      <div slot="extra">More</div>
+    </v-list-item>
+  </v-swipe-action>
 </v-list>
 ```
 :::
@@ -163,9 +162,9 @@ Vue.component(Swipeaction.name, Swipeaction);
 | style | swipeout样式 | `Object`  |  |
 | left | 左侧按钮组 | `Array`  | `null` |
 | right | 右侧按钮组 | `Array`  | `null` |
-| autoclose | 点击按钮后自动隐藏按钮 | `Boolean`  |  `false`  |
-| onopen | 打开时回调函数 | `(): void`  |  `function() {}`  |
-| onclose | 关闭时回调函数 | `(): void`  |  `function() {}`  |
+| autoClose | 点击按钮后自动隐藏按钮 | `Boolean`  |  `false`  |
+| onOpen | 打开时回调函数 | `(): void`  |  `function() {}`  |
+| onClose | 关闭时回调函数 | `(): void`  |  `function() {}`  |
 
 ### Button
 
