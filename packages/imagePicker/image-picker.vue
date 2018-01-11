@@ -27,9 +27,7 @@
 
   export default {
     name: 'VImagePicker',
-    components: {
-      [Icon.name]: Icon
-    },
+    components: { Icon },
     props: {
       files: Array,
       multiple: {
