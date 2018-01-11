@@ -15,6 +15,7 @@ import Popover from './popover';
 import Progress from './progress';
 import Radio from './radio';
 import Row from './row';
+import SearchBar from './searchBar';
 import Stepper from './stepper';
 import Switch from './switch';
 import Textarea from './textarea';
@@ -40,6 +41,7 @@ const components = [
   Progress,
   Radio,
   Row,
+  SearchBar,
   Stepper,
   Switch,
   Textarea
@@ -78,6 +80,7 @@ export {
   Progress,
   Radio,
   Row,
+  SearchBar,
   Stepper,
   Switch,
   Textarea,

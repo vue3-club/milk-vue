@@ -85,6 +85,10 @@ module.exports = {
             {
               'path': '/pagination',
               'title': 'Pagination - 分页器'
+            },
+            {
+              'path': '/search-bar',
+              'title': 'SearchBar - 搜索栏'
             }
           ]
         }, {
