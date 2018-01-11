@@ -78,14 +78,18 @@ export default {
 ```
 :::
 
-### API
-
+### Attributes
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | files | 图片文件数组，元素为对象 | `Array` | `[]` |
-| change | files 值发生变化触发的回调函数, type 操作类型有添加，移除，如果是移除操作，则第三个参数代表的是移除图片的索引 | `(files: Object, operationType: string, index: number): void` ||
-| image-click | 图片被点击时的回调， | `(index: number): void` |  |
-| fail | 选择图片错误时的回调 | `(error: object): void` |  |
 | selectable | 是否显示选择按钮 | `Boolean` | `true` |
 | removeable | 是否显示移除按钮 | `Boolean` | `true` |
 | multiple	 | 是否支持多选 | `Boolean` | `false` |
+
+
+### Events
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| change | files 值发生变化触发的回调函数, type 操作类型有添加，移除，如果是移除操作，则第三个参数代表的是移除图片的索引 | `(files: Object, operationType: string, index: number): void` ||
+| image-click | 图片被点击时的回调， | `(index: number): void` |  |
+| fail | 选择图片错误时的回调 | `(error: object): void` |  |
