@@ -1,18 +1,18 @@
 <template>
-  <div :class="`${prefixCls}-list`">
-    <div :class="`${prefixCls}-flexbox`" v-for="(file, index) in files">
-      <div :class="`${prefixCls}-item`"
+  <div :class="wrapClass">
+    <div :class="flexClass" v-for="(file, index) in files">
+      <div :class="itemClass"
            @click.self="onClick(index)"
            :style="{ backgroundImage: `url(${file.url})` }">
-        <div :class="`${prefixCls}-item-remove`"
+        <div :class="itemRemoveClass"
              v-if="removeable"
              @click="removeImage(index)">
           <v-icon type="cross-circle-o" color="#f00" size="xs"></v-icon>
         </div>
       </div>
     </div>
-    <div :class="`${prefixCls}-flexbox`" v-if="selectable">
-      <div :class="`${prefixCls}-item ${prefixCls}-upload-btn`">
+    <div :class="flexClass" v-if="selectable">
+      <div :class="uploadClass">
         <input type="file" accept="image/*" @change="uploadHandle" v-if="multiple" multiple>
         <input type="file" accept="image/*" @change="uploadHandle" v-else="multiple">
       </div>
@@ -27,9 +27,7 @@
 
   export default {
     name: 'VImagePicker',
-    components: {
-      [Icon.name]: Icon
-    },
+    components: { Icon },
     props: {
       files: Array,
       multiple: {
@@ -45,10 +43,25 @@
         default: true
       }
     },
-    data() {
-      return {
-        prefixCls: prefixCls
-      };
+    computed: {
+      wrapClass() {
+        return `${prefixCls}-wrap`;
+      },
+      flexClass() {
+        return `${prefixCls}-flexbox`;
+      },
+      itemClass() {
+        return `${prefixCls}-item`;
+      },
+      itemRemoveClass() {
+        return `${prefixCls}-item-remove`;
+      },
+      uploadClass() {
+        return [
+          this.itemClass,
+          `${prefixCls}-upload-btn`
+        ];
+      }
     },
     methods: {
       // 移除图片

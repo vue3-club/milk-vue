@@ -16,12 +16,12 @@ import Popover from './popover';
 import Progress from './progress';
 import Radio from './radio';
 import Row from './row';
+import SearchBar from './searchBar';
 import Stepper from './stepper';
 import Swipeaction from './swipeaction';
 import Switch from './switch';
 import Textarea from './textarea';
 import Toast from './toast';
-import Touch from './touch';
 import '../style/index.less';
 
 const version = '0.9.3';
@@ -44,11 +44,11 @@ const components = [
   Progress,
   Radio,
   Row,
+  SearchBar,
   Stepper,
   Swipeaction,
   Switch,
-  Textarea,
-  Touch
+  Textarea
 ];
 
 const install = function(Vue) {
@@ -85,12 +85,12 @@ export {
   Progress,
   Radio,
   Row,
+  SearchBar,
   Stepper,
   Swipeaction,
   Switch,
   Textarea,
-  Toast,
-  Touch
+  Toast
 };
 export default {
   install,
