@@ -1,3 +1,4 @@
+import Actionsheet from './actionsheet';
 import Button from './button';
 import Checkbox from './checkbox';
 import Col from './col';
@@ -25,6 +26,7 @@ import '../style/index.less';
 
 const version = '0.9.3';
 const components = [
+  Actionsheet,
   Button,
   Checkbox,
   Col,
@@ -65,6 +67,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
+  Actionsheet,
   Button,
   Checkbox,
   Col,

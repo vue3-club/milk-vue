@@ -85,6 +85,10 @@ module.exports = {
             {
               'path': '/pagination',
               'title': 'Pagination - 分页器'
+            },
+            {
+              'path': '/actionsheet',
+              'title': 'ActionSheet - 动作面板'
             }
           ]
         }, {
