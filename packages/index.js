@@ -20,6 +20,8 @@ import SearchBar from './searchBar';
 import Stepper from './stepper';
 import Swipeaction from './swipeaction';
 import Switch from './switch';
+import Tabs from './tabs';
+import TabPane from './tabPane';
 import Textarea from './textarea';
 import Toast from './toast';
 import '../style/index.less';
@@ -48,6 +50,8 @@ const components = [
   Stepper,
   Swipeaction,
   Switch,
+  Tabs,
+  TabPane,
   Textarea
 ];
 
@@ -89,6 +93,7 @@ export {
   Stepper,
   Swipeaction,
   Switch,
+  Tabs,
   Textarea,
   Toast
 };
