@@ -12,6 +12,8 @@ import Popover from './popover';
 import Radio from './radio';
 import Row from './row';
 import Switch from './switch';
+import Tabs from './tabs';
+import TabPane from './tabPane';
 import Textarea from './textarea';
 import Toast from './toast';
 import '../style/index.less';
@@ -32,6 +34,8 @@ const components = [
   Radio,
   Row,
   Switch,
+  Tabs,
+  TabPane,
   Textarea
 ];
 
@@ -65,6 +69,7 @@ export {
   Radio,
   Row,
   Switch,
+  Tabs,
   Textarea,
   Toast
 };
