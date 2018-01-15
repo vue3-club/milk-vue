@@ -1,0 +1,76 @@
+@import "../themes/default";
+
+@imagePickerPrefixCls: vm-image-picker;
+
+.@{imagePickerPrefixCls} {
+  &-wrap {
+    margin-bottom: 15 * @hd;
+    padding: 9 * @hd 8 * @hd 0;
+  }
+  &-flexbox {
+    position: relative;
+    width: 25%;
+    display: inline-block;
+  }
+
+  &-item {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 95%;
+    height: 95%;
+    background-size: cover;
+  }
+
+  &-flexbox:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  &-upload-btn {
+    box-sizing: border-box;
+    border-radius: 3 * @hd;
+    border: 1 * @hd solid @color-text-secondary;
+    background-color: #fff;
+  }
+
+  &-upload-btn:after,
+  &-upload-btn:before {
+    width: 1 * @hd;
+    height: 25 * @hd;
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: @color-text-secondary;
+  }
+
+  &-upload-btn:before {
+    width: 25 * @hd;
+    height: 1 * @hd;
+  }
+
+  &-upload-btn input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+  }
+
+  &-item-remove {
+    width: 15 * @hd;
+    height: 15 * @hd;
+    position: absolute;
+    right: 3 * @hd;
+    top: 0;
+    text-align: right;
+    vertical-align: top;
+    z-index: 2;
+  }
+}

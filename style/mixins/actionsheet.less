@@ -1,0 +1,245 @@
+@import '../themes/default';
+@import "./hairline.less";
+@ActionSheetPrefixCls: vm-actionsheet;
+
+.@{ActionSheetPrefixCls} {
+  &-wrap {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: @action-sheet-zindex;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+  }
+
+  &-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: @fill-mask;
+    height: 100%;
+    z-index: @action-sheet-zindex;
+
+    &-hidden {
+      display: none;
+    }
+  }
+  // 隐藏掉 dialog 默认的 x 按钮
+  &-close {
+    display: none;
+  }
+}
+
+.@{ActionSheetPrefixCls} {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: @fill-base;
+
+  &&-share {
+    background-color: #f2f2f2;
+  }
+
+  &-title,
+  &-message {
+    margin: @h-spacing-lg auto;
+    padding: 0 @h-spacing-lg;
+    text-align: center;
+  }
+
+  &-title {
+    font-size: @font-size-heading;
+  }
+
+  &-message {
+    color: @color-text-caption;
+    font-size: @font-size-base;
+  }
+
+  &-button-list {
+    text-align: center;
+    color: @color-text-base;
+
+    &-item {
+      font-size: @actionsheet-item-font-size;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      height: @actionsheet-item-height;
+      line-height: @actionsheet-item-height;
+      box-sizing: border-box;
+      .hairline('top');
+      &&-active {
+        background-color: @fill-tap;
+      }
+    }
+
+    .@{ActionSheetPrefixCls}-cancel-button {
+      margin-top: @v-spacing-sm;
+      position: relative;
+
+      &-mask {
+        position: absolute;
+        top: -@v-spacing-sm;
+        left: 0;
+        width: 100%;
+        height: @v-spacing-sm;
+        background-color: #e7e7ed;
+        .hairline('top');
+        .hairline('bottom');
+      }
+    }
+
+    .@{ActionSheetPrefixCls}-destructive-button {
+      color: @brand-error;
+    }
+  }
+
+  &-share {
+    &-list {
+      display: flex;
+      position: relative;
+      .hairline('top');
+
+      padding: @v-spacing-xl 0 @v-spacing-xl @h-spacing-lg;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+
+      &-item {
+        flex: none;
+        margin: 0 12 * @hd 0 0;
+
+        &-icon {
+          margin-bottom: @v-spacing-md;
+          width: 60 * @hd;
+          height: 60 * @hd;
+          background-color: @fill-base;
+          border-radius: @radius-sm;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &-title {
+          color: @color-text-caption;
+          font-size: @font-size-icontext;
+          text-align: center;
+        }
+      }
+    }
+
+    &-cancel-button {
+      height: @actionsheet-item-height;
+      line-height: @actionsheet-item-height;
+      text-align: center;
+      background-color: @fill-base;
+      color: @color-text-base;
+      font-size: @button-font-size;
+      position: relative;
+      .hairline('top');
+      box-sizing: border-box;
+
+      &&-active {
+        background-color: @fill-tap;
+      }
+    }
+  }
+}
+
+
+@-webkit-keyframes vm-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes vm-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes vm-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vm-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes vm-slider-in {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes vm-slider-in {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes vm-slider-out {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes vm-slider-out {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.vm-fade-enter-active {
+  -webkit-animation: .3s vm-fade-in;
+          animation: .3s vm-fade-in;
+}
+
+.vm-fade-leave-active {
+-webkit-animation: .3s vm-fade-out;
+        animation: .3s vm-fade-out;
+}
+
+.vm-float-enter-active {
+  -webkit-animation: .3s vm-slider-in;
+          animation: .3s vm-slider-in;
+}
+.vm-float-leave-active {
+  -webkit-animation: .3s vm-slider-out;
+          animation: .3s vm-slider-out;
+}

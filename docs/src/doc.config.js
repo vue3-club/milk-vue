@@ -81,6 +81,22 @@ module.exports = {
             {
               'path': '/tabs',
               'title': 'Tabs - 标签页'
+            },
+            {
+              'path': '/progress',
+              'title': 'Progress - 进度条'
+            },
+            {
+              'path': '/pagination',
+              'title': 'Pagination - 分页器'
+            },
+            {
+              'path': '/actionsheet',
+              'title': 'ActionSheet - 动作面板'
+            },
+            {
+              'path': '/search-bar',
+              'title': 'SearchBar - 搜索栏'
             }
           ]
         }, {
@@ -101,13 +117,30 @@ module.exports = {
               'path': '/checkbox',
               'title': 'Checkbox - 复选框'
             },
+            {
+              'path': '/stepper',
+              'title': 'Stepper - 步进器'
+            },
+            {
+              'path': '/image-picker',
+              'title': 'ImagePicker - 图片选择器'
+            },
           ]
         }, {
           'groupName': '操作反溃',
           'list': [{
             'path': '/toast',
             'title': 'Toast - 轻提示'
-          }, ]
+          },{
+              'path': '/modal',
+              'title': 'Modal - 对话框'
+           }]
+        }, {
+          'groupName': '手势',
+          'list': [{
+            'path': '/swipeaction',
+            'title': 'SwipeAction - 滑动操作'
+          }]
         }]
       }
     ]

@@ -62,7 +62,7 @@ Vue.use(Milk);
 
 ## Contribution
 
-Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
+[Contributioner](https://github.com/vueClub/milk-vue/blob/master/components.list.md)
 
 ## Thanks
 

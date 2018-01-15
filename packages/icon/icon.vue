@@ -2,7 +2,8 @@
   <svg
     :class="svgCls"
     :style="style"
-    @click="$emit('click')"
+    @click="!disabled&&$emit('click')"
+    v-bind="$attrs"
   >
     <use :href="`#${this.type}`"/>
   </svg>
@@ -19,7 +20,8 @@
         required: true
       },
       size: String,
-      color: String
+      color: String,
+      disabled: Boolean
     },
     beforeCreate() {
       loadSprite();
@@ -32,7 +34,8 @@
           `${prefixCls}`,
           {
             [`${prefixCls}-${this.type}`]: this.type,
-            [`${prefixCls}-${this.size}`]: this.size
+            [`${prefixCls}-${this.size}`]: this.size,
+            [`${prefixCls}-disabled`]: this.disabled
           }
         ];
       },

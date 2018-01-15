@@ -1,0 +1,122 @@
+.vm-modal {
+  &-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+  }
+  &-wrapper {
+    position: fixed;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: @modal-zindex;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-header {
+    padding: 6px 15px 15px;
+  }
+  &-title {
+    text-align: center;
+    font-size: @color-text-base;
+    font-size: 18px;
+  }
+  &-content {
+    position: relative;
+    width: 270px;
+    height: auto;
+    border-radius: 7px;
+    padding-top: 15px;
+    background: #fff;
+    .vm-modal-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+    }
+  }
+  &-body {
+    padding: 0 15px 15px;
+    font-size: 14px;
+    color: @color-text-caption;
+  }
+  &-body-basic {
+    max-height: 85px;
+    overflow: auto;
+    line-height: @line-height-paragraph;
+    text-align: center;
+  }
+  &-body-confirm {
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    color: @color-text-caption;
+  }
+  &-footer-confirm {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-btn {
+    font-size: 18px;
+    border-top: 1px solid @border-color-base;
+    .hairline('top', @border-color-base);
+    border-radius: 0 0 7px 7px;
+  }
+  .btn-close {
+    color: @color-text-base;
+  }
+  .btn-confirm {
+    color: @brand-primary;
+  }
+  &-btn-confirm {
+    width: 50%;
+    &:first-child {
+      border-radius: 0 0 0 7px;
+    };
+    &:last-child {
+      border-radius: 0 0 7px 0;
+    }
+  }
+  &-btn-mult {
+    border-bottom-color: transparent;
+    border-radius: 0 0 0 0;
+    &:last-child {
+      border-radius: 0 0 7px 7px;
+    }
+  }
+  &-body-popup {
+    padding: 0;
+  }
+  &-content-popup {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    transition: bottom .2s;
+  }
+  &-btn-popup {
+    border-radius: 0;
+  }
+}
+.vm-modal-fade-enter-active, .vm-modal-fade-leave-active {
+  transition: opacity .2s;
+}
+.vm-modal-fade-enter, .vm-modal-fade-leave-to {
+  opacity: 0;
+}
+.vm-modal-slideup-enter-active, .vm-modal-slideup-leave-active {
+  transition: all .2s;
+}
+.vm-modal-slideup-enter, .vm-modal-slideup-leave-to {
+  opacity: 0;
+}
+.vm-modal-slideup-enter .vm-modal-content-popup, .vm-modal-slideup-leave-to .vm-modal-content-popup {
+  bottom: -100%;
+}

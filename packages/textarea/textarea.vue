@@ -30,7 +30,7 @@
     <div
       v-if="error"
       :class="`${prefixCls}-error-extra`"
-      @click="$emit('error-click')"
+      @click="$emit('error-click',inputValue)"
     >
     </div>
     <span
@@ -177,12 +177,12 @@
       // 处理聚焦事件
       handleFocus() {
         this.focus = true;
-        this.$emit('focus');
+        this.$emit('focus', this.inputValue);
       },
       // 处理失焦事件
       handleBlur() {
         this.focus = false;
-        this.$emit('blur');
+        this.$emit('blur', this.inputValue);
       }
     }
   };
