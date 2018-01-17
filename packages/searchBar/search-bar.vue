@@ -113,7 +113,7 @@
       },
       visible() {
         return {
-          visibility: this.value.length > 0 ? 'hidden' : 'visible'
+          visibility: this.inputValue.length > 0 ? 'hidden' : 'visible'
         };
       },
       clearClass() {
@@ -170,7 +170,7 @@
           this.isFocus = true;
           this.visibleCancel = true;
           // 获取取消按钮元素宽度设置偏移
-          this.placeholderWidth = `${this.$refs.ph.offsetWidth + 0.5}px`;
+          this.placeholderWidth = `${this.$refs.ph.offsetWidth + 1}px`;
           this.marginRightWidth = 0;
         } else {
           this.placeholderWidth = '100%';
