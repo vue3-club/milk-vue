@@ -140,6 +140,9 @@ module.exports = {
           'list': [{
             'path': '/swipeaction',
             'title': 'SwipeAction - 滑动操作'
+          }, {
+            'path': '/pulltorefresh',
+            'title': 'PullToRefresh - 拉动刷新'
           }]
         }]
       }

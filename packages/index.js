@@ -14,6 +14,7 @@ import Navbar from './navbar';
 import Pagination from './pagination';
 import Popover from './popover';
 import Progress from './progress';
+import Pulltorefresh from './pulltorefresh';
 import Radio from './radio';
 import Row from './row';
 import SearchBar from './searchBar';
@@ -44,6 +45,7 @@ const components = [
   Pagination,
   Popover,
   Progress,
+  Pulltorefresh,
   Radio,
   Row,
   SearchBar,
@@ -87,6 +89,7 @@ export {
   Pagination,
   Popover,
   Progress,
+  Pulltorefresh,
   Radio,
   Row,
   SearchBar,
