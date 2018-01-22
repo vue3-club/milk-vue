@@ -42,6 +42,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "6.x",
+    "qrcode.vue": "^1.5.2",
     "v-drawer": "^1.0.9",
     "v-feedback": "^0.1.13",
     "v-pull-to-refresh": "^1.0.3",

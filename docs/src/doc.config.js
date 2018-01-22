@@ -144,6 +144,12 @@ module.exports = {
             'path': '/pulltorefresh',
             'title': 'PullToRefresh - 拉动刷新'
           }]
+        }, {
+          'groupName': '集成SDK',
+          'list': [{
+            'path': '/share',
+            'title': '第三方分享'
+          }]
         }]
       }
     ]
