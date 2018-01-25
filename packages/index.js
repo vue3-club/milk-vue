@@ -18,11 +18,12 @@ import Pulltorefresh from './pulltorefresh';
 import Radio from './radio';
 import Row from './row';
 import SearchBar from './searchBar';
+import Share from './share';
 import Stepper from './stepper';
 import Swipeaction from './swipeaction';
 import Switch from './switch';
-import Tabs from './tabs';
 import TabPane from './tabPane';
+import Tabs from './tabs';
 import Textarea from './textarea';
 import Toast from './toast';
 import '../style/index.less';
@@ -49,11 +50,12 @@ const components = [
   Radio,
   Row,
   SearchBar,
+  Share,
   Stepper,
   Swipeaction,
   Switch,
-  Tabs,
   TabPane,
+  Tabs,
   Textarea
 ];
 
@@ -93,9 +95,11 @@ export {
   Radio,
   Row,
   SearchBar,
+  Share,
   Stepper,
   Swipeaction,
   Switch,
+  TabPane,
   Tabs,
   Textarea,
   Toast
