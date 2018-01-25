@@ -1,5 +1,25 @@
 .vm-share {
-  
+  &-qrcode {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    z-index: 3;
+    .qrcode-title {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 10px;
+      margin-left: -5px;
+      h3 {
+        line-height: 1.5;
+      }
+    }
+  }
   &-link {
     display: inline-block;
     width: 22px;
@@ -7,6 +27,106 @@
     padding: 5px;
     border-radius: 50%;
     border: 1px solid #000;
+  }
+  .wx-btn {
+    border-color: #7bc549;
+    color: #7bc549;
+    &:hover {
+      background: #7bc549;
+      svg {
+        color: #fff!important;
+      }
+    }
+  }
+  .wb-btn {
+    border-color: #ff763b;
+    color: #ff763b;
+    &:hover {
+      background: #ff763b;
+      svg {
+        color: #fff!important;
+      }
+    }
+  }
+  .qq-btn {
+    border-color: #56b6e7;
+    color: #56b6e7;
+    &:hover {
+      background: #56b6e7;
+      svg {
+        color: #fff!important;
+      }
+    }
+  }
+  .twb-btn {
+    border-color: #56b6e7;
+    color: #56b6e7;
+    &:hover {
+      background: #56b6e7;
+      svg {
+        color: #fff!important;
+      }
+    }
+  }
+  .facebook-btn {
+    border-color: #44619D;
+    color: #44619D;
+    &:hover {
+      background: #44619D;
+      svg {
+        color: #fff!important;
+      }
+    }
+  }
+  .google-btn {
+    border-color: #db4437;
+    color: #db4437;
+    &:hover {
+      background: #db4437;
+      svg {
+        color: #fff!important;
+      }
+    }
+  }
+  .linkedin-btn {
+    border-color: #0077B5;
+    color: #0077B5;
+    &:hover {
+      background: #0077B5;
+      svg {
+        color: #fff!important;
+      }
+    }
+  }
+  .twitter-btn {
+    border-color: #55acee;
+    color: #55acee;
+    &:hover {
+      background: #55acee;
+      svg {
+        color: #fff!important;
+      }
+    }
+  }
+  .douban-btn {
+    border-color: #33b045;
+    color: #33b045;
+    &:hover {
+      background: #33b045;
+      svg {
+        color: #fff!important;
+      }
+    }
+  }
+  .qzone-btn {
+    border-color: #FDBE3D;
+    color: #FDBE3D;
+    &:hover {
+      background: #FDBE3D;
+      svg {
+        color: #fff!important;
+      }
+    }
   }
 }
 .vm-share-bloom {
@@ -22,6 +142,7 @@
     line-height: 60px;
     text-align: center;
     z-index: 2;
+    cursor: pointer;
     &:hover {
       background: #fff;
     }
@@ -37,32 +158,12 @@
     animation-duration: 0.5s;
     animation-timing-function: ease-in;
   }
-  &-qrcode {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35);
-    .qrcode-title {
-      text-align: center;
-      color: #fff;
-      margin-bottom: 10px;
-      margin-left: -5px;
-      h3 {
-        line-height: 1.5;
-      }
-    }
-  }
 }
 .vm-share-default {
   position: static;
   &-item {
     position: static;
     display: inline-block;
-    margin: 0 5px;
+    margin: 3px 5px;
   }
 }
