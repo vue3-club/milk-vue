@@ -47,7 +47,7 @@ Vue.component(Share.name, Share);
 :::demo
 ```html
 <div class="demo-block">
-    <v-share :share-list="shareList"></v-share>
+    <v-share :share-list="shareList" type="bloom"></v-share>
 </div>
 ```
 :::

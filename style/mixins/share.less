@@ -1,4 +1,15 @@
 .vm-share {
+  
+  &-link {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid #000;
+  }
+}
+.vm-share-bloom {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -25,9 +36,6 @@
     z-index: 1;
     animation-duration: 0.5s;
     animation-timing-function: ease-in;
-    a {
-      color: #000;
-    }
   }
   &-qrcode {
     position: fixed;
@@ -48,5 +56,13 @@
         line-height: 1.5;
       }
     }
+  }
+}
+.vm-share-default {
+  position: static;
+  &-item {
+    position: static;
+    display: inline-block;
+    margin: 0 5px;
   }
 }
