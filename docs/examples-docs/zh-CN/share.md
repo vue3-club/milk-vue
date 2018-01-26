@@ -47,7 +47,7 @@ Vue.component(Share.name, Share);
 :::demo
 ```html
 <div class="demo-block">
-    <v-share :share-list="shareList"></v-share>
+    <v-share :share-list="shareList" type="bloom"></v-share>
 </div>
 ```
 :::
@@ -57,6 +57,8 @@ Vue.component(Share.name, Share);
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | shareList | 第三方列表 | Array  | - | - |
+| type | 样式类型，bloom类型下建议分享按钮不超过4个 | String  | default | default/bloom |
+| btntext | bloom类型下按钮文字，可以使用图标 | String  | 分享 | - |
 
 shareList 默认值为 [{key: 'wx',title: '微信'}, {key: 'wb',title: '微博'}, {key: 'qq',title: 'QQ'}, {key: 'douban',title: '豆瓣'}]
 
