@@ -79,12 +79,24 @@ module.exports = {
               'title': 'Popover - 气泡'
             },
             {
+              'path': '/tabs',
+              'title': 'Tabs - 标签页'
+            },
+            {
               'path': '/progress',
               'title': 'Progress - 进度条'
             },
             {
               'path': '/pagination',
               'title': 'Pagination - 分页器'
+            },
+            {
+              'path': '/actionsheet',
+              'title': 'ActionSheet - 动作面板'
+            },
+            {
+              'path': '/search-bar',
+              'title': 'SearchBar - 搜索栏'
             }
           ]
         }, {
@@ -128,6 +140,15 @@ module.exports = {
           'list': [{
             'path': '/swipeaction',
             'title': 'SwipeAction - 滑动操作'
+          }, {
+            'path': '/pulltorefresh',
+            'title': 'PullToRefresh - 拉动刷新'
+          }]
+        }, {
+          'groupName': '集成SDK',
+          'list': [{
+            'path': '/share',
+            'title': '第三方分享'
           }]
         }]
       }
