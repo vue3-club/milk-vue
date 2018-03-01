@@ -43,11 +43,9 @@ export default {
 
 ### 使用指南
 ``` javascript
-import { Accordion, AccordionItem, List, ListItem } from 'milk-vue';
+import { Accordion, AccordionItem } from 'milk-vue';
 Vue.component(Accordion.name, Accordion);
 Vue.component(AccordionItem.name, AccordionItem);
-Vue.component(List.name, List);
-Vue.component(ListItem.name, ListItem);
 ```
 
 ### 代码演示
