@@ -97,6 +97,10 @@ module.exports = {
             {
               'path': '/search-bar',
               'title': 'SearchBar - 搜索栏'
+            },
+            {
+              'path': '/accordion',
+              'title': 'Accordion - 手风琴'
             }
           ]
         }, {
