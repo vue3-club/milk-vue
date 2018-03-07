@@ -1,3 +1,5 @@
+import Accordion from './accordion';
+import AccordionItem from './accordionItem';
 import Actionsheet from './actionsheet';
 import Button from './button';
 import Checkbox from './checkbox';
@@ -30,6 +32,8 @@ import '../style/index.less';
 
 const version = '0.9.3';
 const components = [
+  Accordion,
+  AccordionItem,
   Actionsheet,
   Button,
   Checkbox,
@@ -75,6 +79,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
+  Accordion,
+  AccordionItem,
   Actionsheet,
   Button,
   Checkbox,

@@ -1,0 +1,74 @@
+@import "../themes/default";
+@import "./hairline";
+@import "./icon";
+
+@accordionPrefixCls: vm-accordion;
+
+.@{accordionPrefixCls} {
+  position: relative;
+  background-color: @fill-base;
+  .hairline('top');
+}
+
+.vm-accordion-commont {
+  position: relative;
+  background-color: @fill-base;
+  vertical-align: middle;
+  transition: background-color 200ms;
+  align-items: center;
+}
+
+.@{accordionPrefixCls}-item {
+  .@{accordionPrefixCls}-item-title {
+    &:extend(.vm-accordion-commont);
+    .hairline('top');
+    .hairline('bottom');
+    margin-top: -1px;
+    user-select: none;
+    overflow: hidden;
+    min-height: @list-item-height;
+    display: flex;
+    padding: 0 @h-spacing-lg;
+    transition: all 0.4s ease;
+    z-index: 2;
+  }
+  .@{accordionPrefixCls}-item-content {
+    &:extend(.vm-accordion-commont);
+    z-index: 1;
+    transition: all 0.25s ease;
+    overflow: hidden;
+    &.@{accordionPrefixCls}-item-inactive {
+      height: 0;
+    }
+  }
+  .@{accordionPrefixCls}-item-content:last-child {
+    .hairline('bottom');
+    margin-top: -1px;
+  }
+
+  /* 右侧箭头*/
+  .@{accordionPrefixCls}-arrow {
+    position: absolute;
+    right: @h-spacing-lg;
+    width: @icon-size-xxs;
+    height: @icon-size-xxs;
+    margin-left: @h-spacing-md;
+    transition: all 0.4s ease;
+    .encoded-svg-background('right');
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    visibility: hidden;
+
+    &-vertical {
+      visibility: visible;
+      transform: rotate(90deg);
+    }
+
+    &-vertical-up {
+      visibility: visible;
+      transform: rotate(270deg);
+    }
+  }
+}

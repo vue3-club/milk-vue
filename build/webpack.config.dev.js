@@ -10,7 +10,7 @@ const { extractExample } = require('zan-doc/src/helper');
 const styleLoaders = [
   { loader: 'css-loader' },
   { loader: 'less-loader' },
-  { loader: 'postcss-loader', options: { sourceMap: true } }
+  { loader: 'postcss-loader', options: { sourceMap: true }}
 ];
 
 // extract [components].vue from [components].md
@@ -46,7 +46,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.join(__dirname, '../node_modules'), 'node_modules'],
-    extensions: ['.js', '.vue', '.css'],
+    extensions: ['.js', '.vue', '.css', '.less'],
     alias: {
       vue: 'vue/dist/vue.runtime.esm.js',
       packages: path.join(__dirname, '../packages'),
@@ -91,11 +91,11 @@ module.exports = {
       {
         test: /\.less$/,
         use: [{
-            loader: "style-loader" // creates style nodes from JS strings
+          loader: 'style-loader' // creates style nodes from JS strings
         }, {
-            loader: "css-loader" // translates CSS into CommonJS
+          loader: 'css-loader' // translates CSS into CommonJS
         }, {
-            loader: "less-loader" // compiles Less to CSS
+          loader: 'less-loader' // compiles Less to CSS
         }]
       },
       {
